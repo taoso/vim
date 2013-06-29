@@ -5,6 +5,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'kien/ctrlp.vim'
 
 set nocompatible
 set background=dark
@@ -49,3 +50,10 @@ let g:solarized_termtrans=1
 let g:Powerline_symbols = 'fancy'
 set laststatus=2
 set t_Co=256
+
+" Ctrlp
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_custom_ignore = {
+    \ 'dir': '\.(git|hg|svn|build|)$',
+    \ 'file': '\.(exe|so|dll|pyc|pdf)$',}
+map <Enter> :CtrlPMRUFiles <CR>
