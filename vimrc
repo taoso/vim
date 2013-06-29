@@ -4,6 +4,7 @@ call vundle#rc()
 " let Vundle manage Vundle
 Bundle 'gmarik/vundle'
 Bundle 'flazz/vim-colorschemes'
+Bundle 'Lokaltog/vim-powerline'
 
 set nocompatible
 set background=dark
@@ -43,3 +44,8 @@ set softtabstop=4           " let backspace delete indent
 color solarized
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
+
+" Powerline
+let g:Powerline_symbols = 'fancy'
+set laststatus=2
+set t_Co=256
