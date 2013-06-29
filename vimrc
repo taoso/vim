@@ -7,6 +7,7 @@ Bundle 'flazz/vim-colorschemes'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'kien/ctrlp.vim'
 Bundle 'hynek/vim-python-pep8-indent'
+Bundle 'scrooloose/syntastic'
 
 set nocompatible
 set background=dark
@@ -58,3 +59,7 @@ let g:ctrlp_custom_ignore = {
     \ 'dir': '\.(git|hg|svn|build|)$',
     \ 'file': '\.(exe|so|dll|pyc|pdf)$',}
 map <Enter> :CtrlPMRUFiles <CR>
+
+" Syntastic
+let g:syntastic_check_on_open=1
+let g:syntastic_auto_jump=1
