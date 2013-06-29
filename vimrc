@@ -6,6 +6,7 @@ Bundle 'gmarik/vundle'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'kien/ctrlp.vim'
+Bundle 'hynek/vim-python-pep8-indent'
 
 set nocompatible
 set background=dark
