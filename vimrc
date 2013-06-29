@@ -3,6 +3,7 @@ call vundle#rc()
 
 " let Vundle manage Vundle
 Bundle 'gmarik/vundle'
+Bundle 'flazz/vim-colorschemes'
 
 set nocompatible
 set background=dark
@@ -37,3 +38,8 @@ set expandtab               " Tabs are spaces
 set shiftwidth=4            " Use indents of 4 spaces
 set tabstop=4               " An indentation every four columns
 set softtabstop=4           " let backspace delete indent
+
+" Color theme
+color solarized
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
