@@ -1,3 +1,6 @@
+set nocompatible
+filetype off
+
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
@@ -9,7 +12,6 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'scrooloose/syntastic'
 
-set nocompatible
 set background=dark
 
 set fencs=utf-8,gb2312,gbk  " Sets the default encoding
