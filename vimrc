@@ -11,6 +11,7 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'kien/ctrlp.vim'
 Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'scrooloose/syntastic'
+Bundle 'Valloric/YouCompleteMe'
 
 set background=dark
 
@@ -65,3 +66,7 @@ map <Enter> :CtrlPMRUFiles <CR>
 " Syntastic
 let g:syntastic_check_on_open=1
 let g:syntastic_auto_jump=1
+
+" YouCompleteMe
+let g:ycm_autoclose_preview_window_after_insertion=1
+nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration <CR>
