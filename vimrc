@@ -69,4 +69,4 @@ let g:syntastic_auto_jump=1
 
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_insertion=1
-nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration <CR>
+nnoremap <leader>d :YcmCompleter GoToDefinitionElseDeclaration <CR>
