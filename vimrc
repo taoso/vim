@@ -12,6 +12,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'scrooloose/syntastic'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'sprsquish/thrift.vim'
 
 set background=dark
 
@@ -68,5 +69,8 @@ let g:syntastic_check_on_open=1
 let g:syntastic_auto_jump=1
 
 " YouCompleteMe
-let g:ycm_autoclose_preview_window_after_insertion=1
+let g:ycm_autoclose_preview_window_after_completion=1
 nnoremap <leader>d :YcmCompleter GoToDefinitionElseDeclaration <CR>
+
+" Thrift
+autocmd BufRead,BufNewFile *.thrift set filetype=thrift
