@@ -56,6 +56,12 @@ set colorcolumn=80
 
 autocmd BufWritePre *.py :%s/\s\+$//e " auto clean trailing whitespace
 
+" jump to the last position when reopening a file
+autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
+
 " Color theme
 color solarized
 let g:solarized_termcolors=256
