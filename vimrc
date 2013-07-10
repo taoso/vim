@@ -46,6 +46,10 @@ set expandtab               " Tabs are spaces
 set shiftwidth=4            " Use indents of 4 spaces
 set tabstop=4               " An indentation every four columns
 set softtabstop=4           " let backspace delete indent
+au BufReadPost * if 
+    \ line("'\"") > 1 && line("'\"") <= line("$") 
+    \ | exe "normal! g'\"" | 
+    \ endif
 
 " Color theme
 color solarized
@@ -62,7 +66,7 @@ let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = {
     \ 'dir': '\.(git|hg|svn|build|)$',
     \ 'file': '\.(exe|so|dll|pyc|pdf)$',}
-map <Enter> :CtrlPMRUFiles <CR>
+map <Enter> :CtrlPMRU<CR>
 
 " Syntastic
 let g:syntastic_check_on_open=1
