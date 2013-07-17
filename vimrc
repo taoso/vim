@@ -51,6 +51,9 @@ au BufReadPost * if
     \ | exe "normal! g'\"" | 
     \ endif
 
+inoremap ` <Esc>
+set colorcolumn=80
+
 " Color theme
 color solarized
 let g:solarized_termcolors=256
@@ -70,7 +73,8 @@ map <Enter> :CtrlPMRU<CR>
 
 " Syntastic
 let g:syntastic_check_on_open=1
-let g:syntastic_auto_jump=1
+let g:syntastic_auto_jump=0
+let g:syntastic_python_flake8_post_args='--ignore=W402'
 
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion=1
