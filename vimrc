@@ -54,6 +54,8 @@ au BufReadPost * if
 inoremap ` <Esc>
 set colorcolumn=80
 
+autocmd BufWritePre *.py :%s/\s\+$//e " auto clean trailing whitespace
+
 " Color theme
 color solarized
 let g:solarized_termcolors=256
