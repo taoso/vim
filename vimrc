@@ -13,6 +13,7 @@ Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'scrooloose/syntastic'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'sprsquish/thrift.vim'
+Bundle 'terryma/vim-multiple-cursors'
 
 set background=dark
 
