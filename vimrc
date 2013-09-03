@@ -14,6 +14,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'sprsquish/thrift.vim'
 Bundle 'terryma/vim-multiple-cursors'
+Bundle 'othree/html5.vim'
 
 set background=dark
 
