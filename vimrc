@@ -15,6 +15,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'sprsquish/thrift.vim'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'othree/html5.vim'
+Bundle 'plasticboy/vim-markdown'
 
 set background=dark
 
@@ -92,3 +93,6 @@ nnoremap <leader>d :YcmCompleter GoToDefinitionElseDeclaration <CR>
 
 " Thrift
 autocmd BufRead,BufNewFile *.thrift set filetype=thrift
+
+" vim-markdown
+let g:vim_markdown_folding_disabled=1
