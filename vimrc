@@ -16,6 +16,7 @@ Bundle 'sprsquish/thrift.vim'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'othree/html5.vim'
 Bundle 'plasticboy/vim-markdown'
+Bundle 'shawncplus/phpcomplete.vim'
 
 set background=dark
 
