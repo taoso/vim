@@ -11,12 +11,12 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'kien/ctrlp.vim'
 Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'scrooloose/syntastic'
-Bundle 'Valloric/YouCompleteMe'
 Bundle 'sprsquish/thrift.vim'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'othree/html5.vim'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'shawncplus/phpcomplete.vim'
+Bundle 'jelera/vim-javascript-syntax'
 
 set background=dark
 
@@ -55,10 +55,13 @@ au BufReadPost * if
     \ | exe "normal! g'\"" | 
     \ endif
 
-inoremap ` <Esc>
 set colorcolumn=80
 
 autocmd BufWritePre *.py :%s/\s\+$//e " auto clean trailing whitespace
+
+autocm FileType css,less,javascript,html set shiftwidth=2
+autocm FileType css,less,javascript,html set tabstop=2
+autocm FileType css,less,javascript,html set softtabstop=2
 
 " jump to the last position when reopening a file
 autocmd BufReadPost *
