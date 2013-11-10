@@ -10,13 +10,13 @@ Bundle 'flazz/vim-colorschemes'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'kien/ctrlp.vim'
 Bundle 'hynek/vim-python-pep8-indent'
-Bundle 'scrooloose/syntastic'
 Bundle 'sprsquish/thrift.vim'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'othree/html5.vim'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'jelera/vim-javascript-syntax'
+Bundle "pangloss/vim-javascript"
 
 set background=dark
 
@@ -24,6 +24,7 @@ set fencs=utf-8,gb2312,gbk  " Sets the default encoding
 filetype plugin indent on   " Automatically detect file types
 syntax on                   " Syntax highlighting
 set autochdir               " Always switch to the current file directory
+set fileformat=unix
 
 set nospell
 set history=1000
@@ -59,9 +60,11 @@ set colorcolumn=80
 
 autocmd BufWritePre *.py :%s/\s\+$//e " auto clean trailing whitespace
 
-autocm FileType css,less,javascript,html set shiftwidth=2
-autocm FileType css,less,javascript,html set tabstop=2
-autocm FileType css,less,javascript,html set softtabstop=2
+autocm FileType css,less,javascript,html,xml,js set shiftwidth=2
+autocm FileType css,less,javascript,html,xml,js set tabstop=2
+autocm FileType css,less,javascript,html,xml,js set softtabstop=2
+
+autocmd FileType css,less,html,xml set foldmethod=indent
 
 " jump to the last position when reopening a file
 autocmd BufReadPost *
@@ -92,8 +95,8 @@ let g:syntastic_auto_jump=0
 let g:syntastic_python_flake8_post_args='--ignore=W402'
 
 " YouCompleteMe
-let g:ycm_autoclose_preview_window_after_completion=1
-nnoremap <leader>d :YcmCompleter GoToDefinitionElseDeclaration <CR>
+"let g:ycm_autoclose_preview_window_after_completion=1
+"nnoremap <leader>d :YcmCompleter GoToDefinitionElseDeclaration <CR>
 
 " Thrift
 autocmd BufRead,BufNewFile *.thrift set filetype=thrift
