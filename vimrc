@@ -17,6 +17,8 @@ Bundle 'plasticboy/vim-markdown'
 Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle "pangloss/vim-javascript"
+Bundle 'vim-scripts/javacomplete'
+Bundle 'vim-scripts/armasm'
 
 set background=dark
 
@@ -51,6 +53,7 @@ set expandtab               " Tabs are spaces
 set shiftwidth=4            " Use indents of 4 spaces
 set tabstop=4               " An indentation every four columns
 set softtabstop=4           " let backspace delete indent
+
 au BufReadPost * if 
     \ line("'\"") > 1 && line("'\"") <= line("$") 
     \ | exe "normal! g'\"" | 
@@ -60,9 +63,12 @@ set colorcolumn=80
 
 autocmd BufWritePre *.py :%s/\s\+$//e " auto clean trailing whitespace
 
-autocm FileType css,less,javascript,html,xml,js set shiftwidth=2
-autocm FileType css,less,javascript,html,xml,js set tabstop=2
-autocm FileType css,less,javascript,html,xml,js set softtabstop=2
+autocmd FileType css,less,javascript,html,xml,js,ruby set shiftwidth=2
+autocmd FileType css,less,javascript,html,xml,js,ruby set tabstop=2
+autocmd FileType css,less,javascript,html,xml,js,ruby set softtabstop=2
+
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+autocmd FileType java setlocal completefunc=javacomplete#CompleteParamsInfo
 
 autocmd FileType css,less,html,xml set foldmethod=indent
 
@@ -103,3 +109,7 @@ autocmd BufRead,BufNewFile *.thrift set filetype=thrift
 
 " vim-markdown
 let g:vim_markdown_folding_disabled=1
+
+" armasm
+let asmsyntax='armasm' 
+let filetype_inc='armasm'
