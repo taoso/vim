@@ -20,6 +20,7 @@ Bundle "pangloss/vim-javascript"
 Bundle 'vim-scripts/javacomplete'
 Bundle 'vim-scripts/armasm'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'vim-scripts/a.vim'
 
 set background=dark
 
@@ -104,6 +105,7 @@ let g:syntastic_python_flake8_post_args='--ignore=W402'
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion=1
 nnoremap <leader>d :YcmCompleter GoToDefinitionElseDeclaration <CR>
+let g:ycm_confirm_extra_conf = 0
 
 " Thrift
 autocmd BufRead,BufNewFile *.thrift set filetype=thrift
