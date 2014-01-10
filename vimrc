@@ -19,8 +19,8 @@ Bundle 'jelera/vim-javascript-syntax'
 Bundle "pangloss/vim-javascript"
 Bundle 'vim-scripts/javacomplete'
 Bundle 'vim-scripts/armasm'
-Bundle 'Valloric/YouCompleteMe'
 Bundle 'vim-scripts/a.vim'
+Bundle 'davidhalter/jedi-vim'
 
 set background=dark
 
@@ -93,19 +93,14 @@ set t_Co=256
 " Ctrlp
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = {
-    \ 'dir': '\.(git|hg|svn|build|)$',
-    \ 'file': '\.(exe|so|dll|pyc|pdf)$',}
+            \ 'dir': '\.(git|hg|svn|build|)$',
+            \ 'file': '\.(exe|so|dll|pyc|pdf)$',}
 map <Enter> :CtrlPMRU<CR>
 
 " Syntastic
 let g:syntastic_check_on_open=1
 let g:syntastic_auto_jump=0
 let g:syntastic_python_flake8_post_args='--ignore=W402'
-
-" YouCompleteMe
-let g:ycm_autoclose_preview_window_after_completion=1
-nnoremap <leader>d :YcmCompleter GoToDefinitionElseDeclaration <CR>
-let g:ycm_confirm_extra_conf = 0
 
 " Thrift
 autocmd BufRead,BufNewFile *.thrift set filetype=thrift
