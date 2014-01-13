@@ -9,6 +9,7 @@ Bundle 'gmarik/vundle'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'kien/ctrlp.vim'
+Bundle 'Valloric/YouCompleteMe'
 
 set background=dark
 
@@ -63,7 +64,7 @@ let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 
 " Powerline
-let g:Powerline_symbols = 'fancy'
+let g:Powerline_symbols = 'unicode'
 set laststatus=2
 set t_Co=256
 
@@ -73,3 +74,7 @@ let g:ctrlp_custom_ignore = {
             \ 'dir': '\.(git|hg|svn|build|)$',
             \ 'file': '\.(exe|so|dll|pyc|pdf|o)$',}
 map <Enter> :CtrlPMRU<CR>
+
+" YouCompleteMe
+map <leader>d :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let g:ycm_autoclose_preview_window_after_completion=1
