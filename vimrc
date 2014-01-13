@@ -1,6 +1,6 @@
+" preparation for Vundle
 set nocompatible
 filetype off
-
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
@@ -9,18 +9,6 @@ Bundle 'gmarik/vundle'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'kien/ctrlp.vim'
-Bundle 'hynek/vim-python-pep8-indent'
-Bundle 'sprsquish/thrift.vim'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'othree/html5.vim'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'shawncplus/phpcomplete.vim'
-Bundle 'jelera/vim-javascript-syntax'
-Bundle "pangloss/vim-javascript"
-Bundle 'vim-scripts/javacomplete'
-Bundle 'vim-scripts/armasm'
-Bundle 'vim-scripts/a.vim'
-Bundle 'davidhalter/jedi-vim'
 
 set background=dark
 
@@ -55,24 +43,13 @@ set expandtab               " Tabs are spaces
 set shiftwidth=4            " Use indents of 4 spaces
 set tabstop=4               " An indentation every four columns
 set softtabstop=4           " let backspace delete indent
-
-au BufReadPost * if 
-    \ line("'\"") > 1 && line("'\"") <= line("$") 
-    \ | exe "normal! g'\"" | 
-    \ endif
-
 set colorcolumn=80
 
-autocmd BufWritePre *.py :%s/\s\+$//e " auto clean trailing whitespace
+autocmd BufWritePre *.py :%s/\s\+$//e " auto clean trailing whitespace for py
 
 autocmd FileType css,less,javascript,html,xml,js,ruby set shiftwidth=2
 autocmd FileType css,less,javascript,html,xml,js,ruby set tabstop=2
 autocmd FileType css,less,javascript,html,xml,js,ruby set softtabstop=2
-
-autocmd FileType java setlocal omnifunc=javacomplete#Complete
-autocmd FileType java setlocal completefunc=javacomplete#CompleteParamsInfo
-
-autocmd FileType css,less,html,xml set foldmethod=indent
 
 " jump to the last position when reopening a file
 autocmd BufReadPost *
@@ -94,20 +71,5 @@ set t_Co=256
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = {
             \ 'dir': '\.(git|hg|svn|build|)$',
-            \ 'file': '\.(exe|so|dll|pyc|pdf)$',}
+            \ 'file': '\.(exe|so|dll|pyc|pdf|o)$',}
 map <Enter> :CtrlPMRU<CR>
-
-" Syntastic
-let g:syntastic_check_on_open=1
-let g:syntastic_auto_jump=0
-let g:syntastic_python_flake8_post_args='--ignore=W402'
-
-" Thrift
-autocmd BufRead,BufNewFile *.thrift set filetype=thrift
-
-" vim-markdown
-let g:vim_markdown_folding_disabled=1
-
-" armasm
-let asmsyntax='armasm' 
-let filetype_inc='armasm'
