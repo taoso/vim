@@ -10,6 +10,7 @@ Bundle 'flazz/vim-colorschemes'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'vim-scripts/a.vim'
 
 set background=dark
 
@@ -46,11 +47,11 @@ set tabstop=4               " An indentation every four columns
 set softtabstop=4           " let backspace delete indent
 set colorcolumn=80
 
-autocmd BufWritePre *.py :%s/\s\+$//e " auto clean trailing whitespace for py
+autocmd BufWritePre * :%s/\s\+$//e " auto clean trailing whitespace for py
 
-autocmd FileType css,less,javascript,html,xml,js,ruby set shiftwidth=2
-autocmd FileType css,less,javascript,html,xml,js,ruby set tabstop=2
-autocmd FileType css,less,javascript,html,xml,js,ruby set softtabstop=2
+autocmd FileType css,less,html,xml,js,ruby set shiftwidth=2
+autocmd FileType css,less,html,xml,js,ruby set tabstop=2
+autocmd FileType css,less,html,xml,js,ruby set softtabstop=2
 
 " jump to the last position when reopening a file
 autocmd BufReadPost *
@@ -78,3 +79,4 @@ map <Enter> :CtrlPMRU<CR>
 " YouCompleteMe
 map <leader>d :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:ycm_autoclose_preview_window_after_completion=1
+
