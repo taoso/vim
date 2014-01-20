@@ -12,6 +12,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'vim-scripts/a.vim'
 Bundle 'scrooloose/nerdcommenter'
+Bundle 'marijnh/tern_for_vim'
 
 set background=dark
 
@@ -49,10 +50,6 @@ set softtabstop=4           " let backspace delete indent
 set colorcolumn=80
 
 autocmd BufWritePre * :%s/\s\+$//e " auto clean trailing whitespace for py
-
-autocmd FileType css,less,html,xml,js,ruby set shiftwidth=2
-autocmd FileType css,less,html,xml,js,ruby set tabstop=2
-autocmd FileType css,less,html,xml,js,ruby set softtabstop=2
 
 " jump to the last position when reopening a file
 autocmd BufReadPost *
