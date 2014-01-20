@@ -13,6 +13,8 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'vim-scripts/a.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'marijnh/tern_for_vim'
+Bundle 'othree/html5.vim'
+Bundle 'hail2u/vim-css3-syntax'
 
 set background=dark
 
