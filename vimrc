@@ -11,6 +11,7 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'vim-scripts/a.vim'
+Bundle 'scrooloose/nerdcommenter'
 
 set background=dark
 
