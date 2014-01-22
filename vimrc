@@ -15,6 +15,7 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'marijnh/tern_for_vim'
 Bundle 'othree/html5.vim'
 Bundle 'hail2u/vim-css3-syntax'
+Bundle 'jelera/vim-javascript-syntax'
 
 set background=dark
 
@@ -47,11 +48,14 @@ set ai                      " Auto indent
 set si                      " Smart indent
 set expandtab               " Tabs are spaces
 set shiftwidth=4            " Use indents of 4 spaces
-set tabstop=4               " An indentation every four columns
 set softtabstop=4           " let backspace delete indent
+set tabstop=4               " An indentation every four columns
 set colorcolumn=80
 
 autocmd BufWritePre * :%s/\s\+$//e " auto clean trailing whitespace for py
+autocmd FileType html,css,javascript set shiftwidth=2
+autocmd FileType html,css,javascript set softtabstop=2
+autocmd FileType html,css,javascript set tabstop=2
 
 " jump to the last position when reopening a file
 autocmd BufReadPost *
@@ -80,3 +84,7 @@ map <Enter> :CtrlPMRU<CR>
 map <leader>d :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:ycm_autoclose_preview_window_after_completion=1
 
+
+" vim-javascript-syntax
+" enable js folding
+au FileType javascript call JavaScriptFold()
