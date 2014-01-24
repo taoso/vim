@@ -15,7 +15,7 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'marijnh/tern_for_vim'
 Bundle 'othree/html5.vim'
 Bundle 'hail2u/vim-css3-syntax'
-Bundle 'jelera/vim-javascript-syntax'
+Bundle 'pangloss/vim-javascript'
 
 set background=dark
 
@@ -84,8 +84,3 @@ map <Enter> :CtrlPMRU<CR>
 map <leader>d :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_confirm_extra_conf=0
-
-
-" vim-javascript-syntax
-" enable js folding
-au FileType javascript call JavaScriptFold()
