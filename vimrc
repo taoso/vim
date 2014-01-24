@@ -83,6 +83,7 @@ map <Enter> :CtrlPMRU<CR>
 " YouCompleteMe
 map <leader>d :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_confirm_extra_conf=0
 
 
 " vim-javascript-syntax
