@@ -16,13 +16,15 @@ Bundle 'marijnh/tern_for_vim'
 Bundle 'othree/html5.vim'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'pangloss/vim-javascript'
+Bundle 'hynek/vim-python-pep8-indent'
+Bundle 'majutsushi/tagbar'
 
 set background=dark
 
 set fencs=utf-8,gb2312,gbk  " Sets the default encoding
 filetype plugin indent on   " Automatically detect file types
 syntax on                   " Syntax highlighting
-set autochdir               " Always switch to the current file directory
+"set autochdir               " Always switch to the current file directory
 set fileformat=unix
 
 set nospell
@@ -78,7 +80,8 @@ let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = {
             \ 'dir': '\.(git|hg|svn|build|)$',
             \ 'file': '\.(exe|so|dll|pyc|pdf|o)$',}
-map <Enter> :CtrlPMRU<CR>
+nnoremap <NL> :CtrlPMRU<CR>
+nnoremap <leader>. :CtrlPTag<cr>
 
 " YouCompleteMe
 map <leader>d :YcmCompleter GoToDefinitionElseDeclaration<CR>
