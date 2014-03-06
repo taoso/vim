@@ -1,4 +1,4 @@
-Jefferson Lyu's vim configuration
-=================================
+Jalen Lyu's vim configuration
+=============================
 
 Some useful configuration and plugins.
