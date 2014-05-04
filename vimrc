@@ -18,6 +18,8 @@ Bundle 'hail2u/vim-css3-syntax'
 Bundle 'pangloss/vim-javascript'
 Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'majutsushi/tagbar'
+Bundle 'vim-scripts/DrawIt'
+Bundle 'plasticboy/vim-markdown'
 
 set background=dark
 
@@ -87,3 +89,5 @@ nnoremap <leader>. :CtrlPTag<cr>
 map <leader>d :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_confirm_extra_conf=0
+
+let g:vim_markdown_folding_disabled=1
