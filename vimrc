@@ -20,6 +20,7 @@ Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'majutsushi/tagbar'
 Bundle 'vim-scripts/DrawIt'
 Bundle 'plasticboy/vim-markdown'
+Bundle 'godlygeek/tabular'
 
 set background=dark
 
