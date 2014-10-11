@@ -19,6 +19,11 @@ Bundle 'plasticboy/vim-markdown'
 Bundle 'godlygeek/tabular'
 Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'vim-php/tagbar-phpctags.vim'
+Bundle '2072/PHP-Indenting-for-VIm'
+Bundle 'Shougo/vimproc'
+Bundle 'Shougo/unite.vim'
+Bundle 'm2mdas/phpcomplete-extended'
+Bundle 'm2mdas/phpcomplete-extended-laravel'
 
 set background=dark
 
@@ -59,8 +64,7 @@ autocmd BufWritePre * :%s/\s\+$//e " auto clean trailing whitespace for py
 "autocmd FileType xml set shiftwidth=2
 "autocmd FileType xml set softtabstop=2
 "autocmd FileType xml set tabstop=2
-
-autocmd FileType twig,phtml set filetype=html
+autocmd BufRead,BufNewFile *.phtml set filetype=html
 
 " jump to the last position when reopening a file
 autocmd BufReadPost *
@@ -80,6 +84,7 @@ python del powerline_setup
 let g:Powerline_symbols = 'fancy'
 set laststatus=2
 set t_Co=256
+set guifont=Inconsolata\ for\ Powerline:h18
 
 " Ctrlp
 let g:ctrlp_working_path_mode = 'ra'
@@ -100,3 +105,9 @@ nnoremap <leader>t :TagbarToggle<cr>
 
 let g:tagbar_phpctags_bin='~/.vim/bundle/tagbar-phpctags.vim/bin/phpctags'
 let g:tagbar_phpctags_memory_limit='512M'
+
+autocmd FileType php setlocal omnifunc=phpcomplete_extended#CompletePHP
+let g:phpcomplete_index_composer_command='composer'
+
+autocmd CursorMovedI * if pumvisible() == 0|silent! pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|silent! pclose|endif
