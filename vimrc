@@ -11,21 +11,10 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'othree/html5.vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'wavded/vim-stylus'
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'pangloss/vim-javascript'
-Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'Raimondi/delimitMate'
-Plugin 'hynek/vim-python-pep8-indent'
-Plugin 'majutsushi/tagbar'
 Plugin 'vim-scripts/DrawIt'
-Plugin 'plasticboy/vim-markdown'
 Plugin 'godlygeek/tabular'
-Plugin 'shawncplus/phpcomplete.vim'
-Plugin 'vim-php/tagbar-phpctags.vim'
-Plugin '2072/PHP-Indenting-for-VIm'
-Plugin 'moll/vim-node'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'marijnh/tern_for_vim'
 Plugin 'tomtom/tcomment_vim'
 
 set background=dark
@@ -37,7 +26,7 @@ syntax on                   " Syntax highlighting
 set fileformat=unix
 
 set nospell
-set history=1000
+set history=10000
 
 set noswapfile
 set nobackup
@@ -64,10 +53,11 @@ set tabstop=4               " An indentation every four columns
 set colorcolumn=80
 
 autocmd BufWritePre * :%s/\s\+$//e " auto clean trailing whitespace for py
-"autocmd FileType xml set shiftwidth=2
-"autocmd FileType xml set softtabstop=2
-"autocmd FileType xml set tabstop=2
-autocmd BufRead,BufNewFile *.phtml set filetype=html
+autocmd BufRead,BufNewFile *.phtml setlocal filetype=html
+autocmd BufRead,BufNewFile *.blade.php setlocal filetype=html
+autocmd FileType html,xml setlocal shiftwidth=2
+autocmd FileType html,xml setlocal softtabstop=2
+autocmd FileType html,xml setlocal tabstop=2
 
 " jump to the last position when reopening a file
 autocmd BufReadPost *
@@ -102,15 +92,8 @@ map <leader>d :YcmCompleter GoToDefinitionElseDeclaration<CR>
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_confirm_extra_conf=0
 
-let g:vim_markdown_folding_disabled=1
-
-nnoremap <leader>t :TagbarToggle<cr>
-
-let g:tagbar_phpctags_bin='~/.vim/bundle/tagbar-phpctags.vim/bin/phpctags'
-let g:tagbar_phpctags_memory_limit='512M'
-
-autocmd FileType php setlocal omnifunc=phpcomplete_extended#CompletePHP
-let g:phpcomplete_index_composer_command='composer'
-
 autocmd CursorMovedI * if pumvisible() == 0|silent! pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|silent! pclose|endif
+
+set pastetoggle=<leader>v
+imap jk <Esc>
