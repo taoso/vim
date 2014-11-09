@@ -24,7 +24,8 @@ set background=dark
 set fencs=utf-8,gb2312,gbk  " Sets the default encoding
 filetype plugin indent on   " Automatically detect file types
 syntax on                   " Syntax highlighting
-"set autochdir               " Always switch to the current file directory
+set autochdir               " Always switch to the current file directory
+set tags=tags;
 set fileformat=unix
 
 set nospell
