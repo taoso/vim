@@ -16,6 +16,8 @@ Plugin 'vim-scripts/DrawIt'
 Plugin 'godlygeek/tabular'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'tomtom/tcomment_vim'
+Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'majutsushi/tagbar'
 
 set background=dark
 
