@@ -11,7 +11,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'othree/html5.vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'wavded/vim-stylus'
-Plugin 'Raimondi/delimitMate'
+Plugin 'jiangmiao/auto-pairs'
 Plugin 'vim-scripts/DrawIt'
 Plugin 'godlygeek/tabular'
 Plugin 'Valloric/YouCompleteMe'
@@ -99,3 +99,7 @@ autocmd InsertLeave * if pumvisible() == 0|silent! pclose|endif
 
 set pastetoggle=<leader>v
 imap jk <Esc>
+
+" auto-pairs
+let g:AutoPairsFlyMode=1
+let g:AutoPairsShortcutBackInsert='<leader>b'
