@@ -11,13 +11,14 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'othree/html5.vim'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'wavded/vim-stylus'
-Plugin 'jiangmiao/auto-pairs'
 Plugin 'vim-scripts/DrawIt'
 Plugin 'godlygeek/tabular'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'majutsushi/tagbar'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'xsbeats/vim-blade'
 
 set background=dark
 
@@ -57,7 +58,7 @@ set colorcolumn=80
 
 autocmd BufWritePre * :%s/\s\+$//e " auto clean trailing whitespace for py
 autocmd BufRead,BufNewFile *.phtml setlocal filetype=html
-autocmd BufRead,BufNewFile *.blade.php setlocal filetype=html
+"autocmd BufRead,BufNewFile *.blade.php setlocal filetype=html
 autocmd FileType html,xml setlocal shiftwidth=2
 autocmd FileType html,xml setlocal softtabstop=2
 autocmd FileType html,xml setlocal tabstop=2
@@ -84,11 +85,13 @@ set guifont=Inconsolata\ for\ Powerline:h18
 
 " Ctrlp
 let g:ctrlp_working_path_mode = 'ra'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.pdf
+
 let g:ctrlp_custom_ignore = {
-            \ 'dir': '\.(git|hg|svn|build|)$',
-            \ 'file': '\.(exe|so|dll|pyc|pdf|o)$',}
+  \ 'dir':  '(git|hg|svn)$',
+  \ 'file': 'tags$',
+  \ }
 nnoremap <C-U> :CtrlPMRU<CR>
-nnoremap <leader>. :CtrlPTag<cr>
 
 " YouCompleteMe
 map <leader>d :YcmCompleter GoToDefinitionElseDeclaration<CR>
@@ -99,8 +102,7 @@ autocmd CursorMovedI * if pumvisible() == 0|silent! pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|silent! pclose|endif
 
 set pastetoggle=<leader>v
-imap jk <Esc>
 
-" auto-pairs
-let g:AutoPairsFlyMode=1
-let g:AutoPairsShortcutBackInsert='<leader>b'
+nnoremap <leader>t :TagbarToggle<CR>
+
+let g:vim_markdown_initial_foldlevel=2
