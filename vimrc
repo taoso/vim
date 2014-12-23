@@ -63,9 +63,10 @@ set colorcolumn=80
 autocmd BufWritePre * :%s/\s\+$//e " auto clean trailing whitespace for py
 autocmd BufRead,BufNewFile *.phtml setlocal filetype=html
 autocmd BufRead,BufNewFile *.blade.php setlocal filetype=html
-autocmd FileType html,xml setlocal shiftwidth=2
-autocmd FileType html,xml setlocal softtabstop=2
-autocmd FileType html,xml setlocal tabstop=2
+autocmd FileType html,xml,yaml setlocal shiftwidth=2
+autocmd FileType html,xml,yaml setlocal softtabstop=2
+autocmd FileType html,xml,yaml setlocal tabstop=2
+autocmd FileType yaml setlocal indentexpr=
 
 " jump to the last position when reopening a file
 autocmd BufReadPost *
