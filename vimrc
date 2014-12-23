@@ -19,6 +19,10 @@ Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'xsbeats/vim-blade'
+Plugin 'Shougo/vimproc'
+Plugin 'Shougo/unite.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin '2072/PHP-Indenting-for-VIm'
 
 set background=dark
 
@@ -58,7 +62,7 @@ set colorcolumn=80
 
 autocmd BufWritePre * :%s/\s\+$//e " auto clean trailing whitespace for py
 autocmd BufRead,BufNewFile *.phtml setlocal filetype=html
-"autocmd BufRead,BufNewFile *.blade.php setlocal filetype=html
+autocmd BufRead,BufNewFile *.blade.php setlocal filetype=html
 autocmd FileType html,xml setlocal shiftwidth=2
 autocmd FileType html,xml setlocal softtabstop=2
 autocmd FileType html,xml setlocal tabstop=2
@@ -106,3 +110,7 @@ set pastetoggle=<leader>v
 nnoremap <leader>t :TagbarToggle<CR>
 
 let g:vim_markdown_initial_foldlevel=2
+
+let g:netrw_liststyle=3
+
+nnoremap <leader>e :NERDTreeToggle<CR>
