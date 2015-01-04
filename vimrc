@@ -1,11 +1,11 @@
 " preparation for Vundle
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'kien/ctrlp.vim'
 Plugin 'othree/html5.vim'
@@ -13,7 +13,6 @@ Plugin 'hail2u/vim-css3-syntax'
 Plugin 'wavded/vim-stylus'
 Plugin 'vim-scripts/DrawIt'
 Plugin 'godlygeek/tabular'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'majutsushi/tagbar'
@@ -24,7 +23,9 @@ Plugin 'Shougo/unite.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin '2072/PHP-Indenting-for-VIm'
 
-set background=dark
+call vundle#end()
+
+"set background=dark
 
 set fencs=utf-8,gb2312,gbk  " Sets the default encoding
 filetype plugin indent on   " Automatically detect file types
@@ -74,18 +75,12 @@ autocmd BufReadPost *
     \   exe "normal! g`\"" |
     \ endif
 
+set t_Co=256
 " Color theme
 color solarized
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 
-" Powerline
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
-let g:Powerline_symbols = 'fancy'
-set laststatus=2
-set t_Co=256
 set guifont=Inconsolata\ for\ Powerline:h18
 
 " Ctrlp
