@@ -77,9 +77,11 @@ autocmd BufReadPost *
 
 set t_Co=256
 " Color theme
+set background=dark        " Assume a dark background
 color solarized
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
+set term=builtin_xterm     " Make terminal stuff works
 
 set guifont=Inconsolata\ for\ Powerline:h18
 
