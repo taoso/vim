@@ -22,6 +22,7 @@ Plugin 'Shougo/vimproc'
 Plugin 'Shougo/unite.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin '2072/PHP-Indenting-for-VIm'
+Plugin 'bling/vim-airline'
 
 call vundle#end()
 
@@ -60,6 +61,7 @@ set shiftwidth=4            " Use indents of 4 spaces
 set softtabstop=4           " let backspace delete indent
 set tabstop=4               " An indentation every four columns
 set colorcolumn=80
+set laststatus=2               " always show statusline
 
 autocmd BufWritePre * :%s/\s\+$//e " auto clean trailing whitespace for py
 autocmd BufRead,BufNewFile *.phtml setlocal filetype=html
@@ -112,3 +114,12 @@ let g:vim_markdown_initial_foldlevel=2
 let g:netrw_liststyle=3
 
 nnoremap <leader>e :NERDTreeToggle<CR>
+
+" Use powerline patched fonts
+let g:airline_powerline_fonts = 1
+" automatically displays all buffers when there's only one tab open
+let g:airline#extensions#tabline#enabled = 1
+" theme airline
+let g:airline_theme = 'luna'
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
