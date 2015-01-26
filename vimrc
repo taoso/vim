@@ -7,6 +7,7 @@ call vundle#begin()
 " let Vundle manage Vundle
 Plugin 'gmarik/Vundle.vim'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'kien/ctrlp.vim'
 Plugin 'othree/html5.vim'
 Plugin 'hail2u/vim-css3-syntax'
@@ -23,10 +24,10 @@ Plugin 'Shougo/unite.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin '2072/PHP-Indenting-for-VIm'
 Plugin 'bling/vim-airline'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
-
-"set background=dark
 
 set fencs=utf-8,gb2312,gbk  " Sets the default encoding
 filetype plugin indent on   " Automatically detect file types
@@ -46,24 +47,30 @@ set cursorline
 set backspace=indent,eol,start
 set linespace=0
 set showmatch
-set incsearch               " Find as you type search
+set incsearch         " Find as you type search
 set hlsearch
 set ignorecase
-set smartcase               " Case sensitive when uc present
-set autoread                " Auto reload file on change
-set wrap                    " Wrap long lines
-set lbr                     " line break
-set tw=0                    " Sets the text width
-set ai                      " Auto indent
-set si                      " Smart indent
-set expandtab               " Tabs are spaces
-set shiftwidth=4            " Use indents of 4 spaces
-set softtabstop=4           " let backspace delete indent
-set tabstop=4               " An indentation every four columns
+set smartcase         " Case sensitive when uc present
+set autoread          " Auto reload file on change
+set wrap              " Wrap long lines
+set lbr               " line break
+set tw=0              " Sets the text width
+set ai                " Auto indent
+set si                " Smart indent
+set expandtab         " Tabs are spaces
+set shiftwidth=4      " Use indents of 4 spaces
+set softtabstop=4     " let backspace delete indent
+set tabstop=4         " An indentation every four columns
 set colorcolumn=80
-set laststatus=2               " always show statusline
+set laststatus=2      " always show statusline
+set mouse=a
+set clipboard=unnamed " use system clipboard
+set scrolloff=4
+set list                                         " Show trailing whitespace
+set listchars=tab:>\ ,trail:\ ,extends:#,nbsp:\  " Highlight problematic whitespace
 
 autocmd BufWritePre * :%s/\s\+$//e " auto clean trailing whitespace for py
+
 autocmd BufRead,BufNewFile *.phtml setlocal filetype=html
 autocmd BufRead,BufNewFile *.blade.php setlocal filetype=html
 autocmd FileType html,xml,yaml setlocal shiftwidth=2
@@ -77,13 +84,12 @@ autocmd BufReadPost *
     \   exe "normal! g`\"" |
     \ endif
 
-set t_Co=256
-" Color theme
-set background=dark        " Assume a dark background
+set background=dark
 color solarized
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 set term=builtin_xterm     " Make terminal stuff works
+set t_Co=256
 
 set guifont=Inconsolata\ for\ Powerline:h18
 
