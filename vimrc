@@ -5,27 +5,28 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle
-Plugin 'gmarik/Vundle.vim'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'kien/ctrlp.vim'
-Plugin 'othree/html5.vim'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'wavded/vim-stylus'
-Plugin 'vim-scripts/DrawIt'
-Plugin 'godlygeek/tabular'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'shawncplus/phpcomplete.vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'xsbeats/vim-blade'
-Plugin 'Shougo/vimproc'
-Plugin 'Shougo/unite.vim'
-Plugin 'scrooloose/nerdtree'
 Plugin '2072/PHP-Indenting-for-VIm'
-Plugin 'bling/vim-airline'
 Plugin 'Lokaltog/vim-easymotion'
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'Shougo/unite.vim'
+Plugin 'Shougo/vimproc'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'bling/vim-airline'
+Plugin 'gmarik/Vundle.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'kien/ctrlp.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'othree/html5.vim'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'scrooloose/nerdtree'
+Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'vim-scripts/DrawIt'
+Plugin 'wavded/vim-stylus'
+Plugin 'xsbeats/vim-blade'
+Plugin 'pangloss/vim-javascript'
 
 call vundle#end()
 
@@ -63,8 +64,7 @@ set softtabstop=4     " let backspace delete indent
 set tabstop=4         " An indentation every four columns
 set colorcolumn=80
 set laststatus=2      " always show statusline
-set mouse=a
-set clipboard=unnamed " use system clipboard
+"set clipboard=unnamed " use system clipboard
 set scrolloff=4
 set list                                         " Show trailing whitespace
 set listchars=tab:>\ ,trail:\ ,extends:#,nbsp:\  " Highlight problematic whitespace
@@ -73,9 +73,9 @@ autocmd BufWritePre * :%s/\s\+$//e " auto clean trailing whitespace for py
 
 autocmd BufRead,BufNewFile *.phtml setlocal filetype=html
 autocmd BufRead,BufNewFile *.blade.php setlocal filetype=html
-autocmd FileType html,xml,yaml setlocal shiftwidth=2
-autocmd FileType html,xml,yaml setlocal softtabstop=2
-autocmd FileType html,xml,yaml setlocal tabstop=2
+autocmd FileType javascript,html,xml,yaml setlocal shiftwidth=2
+autocmd FileType javascript,html,xml,yaml setlocal softtabstop=2
+autocmd FileType javascript,html,xml,yaml setlocal tabstop=2
 autocmd FileType yaml setlocal indentexpr=
 
 " jump to the last position when reopening a file
@@ -115,7 +115,7 @@ set pastetoggle=<leader>v
 
 nnoremap <leader>t :TagbarToggle<CR>
 
-let g:vim_markdown_initial_foldlevel=2
+let g:vim_markdown_folding_disabled=1
 
 let g:netrw_liststyle=3
 
@@ -129,3 +129,35 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme = 'luna'
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
+
+" neocomplete
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" Enable heavy omni completion.
+if !exists('g:neocomplete#sources#omni#input_patterns')
+    let g:neocomplete#sources#omni#input_patterns = {}
+endif
+
+if !exists('g:neocomplete#sources#omni#functions')
+    let g:neocomplete#sources#omni#functions = {}
+endif
+
+if !exists('g:neocomplete#force_omni_input_patterns')
+    let g:neocomplete#force_omni_input_patterns = {}
+    let g:neocomplete#force_omni_input_patterns.python = '[^. \t]\.\w*'
+endif
+
