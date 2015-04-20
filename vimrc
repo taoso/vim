@@ -27,6 +27,8 @@ Plugin 'vim-scripts/DrawIt'
 Plugin 'wavded/vim-stylus'
 Plugin 'xsbeats/vim-blade'
 Plugin 'pangloss/vim-javascript'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'hynek/vim-python-pep8-indent'
 
 call vundle#end()
 
@@ -73,9 +75,6 @@ autocmd BufWritePre * :%s/\s\+$//e " auto clean trailing whitespace for py
 
 autocmd BufRead,BufNewFile *.phtml setlocal filetype=html
 autocmd BufRead,BufNewFile *.blade.php setlocal filetype=html
-autocmd FileType javascript,html,xml,yaml setlocal shiftwidth=2
-autocmd FileType javascript,html,xml,yaml setlocal softtabstop=2
-autocmd FileType javascript,html,xml,yaml setlocal tabstop=2
 autocmd FileType yaml setlocal indentexpr=
 
 " jump to the last position when reopening a file
