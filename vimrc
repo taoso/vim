@@ -29,6 +29,10 @@ Plugin 'xsbeats/vim-blade'
 Plugin 'pangloss/vim-javascript'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'hynek/vim-python-pep8-indent'
+Plugin 'fatih/vim-go'
+Plugin 'vim-scripts/matchit.zip'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rails'
 
 call vundle#end()
 
