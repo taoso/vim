@@ -8,8 +8,6 @@ call vundle#begin()
 Plugin '2072/PHP-Indenting-for-VIm'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'Shougo/neocomplete.vim'
-Plugin 'Shougo/unite.vim'
-Plugin 'Shougo/vimproc'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
 Plugin 'gmarik/Vundle.vim'
@@ -33,6 +31,9 @@ Plugin 'fatih/vim-go'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'rayburgemeestre/phpfolding.vim'
+Plugin 'scrooloose/syntastic'
 
 call vundle#end()
 
@@ -74,12 +75,17 @@ set laststatus=2      " always show statusline
 set scrolloff=4
 set list                                         " Show trailing whitespace
 set listchars=tab:>\ ,trail:\ ,extends:#,nbsp:\  " Highlight problematic whitespace
+set mouse=v
 
 autocmd BufWritePre * :%s/\s\+$//e " auto clean trailing whitespace for py
 
 autocmd BufRead,BufNewFile *.phtml setlocal filetype=html
 autocmd BufRead,BufNewFile *.blade.php setlocal filetype=html
 autocmd FileType yaml setlocal indentexpr=
+
+autocmd FileType html,css,javascript,scss setlocal shiftwidth=2
+autocmd FileType html,css,javascript,scss setlocal softtabstop=2
+autocmd FileType html,css,javascript,scss setlocal tabstop=2
 
 " jump to the last position when reopening a file
 autocmd BufReadPost *
@@ -164,3 +170,11 @@ if !exists('g:neocomplete#force_omni_input_patterns')
     let g:neocomplete#force_omni_input_patterns.python = '[^. \t]\.\w*'
 endif
 
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
