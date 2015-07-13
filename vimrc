@@ -1,4 +1,4 @@
-" 弃用 Vundle 插件
+" 启用 Vundle 插件
 set nocompatible
 filetype off
 
@@ -33,6 +33,10 @@ Plugin 'fatih/vim-go'
 " Python
 Plugin 'davidhalter/jedi-vim'
 Plugin 'hynek/vim-python-pep8-indent'
+
+" 文件操作
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
 
 call vundle#end()
 
@@ -97,3 +101,15 @@ autocmd BufWritePre * :%s/\s\+$//e " 保存文件时删除行尾空白
 " 插件配置
 " Tagbar
 nnoremap <leader>t :TagbarToggle<CR>
+
+" CtrlP
+let g:ctrlp_working_path_mode='ra'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.pdf
+let g:ctrl_custom_ignore={
+			\'dir': '(git|hg|svn)$',
+			\'file': 'tags$',
+			\}
+nnoremap <C-U> :CtrlPMRU<CR>
+
+" NERD Tree
+nnoremap <leader>e :NERDTreeToggle<CR>
