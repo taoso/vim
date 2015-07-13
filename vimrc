@@ -14,6 +14,10 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'wavded/vim-stylus'
 Plugin 'xsbeats/vim-blade'
 
+" 通用编程工具
+Plugin 'majutsushi/tagbar'
+Plugin 'tomtom/tcomment_vim'
+
 " PHP
 Plugin '2072/PHP-Indenting-for-VIm'
 Plugin 'shawncplus/phpcomplete.vim'
@@ -89,3 +93,7 @@ autocmd BufReadPost *
 			\	execute "normal! g`\"" |
 			\ endif
 autocmd BufWritePre * :%s/\s\+$//e " 保存文件时删除行尾空白
+
+" 插件配置
+" Tagbar
+nnoremap <leader>t :TagbarToggle<CR>
