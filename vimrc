@@ -4,6 +4,32 @@ filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'othree/html5.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'wavded/vim-stylus'
+Plugin 'xsbeats/vim-blade'
+
+" PHP
+Plugin '2072/PHP-Indenting-for-VIm'
+Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'rayburgemeestre/phpfolding.vim'
+
+" Ruby
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rails'
+
+" Go
+Plugin 'fatih/vim-go'
+
+" Python
+Plugin 'davidhalter/jedi-vim'
+Plugin 'hynek/vim-python-pep8-indent'
+
 call vundle#end()
 
 " 基础配置
