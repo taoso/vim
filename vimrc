@@ -38,6 +38,10 @@ Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 
+" 视觉样式
+Plugin 'bling/vim-airline'
+Plugin 'altercation/vim-colors-solarized'
+
 call vundle#end()
 
 " 基础配置
@@ -113,3 +117,17 @@ nnoremap <C-U> :CtrlPMRU<CR>
 
 " NERD Tree
 nnoremap <leader>e :NERDTreeToggle<CR>
+
+" Solarized Theme
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+set t_Co=256
+if has('gui_running')
+	set background=light
+else
+	set background=dark
+endif
+colorscheme solarized
+
+" Airline
+let g:airline_powerline_fonts = 1
