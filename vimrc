@@ -48,6 +48,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/DrawIt'
 Plugin 'vim-scripts/matchit.zip'
+Plugin 'yuratomo/w3m.vim'
 
 call vundle#end()
 
@@ -55,7 +56,7 @@ call vundle#end()
 filetype plugin indent on
 syntax on
 set autochdir
-set tags=tags
+set tags=tags;
 
 set fileformat=unix
 set fileencodings=utf-8,gbk
