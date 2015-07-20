@@ -16,7 +16,7 @@ Plugin 'xsbeats/vim-blade'
 
 " 通用编程工具
 Plugin 'majutsushi/tagbar'
-Plugin 'tomtom/tcomment_vim'
+Plugin 'tpope/vim-commentary'
 
 " PHP
 Plugin '2072/PHP-Indenting-for-VIm'
