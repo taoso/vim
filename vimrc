@@ -16,7 +16,7 @@ Plugin 'xsbeats/vim-blade'
 
 " 通用编程工具
 Plugin 'majutsushi/tagbar'
-Plugin 'tpope/vim-commentary'
+Plugin 'tomtom/tcomment_vim'
 
 " PHP
 Plugin '2072/PHP-Indenting-for-VIm'
@@ -43,6 +43,7 @@ Plugin 'scrooloose/nerdtree'
 " 视觉样式
 Plugin 'bling/vim-airline'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'tomasr/molokai'
 
 " 其他
 Plugin 'godlygeek/tabular'
@@ -98,7 +99,7 @@ set pastetoggle=<leader>v
 set list " 高亮行尾字符
 set listchars=tab:>\ ,trail:\ ,extends:#,nbsp:\ " 高亮显示不合理的空白字符
 
-func ExpandTab(len)
+func! ExpandTab(len)
 	setlocal expandtab
 	execute 'setlocal shiftwidth='.a:len
 	execute 'setlocal softtabstop='.a:len
@@ -143,6 +144,7 @@ else
 	set background=dark
 endif
 colorscheme solarized
+color molokai
 
 " Airline
 let g:airline_powerline_fonts=1
