@@ -52,6 +52,7 @@ Plugin 'vim-scripts/matchit.zip'
 Plugin 'yuratomo/w3m.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ervandew/supertab'
+Plugin 'rking/ag.vim'
 
 call vundle#end()
 
