@@ -49,6 +49,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/DrawIt'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'yuratomo/w3m.vim'
+Plugin 'airblade/vim-gitgutter'
 
 call vundle#end()
 
@@ -202,3 +203,5 @@ let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 " For perlomni.vim setting.
 " https://github.com/c9s/perlomni.vim
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+
+let g:gitgutter_max_signs = 500 " default value
