@@ -51,6 +51,7 @@ Plugin 'vim-scripts/DrawIt'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'yuratomo/w3m.vim'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'ervandew/supertab'
 
 call vundle#end()
 
@@ -140,10 +141,12 @@ endif
 colorscheme solarized
 
 " Airline
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts=1
 
 " PHP Complete
 let g:phpcomplete_index_composer_command="composer"
 let g:phpcomplete_use_hhvm=1
 
 autocmd CompleteDone * pclose " 补全完成后自动关闭预览窗口
+
+let g:SuperTabDefaultCompletionType="<c-x><c-o>"
