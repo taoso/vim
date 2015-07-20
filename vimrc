@@ -108,6 +108,8 @@ endfunc
 autocmd FileType html,css,scss,javascript call ExpandTab(2)
 autocmd FileType php,python call ExpandTab(4)
 
+autocmd! BufWritePost ~/.vimrc source ~/.vimrc " 自动刷新 vimrc 文件改动
+
 " 将光标跳转到上次打开当前文件的位置
 autocmd BufReadPost *
 			\if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -152,3 +154,7 @@ let g:phpcomplete_use_hhvm=1
 autocmd CompleteDone * pclose " 补全完成后自动关闭预览窗口
 
 let g:SuperTabDefaultCompletionType="<c-x><c-o>"
+
+" NERDTree
+" 所有编辑窗口关闭后自动关闭 NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
