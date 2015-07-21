@@ -109,13 +109,11 @@ endfunc
 autocmd FileType html,css,scss,javascript call ExpandTab(2)
 autocmd FileType php,python call ExpandTab(4)
 
-autocmd! BufWritePost ~/.vimrc source ~/.vimrc " 自动刷新 vimrc 文件改动
-
 " 将光标跳转到上次打开当前文件的位置
-autocmd BufReadPost *
-			\if line("'\"") > 0 && line("'\"") <= line("$") |
-			\	execute "normal! g`\"" |
+autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
+			\ execute "normal! g`\"" |
 			\ endif
+
 autocmd BufWritePre * :%s/\s\+$//e " 保存文件时删除行尾空白
 
 " 插件配置
