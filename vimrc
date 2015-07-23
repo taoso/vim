@@ -37,7 +37,7 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'hynek/vim-python-pep8-indent'
 
 " 文件操作
-Plugin 'kien/ctrlp.vim'
+Plugin 'lvht/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 
 " 视觉样式
@@ -61,7 +61,7 @@ call vundle#end()
 " 基础配置
 filetype plugin indent on
 syntax on
-set autochdir
+" set autochdir
 set tags=tags;
 
 set fileformat=unix
@@ -107,7 +107,7 @@ func! ExpandTab(len)
 endfunc
 
 autocmd FileType html,css,scss,javascript call ExpandTab(2)
-autocmd FileType php,python call ExpandTab(4)
+autocmd FileType php,python,json call ExpandTab(4)
 
 " 将光标跳转到上次打开当前文件的位置
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -123,10 +123,13 @@ nnoremap <leader>t :TagbarToggle<CR>
 " CtrlP
 let g:ctrlp_working_path_mode='ra'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.pdf
-let g:ctrl_custom_ignore={
+let g:ctrlp_custom_ignore={
 			\'dir': '(git|hg|svn)$',
 			\'file': 'tags$',
 			\}
+let g:ctrlp_mru_custom_ignore=[
+            \'/tmp/',
+            \]
 nnoremap <C-U> :CtrlPMRU<CR>
 
 " NERD Tree
@@ -157,6 +160,7 @@ let g:phpcomplete_use_hhvm=1
 
 autocmd CompleteDone * pclose " 补全完成后自动关闭预览窗口
 
+autocmd FileType php setlocal omnifunc=phpcomplete_extended#CompletePHP
 let g:SuperTabDefaultCompletionType="<c-x><c-o>"
 
 " NERDTree
