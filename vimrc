@@ -55,6 +55,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'ervandew/supertab'
 Plugin 'rking/ag.vim'
 Plugin 'Townk/vim-autoclose'
+Plugin 'lvht/mpc'
 
 call vundle#end()
 
@@ -107,7 +108,8 @@ func! ExpandTab(len)
 endfunc
 
 autocmd FileType html,css,scss,javascript call ExpandTab(2)
-autocmd FileType php,python,json call ExpandTab(4)
+autocmd FileType php,python,json,vim call ExpandTab(4)
+autocmd FileType gitcommit call phpcomplete_extended#disable()
 
 " 将光标跳转到上次打开当前文件的位置
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -130,7 +132,7 @@ let g:ctrlp_custom_ignore={
 let g:ctrlp_mru_custom_ignore=[
             \'/tmp/',
             \]
-nnoremap <C-U> :CtrlPMRU<CR>
+nnoremap <C-M> :CtrlPMRU<CR>
 
 " NERD Tree
 nnoremap <leader>e :NERDTreeToggle<CR>
