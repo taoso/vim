@@ -132,7 +132,7 @@ let g:ctrlp_custom_ignore={
 let g:ctrlp_mru_custom_ignore=[
             \'/tmp/',
             \]
-nnoremap <C-M> :CtrlPMRU<CR>
+nnoremap <C-u> :CtrlPMRU<CR>
 
 " NERD Tree
 nnoremap <leader>e :NERDTreeToggle<CR>
