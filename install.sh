@@ -15,4 +15,4 @@ mkdir ~/.vim/bundle \
 ln -s ~/.vim/vimrc ~/.vimrc
 ln -s ~/.vim/vimrc ~/.nvimrc
 
-vim +BundleInstall +qall
+vim +PluginInstall +qall
