@@ -55,7 +55,6 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'ervandew/supertab'
 Plugin 'rking/ag.vim'
 Plugin 'Townk/vim-autoclose'
-Plugin 'lvht/mpc'
 
 call vundle#end()
 
