@@ -13,6 +13,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'wavded/vim-stylus'
 Plugin 'xsbeats/vim-blade'
+Plugin 'evanmiller/nginx-vim-syntax'
 
 " 通用编程工具
 Plugin 'majutsushi/tagbar'
@@ -20,7 +21,7 @@ Plugin 'tomtom/tcomment_vim'
 
 " PHP
 Plugin '2072/PHP-Indenting-for-VIm'
-Plugin 'rayburgemeestre/phpfolding.vim'
+Plugin 'lvht/phpfolding.vim'
 Plugin 'Shougo/vimproc'
 Plugin 'Shougo/unite.vim'
 Plugin 'lvht/phpcomplete-extended'
@@ -39,6 +40,7 @@ Plugin 'hynek/vim-python-pep8-indent'
 " 文件操作
 Plugin 'lvht/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 " 视觉样式
 Plugin 'bling/vim-airline'
@@ -87,7 +89,6 @@ set autoread
 set wrap
 set linebreak
 set textwidth=0
-set mouse=v
 set colorcolumn=80
 set laststatus=2
 set scrolloff=4
@@ -106,7 +107,7 @@ func! ExpandTab(len)
 endfunc
 
 autocmd FileType html,css,scss,javascript call ExpandTab(2)
-autocmd FileType php,python,json,vim call ExpandTab(4)
+autocmd FileType php,python,json,nginx call ExpandTab(4)
 autocmd FileType gitcommit call phpcomplete_extended#disable()
 
 " 将光标跳转到上次打开当前文件的位置
@@ -134,6 +135,7 @@ nnoremap <C-u> :CtrlPMRU<CR>
 
 " NERD Tree
 nnoremap <leader>e :NERDTreeToggle<CR>
+nnoremap <leader>f :NERDTreeFind<CR>
 
 " Solarized Theme
 let g:solarized_termcolors=256
