@@ -1,18 +1,16 @@
 #!/usr/bin/env bash
 
-for name in viminfo nviminfo vimlog nvimlog; do
+for name in viminfo nviminfo vimlog nvimlog vim nvim; do
 	rm ~/.$name
 done
 
-mv .vim .vim.`date +%Y%m%d`
-
 git clone git://github.com/lvht/vim.git ~/.vim
 
-mkdir ~/.vim/bundle \
-	&& cd ~/.vim/bundle \
-	&& git clone git@github.com:VundleVim/Vundle.vim.git
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+ln -s ~/.vim ~/.nvim
 ln -s ~/.vim/vimrc ~/.vimrc
 ln -s ~/.vim/vimrc ~/.nvimrc
 
-vim +PluginInstall +qall
+vim +PlugInstall +qall

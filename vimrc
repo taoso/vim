@@ -1,65 +1,62 @@
-" 启用 Vundle 插件
-set nocompatible
-filetype off
+"set rtp+=~/.vim/bundle/vim-plug
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
-Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'othree/html5.vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'wavded/vim-stylus'
-Plugin 'xsbeats/vim-blade'
-Plugin 'evanmiller/nginx-vim-syntax'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'othree/html5.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'plasticboy/vim-markdown'
+Plug 'wavded/vim-stylus'
+Plug 'xsbeats/vim-blade'
+Plug 'evanmiller/nginx-vim-syntax'
 
 " 通用编程工具
-Plugin 'majutsushi/tagbar'
-Plugin 'tomtom/tcomment_vim'
+Plug 'majutsushi/tagbar'
+Plug 'tomtom/tcomment_vim'
 
 " PHP
-Plugin '2072/PHP-Indenting-for-VIm'
-Plugin 'lvht/phpfolding.vim'
-Plugin 'Shougo/vimproc'
-Plugin 'Shougo/unite.vim'
-Plugin 'lvht/phpcomplete-extended'
+Plug '2072/PHP-Indenting-for-VIm'
+Plug 'rayburgemeestre/phpfolding.vim'
+Plug 'Shougo/vimproc', { 'do': 'make' }
+Plug 'Shougo/unite.vim'
+Plug 'lvht/phpcomplete-extended'
 
 " Ruby
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-rails'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
 
 " Go
-Plugin 'fatih/vim-go'
+Plug 'fatih/vim-go'
 
 " Python
-Plugin 'davidhalter/jedi-vim'
-Plugin 'hynek/vim-python-pep8-indent'
+Plug 'davidhalter/jedi-vim'
+Plug 'hynek/vim-python-pep8-indent'
 
 " 文件操作
-Plugin 'lvht/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plug 'lvht/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " 视觉样式
-Plugin 'bling/vim-airline'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'tomasr/molokai'
+Plug 'bling/vim-airline'
+Plug 'altercation/vim-colors-solarized'
+Plug 'tomasr/molokai'
 
 " 其他
-Plugin 'godlygeek/tabular'
-Plugin 'tpope/vim-fugitive'
-Plugin 'vim-scripts/DrawIt'
-Plugin 'vim-scripts/matchit.zip'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'ervandew/supertab'
-Plugin 'rking/ag.vim'
-Plugin 'Townk/vim-autoclose'
+Plug 'godlygeek/tabular'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-scripts/DrawIt'
+Plug 'vim-scripts/matchit.zip'
+Plug 'airblade/vim-gitgutter'
+Plug 'ervandew/supertab'
+Plug 'rking/ag.vim'
+Plug 'Townk/vim-autoclose'
 
-call vundle#end()
+call plug#end()
 
 " 基础配置
+set nocompatible
 filetype plugin indent on
 syntax on
 " set autochdir
@@ -168,3 +165,6 @@ let g:SuperTabDefaultCompletionType="<c-x><c-o>"
 " NERDTree
 " 所有编辑窗口关闭后自动关闭 NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+let g:vim_markdown_folding_disabled=1
+let g:vim_markdown_frontmatter=1
