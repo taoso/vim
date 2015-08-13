@@ -1,6 +1,4 @@
-"set rtp+=~/.vim/bundle/vim-plug
-
-call plug#begin('~/.vim/plugged')
+call plug#begin()
 
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'hail2u/vim-css3-syntax'
