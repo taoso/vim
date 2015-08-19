@@ -15,10 +15,10 @@ Plug 'tomtom/tcomment_vim'
 
 " PHP
 Plug '2072/PHP-Indenting-for-VIm'
-Plug 'rayburgemeestre/phpfolding.vim'
+Plug 'lvht/phpfolding.vim'
 Plug 'Shougo/vimproc', { 'do': 'make' }
 Plug 'Shougo/unite.vim'
-Plug 'lvht/phpcomplete.vim'
+Plug 'lvht/phpcd.vim'
 
 " Ruby
 Plug 'vim-ruby/vim-ruby'
@@ -28,7 +28,6 @@ Plug 'tpope/vim-rails'
 Plug 'fatih/vim-go'
 
 " Python
-Plug 'davidhalter/jedi-vim'
 Plug 'hynek/vim-python-pep8-indent'
 
 " 文件操作
