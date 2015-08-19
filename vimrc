@@ -18,7 +18,7 @@ Plug '2072/PHP-Indenting-for-VIm'
 Plug 'rayburgemeestre/phpfolding.vim'
 Plug 'Shougo/vimproc', { 'do': 'make' }
 Plug 'Shougo/unite.vim'
-Plug 'lvht/phpcomplete-extended'
+Plug 'lvht/phpcomplete.vim'
 
 " Ruby
 Plug 'vim-ruby/vim-ruby'
@@ -47,9 +47,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'vim-scripts/DrawIt'
 Plug 'vim-scripts/matchit.zip'
 Plug 'airblade/vim-gitgutter'
-Plug 'ervandew/supertab'
 Plug 'rking/ag.vim'
 Plug 'Townk/vim-autoclose'
+Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
 
@@ -157,8 +157,8 @@ let g:phpcomplete_use_hhvm=1
 
 autocmd CompleteDone * pclose " 补全完成后自动关闭预览窗口
 
-autocmd FileType php setlocal omnifunc=phpcomplete_extended#CompletePHP
-let g:SuperTabDefaultCompletionType="<c-x><c-o>"
+" autocmd FileType php setlocal omnifunc=phpcomplete_extended#CompletePHP
+autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
 
 " NERDTree
 " 所有编辑窗口关闭后自动关闭 NERDTree
