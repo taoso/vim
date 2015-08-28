@@ -1,14 +1,11 @@
 #!/usr/bin/env bash
 
-rm -rf ~/.vim*
 rm -rf ~/.nvim*
 
-git clone https://github.com/lvht/vim.git ~/.vim
-ln -s ~/.vim ~/.nvim
-ln -s ~/.vim/vimrc ~/.vimrc
-ln -s ~/.vim/vimrc ~/.nvimrc
+git clone https://github.com/lvht/vim.git ~/.nvim
+ln -s ~/.nvim/nvimrc ~/.nvimrc
 
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+curl -fLo ~/.nvim/autoload/plug.vim --create-dirs \
 	https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-vim +PlugInstall +qall
+nvim +PlugInstall +qall
