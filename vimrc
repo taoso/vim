@@ -103,6 +103,7 @@ endfunc
 autocmd FileType html,css,scss,javascript call ExpandTab(2)
 autocmd FileType php,python,json,nginx call ExpandTab(4)
 autocmd FileType gitcommit call phpcomplete_extended#disable()
+autocmd FileType blade setlocal filetype=html
 
 " 将光标跳转到上次打开当前文件的位置
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
@@ -150,14 +151,8 @@ let g:airline_theme='luna'
 let g:airline#extensions#tabline#left_sep=''
 let g:airline#extensions#tabline#left_alt_sep='|'
 
-" PHP Complete
-let g:phpcomplete_index_composer_command="composer"
-let g:phpcomplete_use_hhvm=1
-
 autocmd CompleteDone * pclose " 补全完成后自动关闭预览窗口
-
-" autocmd FileType php setlocal omnifunc=phpcomplete_extended#CompletePHP
-autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
+autocmd FileType php setlocal omnifunc=phpcd#CompletePHP
 
 " NERDTree
 " 所有编辑窗口关闭后自动关闭 NERDTree
