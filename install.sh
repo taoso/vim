@@ -3,7 +3,7 @@
 rm -rf ~/.vim*
 rm -rf ~/.nvim*
 
-git clone git@github.com:lvht/vim.git ~/.vim
+git clone https://github.com/lvht/vim.git ~/.vim
 ln -s ~/.vim ~/.nvim
 ln -s ~/.vim/vimrc ~/.vimrc
 ln -s ~/.vim/vimrc ~/.nvimrc
