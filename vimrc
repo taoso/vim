@@ -102,7 +102,6 @@ endfunc
 
 autocmd FileType html,css,scss,javascript call ExpandTab(2)
 autocmd FileType php,python,json,nginx call ExpandTab(4)
-autocmd FileType gitcommit call phpcomplete_extended#disable()
 autocmd FileType blade setlocal filetype=html
 
 " 将光标跳转到上次打开当前文件的位置
@@ -124,8 +123,8 @@ let g:ctrlp_custom_ignore={
 			\'file': 'tags$',
 			\}
 let g:ctrlp_mru_custom_ignore=[
-            \'/tmp/',
-            \]
+			\'/tmp/',
+			\]
 nnoremap <C-u> :CtrlPMRU<CR>
 
 " NERD Tree
