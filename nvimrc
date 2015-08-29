@@ -44,6 +44,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-scripts/DrawIt'
 Plug 'vim-scripts/matchit.zip'
+Plug 'scrooloose/syntastic'
 
 call plug#end() " }}}
 
@@ -137,3 +138,13 @@ autocmd FileType php setlocal omnifunc=phpcd#CompletePHP
 let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_frontmatter=1
 " }}}
+
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
