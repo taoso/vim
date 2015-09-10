@@ -5,6 +5,7 @@ call plug#begin()
 Plug '2072/PHP-Indenting-for-VIm'
 Plug 'lvht/phpfolding.vim'
 Plug 'lvht/phpcd.vim'
+Plug 'majutsushi/tagbar' | Plug 'vim-php/tagbar-phpctags.vim'
 
 " Ruby
 Plug 'vim-ruby/vim-ruby'
@@ -33,12 +34,12 @@ Plug 'pangloss/vim-javascript'
 Plug 'plasticboy/vim-markdown'
 Plug 'wavded/vim-stylus'
 Plug 'xsbeats/vim-blade'
+Plug 'vim-scripts/progressbar-widget'
 
 " 杂项
 Plug 'Townk/vim-autoclose'
 Plug 'airblade/vim-gitgutter'
 Plug 'godlygeek/tabular'
-Plug 'majutsushi/tagbar'
 Plug 'rking/ag.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
