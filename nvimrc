@@ -137,7 +137,6 @@ autocmd FileType php setlocal omnifunc=phpcd#CompletePHP
 " vim-markdown
 let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_frontmatter=1
-" }}}
 
 " syntastic
 set statusline+=%#warningmsg#
@@ -148,3 +147,4 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+" }}}
