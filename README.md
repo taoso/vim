@@ -5,7 +5,7 @@ Some useful configuration and plugins. `NeoVim` ONLY!!
 
 Install
 ```
-curl https://raw.githubusercontent.com/lvht/vim/master/install.sh | sh
+curl https://raw.githubusercontent.com/lvht/nvim/master/install.sh | sh
 ```
 
 Enjoy it :)
