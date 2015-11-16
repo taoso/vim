@@ -4,7 +4,7 @@ call plug#begin()
 " PHP
 Plug '2072/PHP-Indenting-for-VIm'
 Plug 'lvht/phpfolding.vim'
-Plug 'lvht/phpcd.vim'
+Plug 'phpvim/phpcd.vim'
 Plug 'majutsushi/tagbar' | Plug 'vim-php/tagbar-phpctags.vim'
 
 " Python
@@ -113,9 +113,7 @@ nnoremap <C-u> :CtrlPMRU<CR>
 nnoremap <leader>e :NERDTreeToggle<CR>
 nnoremap <leader>f :NERDTreeFind<CR>
 " 所有编辑窗口关闭后自动关闭 NERDTree
-autocmd bufenter * if (winnr("$") == 1
-			\&& exists("b:NERDTreeType")
-			\&& b:NERDTreeType == "primary") | q | endif
+autocmd bufenter * if (winnr("$") == 1 && &filetype == 'nerdtree') | q | endif
 
 " vim-airline
 let g:airline_powerline_fonts=1
@@ -131,6 +129,9 @@ autocmd FileType php setlocal omnifunc=phpcd#CompletePHP
 " vim-markdown
 let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_frontmatter=1
+
+" YouCompleteMe
+autocmd FileType c,python nnoremap <C-]> :YcmCompleter GoTo<CR>
 
 " syntastic
 set statusline+=%#warningmsg#
