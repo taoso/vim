@@ -7,13 +7,6 @@ Plug 'lvht/phpfolding.vim'
 Plug 'lvht/phpcd.vim'
 Plug 'majutsushi/tagbar' | Plug 'vim-php/tagbar-phpctags.vim'
 
-" Ruby
-Plug 'vim-ruby/vim-ruby'
-Plug 'tpope/vim-rails'
-
-" Go
-Plug 'fatih/vim-go'
-
 " Python
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'Valloric/YouCompleteMe'
