@@ -3,7 +3,7 @@ call plug#begin()
 
 " PHP
 Plug '2072/PHP-Indenting-for-VIm'
-Plug 'lvht/phpfolding.vim'
+Plug 'phpvim/phpfolding.vim'
 Plug 'phpvim/phpcd.vim'
 Plug 'majutsushi/tagbar' | Plug 'vim-php/tagbar-phpctags.vim'
 
@@ -39,6 +39,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'vim-scripts/DrawIt'
 Plug 'vim-scripts/matchit.zip'
 Plug 'scrooloose/syntastic'
+Plug 'easymotion/vim-easymotion'
 
 call plug#end() " }}}
 
