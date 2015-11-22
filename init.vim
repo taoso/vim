@@ -54,7 +54,6 @@ set laststatus=2
 set linebreak
 set list " 高亮行尾字符
 set listchars=tab:>\ ,trail:\ ,extends:#,nbsp:\ " 高亮显示不合理的空白字符
-set scrolloff=4
 
 set fileformat=unix
 set fileencodings=utf-8,gbk
@@ -132,7 +131,7 @@ let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_frontmatter=1
 
 " YouCompleteMe
-autocmd FileType c,python nnoremap <C-]> :YcmCompleter GoTo<CR>
+autocmd FileType c,cpp,python nnoremap <C-]> :YcmCompleter GoTo<CR>
 
 " syntastic
 set statusline+=%#warningmsg#
