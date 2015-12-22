@@ -40,6 +40,9 @@ Plug 'vim-scripts/DrawIt'
 Plug 'vim-scripts/matchit.zip'
 Plug 'scrooloose/syntastic'
 Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-surround'
+Plug 'itchyny/calendar.vim'
+Plug 'rdnetto/YCM-Generator', {'branch':'stable'}
 
 call plug#end() " }}}
 
@@ -54,6 +57,7 @@ set laststatus=2
 set linebreak
 set list " 高亮行尾字符
 set listchars=tab:>\ ,trail:\ ,extends:#,nbsp:\ " 高亮显示不合理的空白字符
+set fillchars+=vert:│
 
 set fileformat=unix
 set fileencodings=utf-8,gbk
@@ -117,7 +121,7 @@ autocmd bufenter * if (winnr("$") == 1 && &filetype == 'nerdtree') | q | endif
 
 " vim-airline
 let g:airline_powerline_fonts=1
-let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#enabled=0
 let g:airline_theme='luna'
 let g:airline#extensions#tabline#left_sep=''
 let g:airline#extensions#tabline#left_alt_sep='|'
@@ -131,15 +135,15 @@ let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_frontmatter=1
 
 " YouCompleteMe
-autocmd FileType c,cpp,python nnoremap <C-]> :YcmCompleter GoTo<CR>
+autocmd FileType python nnoremap <C-]> :YcmCompleter GoTo<CR>
 
 " syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 " }}}
