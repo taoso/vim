@@ -1,7 +1,7 @@
 Lv's NeoVim conf
 ================
 
-Some useful configuration and plugins. `NeoVim` ONLY!!
+Some useful configuration and plugins. **NeoVim ONLY**!!
 
 Install
 ```
