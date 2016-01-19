@@ -66,6 +66,8 @@ set smartindent " 根据文件类型智能缩进
 set pastetoggle=<leader>v " 切换粘贴模式快捷键
 set mouse-=a
 
+nnoremap <CR> :noh<CR><CR>
+
 " 将制表符展开成特定长度的空格串
 func! ExpandTab(len) " {{{
 	setlocal expandtab
