@@ -1,22 +1,20 @@
-" 插件列表 " {{{
 call plug#begin()
-
-" PHP
+" PHP {{{
 Plug '2072/PHP-Indenting-for-VIm'
 Plug 'phpvim/phpfolding.vim'
 Plug 'phpvim/phpcd.vim'
 Plug 'majutsushi/tagbar' | Plug 'vim-php/tagbar-phpctags.vim'
-
-" Python
+" }}}
+" Python {{{
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'Valloric/YouCompleteMe'
-
-" 文件操作
+" }}}
+" 文件操作 {{{
 Plug 'lvht/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-
-" 视觉样式
+" }}}
+" 视觉样式 {{{
 Plug 'bling/vim-airline'
 Plug 'tomasr/molokai'
 Plug 'cakebaker/scss-syntax.vim'
@@ -28,8 +26,8 @@ Plug 'plasticboy/vim-markdown'
 Plug 'wavded/vim-stylus'
 Plug 'xsbeats/vim-blade'
 Plug 'vim-scripts/progressbar-widget'
-
-" 杂项
+" }}}
+" 杂项 {{{
 Plug 'Townk/vim-autoclose'
 Plug 'airblade/vim-gitgutter'
 Plug 'godlygeek/tabular'
@@ -45,8 +43,8 @@ Plug 'itchyny/calendar.vim'
 Plug 'rdnetto/YCM-Generator', {'branch':'stable'}
 Plug 'vimwiki/vimwiki'
 Plug 'junegunn/gv.vim'
-
-call plug#end() " }}}
+" }}}
+call plug#end()
 
 filetype plugin indent on
 syntax on
@@ -68,27 +66,25 @@ set mouse-=a
 
 nnoremap <CR> :noh<CR><CR>
 
-" 将制表符展开成特定长度的空格串
-func! ExpandTab(len) " {{{
+" 折行配置 {{{
+func! ExpandTab(len)
 	setlocal expandtab
 	execute 'setlocal shiftwidth='.a:len
 	execute 'setlocal softtabstop='.a:len
 	execute 'setlocal tabstop='.a:len
-endfunc " }}}
+endfunc
 autocmd FileType html,css,scss,javascript call ExpandTab(2)
 autocmd FileType php,python,json,nginx call ExpandTab(4)
 " vim 配置或者脚本文件使用特定标记进行折叠
-autocmd FileType vim setlocal foldmethod=marker
-
-" 将光标跳转到上次打开当前文件的位置
+autocmd FileType vim setlocal foldmethod=marker " }}}
+" 将光标跳转到上次打开当前文件的位置 {{{
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
 			\ execute "normal! g`\"" |
-			\ endif
-
-" 清理行尾空白字符，md 文件除外
+			\ endif " }}}
+" 清理行尾空白字符，md 文件除外 {{{
 autocmd BufWritePre * if &filetype != 'markdown' |
 			\ :%s/\s\+$//e |
-			\ endif
+			\ endif " }}}
 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
