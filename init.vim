@@ -112,6 +112,7 @@ autocmd bufenter * if (winnr("$") == 1 && &filetype == 'nerdtree') | q | endif
 
 " vim-airline
 let g:airline_powerline_fonts=1
+let g:airline_theme='luna'
 let g:airline#extensions#tabline#enabled=1
 
 " PHPCD
@@ -123,7 +124,8 @@ let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_frontmatter=1
 
 " YouCompleteMe
-autocmd FileType python nnoremap <C-]> :YcmCompleter GoTo<CR>
+autocmd FileType python,c,cpp nnoremap <C-]> :YcmCompleter GoTo<CR>
+let g:ycm_confirm_extra_conf = 0
 
 " syntastic
 set statusline+=%#warningmsg#
