@@ -100,7 +100,7 @@ let g:ctrlp_custom_ignore={
 			\'file': 'tags$',
 			\}
 let g:ctrlp_mru_custom_ignore=[
-			\'/tmp/',
+			\'*fugitive*',
 			\]
 nnoremap <silent> <C-u> :CtrlPMRU<CR>
 
@@ -124,7 +124,20 @@ let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_frontmatter=1
 
 " YouCompleteMe
-autocmd FileType python,c,cpp nnoremap <C-]> :YcmCompleter GoTo<CR>
+autocmd FileType python nnoremap <C-]> :YcmCompleter GoTo<CR>
+func GoToForC() " {{{
+	let cwin = winbufnr('.')
+	let crow = col('.')
+	exec "YcmCompleter GoTo"
+	if winbufnr('.') == cwin && col('.') == crow
+		let cword = expand('<cword>')
+		exec "tjump " . cword
+	endif
+	normal zv
+	normal zz
+endfunc " }}}
+autocmd FileType c,cpp nnoremap <silent> <C-]> :call GoToForC()<CR>
+autocmd FileType c,cpp setlocal foldmethod=syntax
 let g:ycm_confirm_extra_conf = 0
 
 " syntastic
