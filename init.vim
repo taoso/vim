@@ -16,6 +16,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 " }}}
 " 视觉样式 {{{
 Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'tomasr/molokai'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'evanmiller/nginx-vim-syntax'
@@ -141,6 +142,10 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" airline
+let g:airline_theme = 'luna'
+let g:airline_powerline_fonts = 1
 
 " gitgutter
 let g:gitgutter_eager = 0
