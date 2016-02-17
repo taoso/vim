@@ -110,11 +110,6 @@ nnoremap <silent> <leader>f :NERDTreeFind<CR>
 " 所有编辑窗口关闭后自动关闭 NERDTree
 autocmd bufenter * if (winnr("$") == 1 && &filetype == 'nerdtree') | q | endif
 
-" vim-airline
-let g:airline_powerline_fonts=1
-let g:airline_theme='luna'
-let g:airline#extensions#tabline#enabled=1
-
 " PHPCD
 autocmd CompleteDone * pclose " 补全完成后自动关闭预览窗口
 autocmd FileType php setlocal omnifunc=phpcd#CompletePHP
@@ -146,6 +141,9 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" gitgutter
+let g:gitgutter_eager = 0
 
 " Calendar
 let g:calendar_first_day="monday"
