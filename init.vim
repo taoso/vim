@@ -91,6 +91,7 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 " 插件配置 " {{{
 " Tagbar
 nnoremap <silent> <leader>t :TagbarToggle<CR> " 设置激活快捷键
+let g:tagbar_autofocus=1
 
 " CtrlP
 let g:ctrlp_working_path_mode='ra'
@@ -99,10 +100,8 @@ let g:ctrlp_custom_ignore={
 			\'dir': '(git|hg|svn)$',
 			\'file': 'tags$',
 			\}
-let g:ctrlp_mru_custom_ignore=[
-			\'*fugitive*',
-			\]
 let g:ctrlp_max_files = 0
+let g:ctrlp_mruf_exclude='fugitive'
 nnoremap <silent> <C-u> :CtrlPMRU<CR>
 
 " NERD Tree
@@ -145,9 +144,6 @@ let g:syntastic_check_on_wq = 0
 
 " airline
 let g:airline_powerline_fonts = 1
-
-" gitgutter
-let g:gitgutter_eager = 0
 
 " Calendar
 let g:calendar_first_day="monday"
