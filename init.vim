@@ -1,24 +1,17 @@
 call plug#begin()
-" PHP {{{
 Plug '2072/PHP-Indenting-for-VIm'
 Plug 'phpvim/phpfolding.vim'
 Plug 'phpvim/phpcd.vim'
 Plug 'majutsushi/tagbar' | Plug 'vim-php/tagbar-phpctags.vim'
-" }}}
-" Python {{{
 Plug 'hynek/vim-python-pep8-indent'
-Plug 'Valloric/YouCompleteMe'
-" }}}
-" 文件操作 {{{
+Plug 'justmao945/vim-clang'
+Plug 'Shougo/deoplete.nvim'
 Plug 'lvht/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-" }}}
-" 视觉样式 {{{
 Plug 'bling/vim-airline'
 Plug 'tomasr/molokai'
 Plug 'cakebaker/scss-syntax.vim'
-Plug 'evanmiller/nginx-vim-syntax'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
@@ -26,8 +19,6 @@ Plug 'plasticboy/vim-markdown'
 Plug 'wavded/vim-stylus'
 Plug 'xsbeats/vim-blade'
 Plug 'vim-scripts/progressbar-widget'
-" }}}
-" 杂项 {{{
 Plug 'Townk/vim-autoclose'
 Plug 'airblade/vim-gitgutter'
 Plug 'godlygeek/tabular'
@@ -37,13 +28,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'vim-scripts/DrawIt'
 Plug 'vim-scripts/matchit.zip'
 Plug 'scrooloose/syntastic'
-Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
 Plug 'itchyny/calendar.vim'
-Plug 'rdnetto/YCM-Generator', {'branch':'stable'}
-Plug 'vimwiki/vimwiki'
-Plug 'junegunn/gv.vim'
-" }}}
 call plug#end()
 
 filetype plugin indent on
@@ -52,18 +38,18 @@ color molokai
 set colorcolumn=80
 set cursorline
 set linebreak
-set list " 高亮行尾字符
+set list
 set fileformat=unix
 set fileencodings=utf-8,gbk
 set nospell
 set noswapfile
 set nobackup
-set ignorecase " 搜索内容不区分大小写
-set smartcase " 搜索内容中有大写字母时则区分大小写
-set smartindent " 根据文件类型智能缩进
-set pastetoggle=<leader>v " 切换粘贴模式快捷键
+set ignorecase
+set smartcase
+set smartindent
+set pastetoggle=<leader>v
 set mouse-=a
-
+" clear search highlight by type enter
 nnoremap <CR> :noh<CR><CR>
 
 " 折行配置 {{{
@@ -88,10 +74,8 @@ autocmd BufWritePre * if &filetype != 'markdown' |
 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
-" 插件配置 " {{{
 " Tagbar
 nnoremap <silent> <leader>t :TagbarToggle<CR> " 设置激活快捷键
-let g:tagbar_autofocus=1
 
 " CtrlP
 let g:ctrlp_working_path_mode='ra'
@@ -118,33 +102,15 @@ autocmd FileType php setlocal omnifunc=phpcd#CompletePHP
 let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_frontmatter=1
 
-" YouCompleteMe
-autocmd FileType python nnoremap <C-]> :YcmCompleter GoTo<CR>
-func GoToForC() " {{{
-	let cwin = winbufnr('.')
-	let crow = col('.')
-	exec "YcmCompleter GoTo"
-	if winbufnr('.') == cwin && col('.') == crow
-		let cword = expand('<cword>')
-		exec "tjump " . cword
-	endif
-	normal zv
-	normal zz
-endfunc " }}}
-autocmd FileType c,cpp nnoremap <silent> <C-]> :call GoToForC()<CR>
-autocmd FileType c,cpp setlocal foldmethod=syntax
-let g:ycm_confirm_extra_conf = 0
-
 " syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-" airline
-let g:airline_powerline_fonts = 1
+let g:syntastic_check_on_wq = 1
 
 " Calendar
 let g:calendar_first_day="monday"
-" }}}
+
+" Deoplete
+let g:deoplete#enable_at_startup = 1
