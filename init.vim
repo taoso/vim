@@ -97,6 +97,7 @@ autocmd bufenter * if (winnr("$") == 1 && &filetype == 'nerdtree') | q | endif
 " PHPCD
 autocmd CompleteDone * pclose " 补全完成后自动关闭预览窗口
 autocmd FileType php setlocal omnifunc=phpcd#CompletePHP
+autocmd FileType php setlocal iskeyword-=$
 
 " vim-markdown
 let g:vim_markdown_folding_disabled=1
