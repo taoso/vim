@@ -1,7 +1,7 @@
 call plug#begin()
 Plug '2072/PHP-Indenting-for-VIm'
 Plug 'phpvim/phpfolding.vim'
-Plug 'phpvim/phpcd.vim'
+Plug 'phpvim/phpcd.vim', { 'for': 'php' , 'do': 'composer update'}
 Plug 'majutsushi/tagbar' | Plug 'vim-php/tagbar-phpctags.vim'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'justmao945/vim-clang'
@@ -31,6 +31,7 @@ Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-surround'
 Plug 'itchyny/calendar.vim'
 Plug 'fatih/vim-go'
+Plug 'ternjs/tern_for_vim'
 call plug#end()
 
 filetype plugin indent on
@@ -116,3 +117,6 @@ let g:calendar_first_day="monday"
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1
+
+autocmd FileType javascript nnoremap <silent> <buffer> <C-]> :TernDef<CR>
+autocmd FileType javascript nnoremap <silent> <buffer> K :TernDoc<CR>
