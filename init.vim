@@ -118,5 +118,10 @@ let g:calendar_first_day="monday"
 " Deoplete
 let g:deoplete#enable_at_startup = 1
 
+" Tern
 autocmd FileType javascript nnoremap <silent> <buffer> <C-]> :TernDef<CR>
 autocmd FileType javascript nnoremap <silent> <buffer> K :TernDoc<CR>
+
+" Go
+autocmd FileType go nnoremap <silent> <buffer> <C-]> :GoDef<CR>
+autocmd FileType go nnoremap <buffer> K :GoDoc<CR>
