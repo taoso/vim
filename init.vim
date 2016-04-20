@@ -4,8 +4,8 @@ Plug 'phpvim/phpfolding.vim'
 Plug 'phpvim/phpcd.vim', { 'for': 'php' , 'do': 'composer update'}
 Plug 'majutsushi/tagbar' | Plug 'vim-php/tagbar-phpctags.vim'
 Plug 'hynek/vim-python-pep8-indent'
-Plug 'justmao945/vim-clang'
-Plug 'Shougo/deoplete.nvim'
+Plug 'Valloric/YouCompleteMe'
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'lvht/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -30,8 +30,6 @@ Plug 'vim-scripts/matchit.zip'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-surround'
 Plug 'itchyny/calendar.vim'
-Plug 'fatih/vim-go'
-Plug 'ternjs/tern_for_vim'
 call plug#end()
 
 filetype plugin indent on
@@ -115,13 +113,19 @@ let g:syntastic_check_on_wq = 1
 " Calendar
 let g:calendar_first_day="monday"
 
-" Deoplete
-let g:deoplete#enable_at_startup = 1
-
-" Tern
-autocmd FileType javascript nnoremap <silent> <buffer> <C-]> :TernDef<CR>
-autocmd FileType javascript nnoremap <silent> <buffer> K :TernDoc<CR>
-
-" Go
-autocmd FileType go nnoremap <silent> <buffer> <C-]> :GoDef<CR>
-autocmd FileType go nnoremap <buffer> K :GoDoc<CR>
+" YouCompleteMe
+func GoToForC() " {{{
+       let cwin = winbufnr('.')
+       let crow = col('.')
+       exec "YcmCompleter GoTo"
+       if winbufnr('.') == cwin && col('.') == crow
+               let cword = expand('<cword>')
+               exec "tjump " . cword
+       endif
+       normal zv
+       normal zz
+endfunc " }}}
+autocmd FileType python nnoremap <C-]> :YcmCompleter GoTo<CR>
+autocmd FileType c,cpp nnoremap <silent> <C-]> :call GoToForC()<CR>
+autocmd FileType c,cpp setlocal foldmethod=syntax
+let g:ycm_confirm_extra_conf = 0 " "
