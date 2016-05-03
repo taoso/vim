@@ -4,6 +4,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
 Plug 'tomasr/molokai'
+Plug 'Shougo/deoplete.nvim'
 
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
@@ -23,6 +24,8 @@ Plug 'vim-scripts/progressbar-widget'
 Plug 'xsbeats/vim-blade'
 
 Plug 'hynek/vim-python-pep8-indent'
+
+Plug 'justmao945/vim-clang'
 
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'hail2u/vim-css3-syntax'
@@ -113,3 +116,5 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 
 autocmd FileType c,cpp setlocal foldmethod=syntax
+
+let g:deoplete#enable_at_startup = 1
