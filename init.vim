@@ -1,35 +1,38 @@
 call plug#begin()
-Plug '2072/PHP-Indenting-for-VIm'
-Plug 'phpvim/phpfolding.vim'
-Plug 'phpvim/phpcd.vim', { 'for': 'php' , 'do': 'composer update'}
-Plug 'majutsushi/tagbar' | Plug 'vim-php/tagbar-phpctags.vim'
-Plug 'hynek/vim-python-pep8-indent'
-Plug 'Valloric/YouCompleteMe'
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
-Plug 'lvht/ctrlp.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'bling/vim-airline'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'majutsushi/tagbar'
+Plug 'scrooloose/nerdtree'
 Plug 'tomasr/molokai'
+
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+
+Plug 'Townk/vim-autoclose'
+Plug 'godlygeek/tabular'
+Plug 'rking/ag.vim'
+Plug 'tomtom/tcomment_vim'
+Plug 'vim-scripts/matchit.zip'
+
+Plug '2072/PHP-Indenting-for-VIm'
+Plug 'phpvim/phpcd.vim', { 'for': 'php' , 'do': 'composer update'}
+Plug 'phpvim/phpfold.vim', { 'for': 'php' , 'do': 'composer update'}
+Plug 'vim-php/tagbar-phpctags.vim'
+Plug 'vim-scripts/progressbar-widget'
+Plug 'xsbeats/vim-blade'
+
+Plug 'hynek/vim-python-pep8-indent'
+
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
-Plug 'plasticboy/vim-markdown'
 Plug 'wavded/vim-stylus'
-Plug 'xsbeats/vim-blade'
-Plug 'vim-scripts/progressbar-widget'
-Plug 'Townk/vim-autoclose'
-Plug 'airblade/vim-gitgutter'
-Plug 'godlygeek/tabular'
-Plug 'rking/ag.vim'
-Plug 'tomtom/tcomment_vim'
-Plug 'tpope/vim-fugitive'
-Plug 'vim-scripts/DrawIt'
-Plug 'vim-scripts/matchit.zip'
+
+Plug 'plasticboy/vim-markdown'
+
 Plug 'scrooloose/syntastic'
-Plug 'tpope/vim-surround'
-Plug 'itchyny/calendar.vim'
 call plug#end()
 
 filetype plugin indent on
@@ -52,7 +55,6 @@ set mouse-=a
 " clear search highlight by type enter
 nnoremap <CR> :noh<CR><CR>
 
-" 折行配置 {{{
 func! ExpandTab(len)
 	setlocal expandtab
 	execute 'setlocal shiftwidth='.a:len
@@ -61,8 +63,8 @@ func! ExpandTab(len)
 endfunc
 autocmd FileType html,css,scss,javascript call ExpandTab(2)
 autocmd FileType php,python,json,nginx call ExpandTab(4)
-" vim 配置或者脚本文件使用特定标记进行折叠
-autocmd FileType vim setlocal foldmethod=marker " }}}
+
+autocmd FileType vim setlocal foldmethod=marker
 " 将光标跳转到上次打开当前文件的位置 {{{
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
 			\ execute "normal! g`\"" |
@@ -110,22 +112,4 @@ set statusline+=%*
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 
-" Calendar
-let g:calendar_first_day="monday"
-
-" YouCompleteMe
-func GoToForC() " {{{
-       let cwin = winbufnr('.')
-       let crow = col('.')
-       exec "YcmCompleter GoTo"
-       if winbufnr('.') == cwin && col('.') == crow
-               let cword = expand('<cword>')
-               exec "tjump " . cword
-       endif
-       normal zv
-       normal zz
-endfunc " }}}
-autocmd FileType python nnoremap <C-]> :YcmCompleter GoTo<CR>
-autocmd FileType c,cpp nnoremap <silent> <C-]> :call GoToForC()<CR>
 autocmd FileType c,cpp setlocal foldmethod=syntax
-let g:ycm_confirm_extra_conf = 0 " "
