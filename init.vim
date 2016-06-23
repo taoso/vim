@@ -1,10 +1,11 @@
 call plug#begin()
-Plug 'bling/vim-airline'
+Plug 'itchyny/lightline.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
 Plug 'tomasr/molokai'
 Plug 'Shougo/deoplete.nvim'
+Plug 'junegunn/fzf'
 
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
@@ -16,16 +17,14 @@ Plug 'rking/ag.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'vim-scripts/matchit.zip'
 
-Plug '2072/PHP-Indenting-for-VIm'
-Plug 'phpvim/phpcd.vim', { 'for': 'php' , 'do': 'composer update'}
-Plug 'phpvim/phpfold.vim', { 'for': 'php' , 'do': 'composer update'}
-Plug 'vim-php/tagbar-phpctags.vim'
-Plug 'vim-scripts/progressbar-widget'
+Plug '2072/PHP-Indenting-for-VIm', { 'for': 'php' }
+Plug 'phpvim/phpcd.vim', { 'for': 'php' }
+Plug 'phpvim/phpfold.vim', { 'for': 'php' }
+Plug 'vim-php/tagbar-phpctags.vim', { 'for': 'php' }
+Plug 'vim-scripts/progressbar-widget', { 'for': 'php' }
 Plug 'xsbeats/vim-blade'
 
 Plug 'hynek/vim-python-pep8-indent'
-
-Plug 'justmao945/vim-clang'
 
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'hail2u/vim-css3-syntax'
@@ -80,18 +79,18 @@ autocmd BufWritePre * if &filetype != 'markdown' |
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 " Tagbar
-nnoremap <silent> <leader>t :TagbarToggle<CR> " 设置激活快捷键
+nnoremap <silent> <leader>t :TagbarToggle<CR>
 
 " CtrlP
-let g:ctrlp_working_path_mode='ra'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.pdf
 let g:ctrlp_custom_ignore={
 			\'dir': '(git|hg|svn)$',
 			\'file': 'tags$',
 			\}
-let g:ctrlp_max_files = 0
 let g:ctrlp_mruf_exclude='fugitive'
+let g:ctrlp_map = '<c-0>'
 nnoremap <silent> <C-u> :CtrlPMRU<CR>
+nnoremap <silent> <C-p> :FZF<CR>
 
 " NERD Tree
 nnoremap <silent> <leader>e :NERDTreeToggle<CR>
