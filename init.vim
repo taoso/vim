@@ -1,11 +1,11 @@
 call plug#begin()
 Plug 'itchyny/lightline.vim'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
 Plug 'tomasr/molokai'
 Plug 'Shougo/deoplete.nvim'
 Plug 'junegunn/fzf'
+Plug 'mileszs/ack.vim'
 
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
@@ -13,7 +13,6 @@ Plug 'tpope/vim-fugitive'
 
 Plug 'Townk/vim-autoclose'
 Plug 'godlygeek/tabular'
-Plug 'rking/ag.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'vim-scripts/matchit.zip'
 
@@ -81,17 +80,6 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 " Tagbar
 nnoremap <silent> <leader>t :TagbarToggle<CR>
 
-" CtrlP
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.pdf
-let g:ctrlp_custom_ignore={
-			\'dir': '(git|hg|svn)$',
-			\'file': 'tags$',
-			\}
-let g:ctrlp_mruf_exclude='fugitive'
-let g:ctrlp_map = '<c-0>'
-nnoremap <silent> <C-u> :CtrlPMRU<CR>
-nnoremap <silent> <C-p> :FZF<CR>
-
 " NERD Tree
 nnoremap <silent> <leader>e :NERDTreeToggle<CR>
 nnoremap <silent> <leader>f :NERDTreeFind<CR>
@@ -117,3 +105,62 @@ let g:syntastic_check_on_wq = 1
 autocmd FileType c,cpp setlocal foldmethod=syntax
 
 let g:deoplete#enable_at_startup = 1
+
+let g:ackprg = 'ag --vimgrep'
+
+" fzf {{{
+rsh
+if !exists('LV_MRU_LIST_JSON')
+	let LV_MRU_LIST_JSON = '[]'
+endif
+let g:lv_mru_list = json_decode(LV_MRU_LIST_JSON)
+
+nnoremap <silent> <C-p> :FZF<CR>
+nnoremap <silent> <C-u> :call ListMruFile()<CR>
+
+
+function! ListMruFile()
+	let files = map(copy(g:lv_mru_list), 'fnamemodify(v:val, ":~:.")')
+	let file_len = len(files)
+	if file_len == 0
+		return
+	elseif file_len > 10
+		let file_len = 10
+	endif
+	let file_len = file_len + 2
+	call fzf#run({
+			\ 'source': files,
+			\ 'sink': 'edit',
+			\ 'options': '-m -x +s',
+			\ 'down': file_len})
+endfunction
+
+function! s:RecordMruFile()
+	let cpath = expand('%:p')
+	if !filereadable(cpath)
+		return
+	endif
+	if cpath =~ 'fugitive'
+		return
+	endif
+	let idx = index(g:lv_mru_list, cpath)
+	if idx >= 0
+		call filter(g:lv_mru_list, 'v:val !=# cpath')
+	endif
+	if cpath != ''
+		call insert(g:lv_mru_list, cpath)
+	endif
+endfunction
+
+function! s:ClearCurretnFile()
+	let cpath = expand('%:p')
+	let idx = index(g:lv_mru_list, cpath)
+	if idx >= 0
+		call remove(g:lv_mru_list, idx)
+	end
+endfunction
+
+autocmd BufEnter * call s:ClearCurretnFile()
+autocmd BufWinLeave,BufWritePost * call s:RecordMruFile()
+autocmd VimLeavePre * let LV_MRU_LIST_JSON = json_encode(g:lv_mru_list)
+" }}}
