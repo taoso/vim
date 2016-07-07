@@ -22,6 +22,7 @@ Plug 'phpvim/phpfold.vim', { 'for': 'php' }
 Plug 'vim-php/tagbar-phpctags.vim', { 'for': 'php' }
 Plug 'vim-scripts/progressbar-widget', { 'for': 'php' }
 Plug 'xsbeats/vim-blade'
+Plug 'justmao945/vim-clang'
 
 Plug 'hynek/vim-python-pep8-indent'
 
@@ -32,8 +33,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'wavded/vim-stylus'
 
 Plug 'plasticboy/vim-markdown'
-
-Plug 'scrooloose/syntastic'
 call plug#end()
 
 filetype plugin indent on
@@ -94,13 +93,6 @@ autocmd FileType php setlocal iskeyword-=$
 " vim-markdown
 let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_frontmatter=1
-
-" syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
 
 autocmd FileType c,cpp setlocal foldmethod=syntax
 
