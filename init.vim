@@ -24,7 +24,8 @@ Plug 'vim-scripts/progressbar-widget', { 'for': 'php' }
 Plug 'xsbeats/vim-blade'
 Plug 'justmao945/vim-clang'
 
-Plug 'hynek/vim-python-pep8-indent'
+Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
+Plug 'justmao945/vim-clang', { 'for': ['c', 'cpp'] }
 
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'hail2u/vim-css3-syntax'
@@ -94,8 +95,6 @@ autocmd FileType php setlocal iskeyword-=$
 let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_frontmatter=1
 
-autocmd FileType c,cpp setlocal foldmethod=syntax
-
 let g:deoplete#enable_at_startup = 1
 
 let g:ackprg = 'ag --vimgrep'
@@ -155,4 +154,13 @@ endfunction
 autocmd BufEnter * call s:ClearCurretnFile()
 autocmd BufWinLeave,BufWritePost * call s:RecordMruFile()
 autocmd VimLeavePre * let LV_MRU_LIST_JSON = json_encode(g:lv_mru_list)
+" }}}
+
+" bison {{{
+function! GoToYaccRule()
+	let name = expand('<cword>')
+	let pattern = "^".name.":"
+	call search(pattern, "swp")
+endfunction
+autocmd FileType yacc nnoremap <C-]> :call GoToYaccRule()<CR>
 " }}}
