@@ -17,8 +17,8 @@ Plug 'tomtom/tcomment_vim'
 Plug 'vim-scripts/matchit.zip'
 
 Plug '2072/PHP-Indenting-for-VIm', { 'for': 'php' }
-Plug 'phpvim/phpcd.vim', { 'for': 'php' }
-Plug 'phpvim/phpfold.vim', { 'for': 'php' }
+Plug 'phpvim/phpcd.vim', { 'for': 'php', 'do': 'composer update' }
+Plug 'phpvim/phpfold.vim', { 'for': 'php', 'do': 'composer update' }
 Plug 'vim-php/tagbar-phpctags.vim', { 'for': 'php' }
 Plug 'vim-scripts/progressbar-widget', { 'for': 'php' }
 Plug 'xsbeats/vim-blade'
@@ -39,6 +39,7 @@ call plug#end()
 filetype plugin indent on
 syntax on
 color molokai
+highlight Normal guibg=#000001 ctermbg=black " 纯黑背景，酷
 set colorcolumn=80
 set cursorline
 set linebreak
