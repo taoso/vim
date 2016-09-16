@@ -1,4 +1,4 @@
-call plug#begin()
+call plug#begin() " {{{
 Plug 'itchyny/lightline.vim'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
@@ -27,17 +27,24 @@ Plug 'justmao945/vim-clang'
 Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
 Plug 'justmao945/vim-clang', { 'for': ['c', 'cpp'] }
 
+Plug 'justinmk/vim-syntax-extra'
+
+Plug 'ap/vim-css-color'
 Plug 'cakebaker/scss-syntax.vim'
+Plug 'gavocanov/vim-js-indent', { 'for': 'javascript' }
+Plug 'groenewege/vim-less'
 Plug 'hail2u/vim-css3-syntax'
-Plug 'othree/html5.vim'
-Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'othree/html5-syntax.vim', { 'for': 'html' }
+Plug 'othree/html5.vim', { 'for': 'html' }
+Plug 'othree/yajs.vim', { 'for': 'javascript' }
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'ternjs/tern_for_vim', { 'for': 'javascript' }
 Plug 'wavded/vim-stylus'
 
 Plug 'plasticboy/vim-markdown'
-call plug#end()
+call plug#end() " }}}
 
-filetype plugin indent on
-syntax on
 color molokai
 highlight Normal guibg=#000001 ctermbg=black " 纯黑背景，酷
 set colorcolumn=80
@@ -45,24 +52,23 @@ set cursorline
 set linebreak
 set list
 set fileformat=unix
-set fileencodings=utf-8,gbk
-set nospell
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+set termguicolors
 set noswapfile
-set nobackup
 set ignorecase
 set smartcase
 set smartindent
 set pastetoggle=<leader>v
 set mouse-=a
 " clear search highlight by type enter
-nnoremap <CR> :noh<CR><CR>
+nnoremap <silent> <CR> :noh<CR><CR>
 
-func! ExpandTab(len)
+func! ExpandTab(len) "{{{"
 	setlocal expandtab
 	execute 'setlocal shiftwidth='.a:len
 	execute 'setlocal softtabstop='.a:len
 	execute 'setlocal tabstop='.a:len
-endfunc
+endfunc "}}}"
 autocmd FileType html,css,scss,javascript call ExpandTab(2)
 autocmd FileType php,python,json,nginx call ExpandTab(4)
 
@@ -76,16 +82,12 @@ autocmd BufWritePre * if &filetype != 'markdown' |
 			\ :%s/\s\+$//e |
 			\ endif " }}}
 
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-
 " Tagbar
 nnoremap <silent> <leader>t :TagbarToggle<CR>
 
 " NERD Tree
 nnoremap <silent> <leader>e :NERDTreeToggle<CR>
 nnoremap <silent> <leader>f :NERDTreeFind<CR>
-" 所有编辑窗口关闭后自动关闭 NERDTree
-autocmd bufenter * if (winnr("$") == 1 && &filetype == 'nerdtree') | q | endif
 
 " PHPCD
 autocmd CompleteDone * pclose " 补全完成后自动关闭预览窗口
@@ -111,3 +113,6 @@ function! GoToYaccRule()
 endfunction
 autocmd FileType yacc nnoremap <C-]> :call GoToYaccRule()<CR>
 " }}}
+
+let g:fzf_mru_file_list_size = 100
+
