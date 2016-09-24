@@ -2,7 +2,7 @@ call plug#begin() " {{{
 Plug 'itchyny/lightline.vim'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
-Plug 'tomasr/molokai'
+Plug 'jacoborus/tender.vim'
 Plug 'Shougo/deoplete.nvim'
 Plug 'lvht/fzf-mru'|Plug 'junegunn/fzf'
 Plug 'mileszs/ack.vim'
@@ -45,7 +45,7 @@ Plug 'wavded/vim-stylus'
 Plug 'plasticboy/vim-markdown'
 call plug#end() " }}}
 
-color molokai
+color tender
 highlight Normal guibg=#000001 ctermbg=black " 纯黑背景，酷
 highlight Comment cterm=italic gui=italic
 set colorcolumn=80
@@ -117,3 +117,4 @@ autocmd FileType yacc nnoremap <C-]> :call GoToYaccRule()<CR>
 
 let g:fzf_mru_file_list_size = 100
 
+let g:lightline = { 'colorscheme': 'tender' }
