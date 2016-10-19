@@ -1,5 +1,5 @@
 call plug#begin() " {{{
-Plug 'itchyny/lightline.vim'
+Plug 'vim-airline/vim-airline'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
 Plug 'jacoborus/tender.vim'
@@ -121,4 +121,5 @@ autocmd FileType yacc nnoremap <C-]> :call GoToYaccRule()<CR>
 
 let g:fzf_mru_file_list_size = 100
 
-let g:lightline = { 'colorscheme': 'tender' }
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'tender'
