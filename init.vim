@@ -77,6 +77,7 @@ autocmd FileType html,css,scss,javascript call ExpandTab(2)
 autocmd FileType php,python,json,nginx call ExpandTab(4)
 
 autocmd FileType vim setlocal foldmethod=marker
+autocmd BufRead composer.lock setlocal ft=json
 " 将光标跳转到上次打开当前文件的位置 {{{
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
 			\ execute "normal! g`\"" |
