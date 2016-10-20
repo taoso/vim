@@ -28,6 +28,7 @@ Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
 Plug 'justmao945/vim-clang', { 'for': ['c', 'cpp'] }
 
 Plug 'justinmk/vim-syntax-extra'
+Plug 'elzr/vim-json'
 
 Plug 'ap/vim-css-color'
 Plug 'cakebaker/scss-syntax.vim'
@@ -77,6 +78,8 @@ autocmd FileType html,css,scss,javascript call ExpandTab(2)
 autocmd FileType php,python,json,nginx call ExpandTab(4)
 
 autocmd FileType vim setlocal foldmethod=marker
+autocmd FileType json setlocal foldmethod=syntax
+autocmd FileType json setlocal foldlevel=1
 autocmd BufRead composer.lock setlocal ft=json
 " 将光标跳转到上次打开当前文件的位置 {{{
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
