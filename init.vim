@@ -20,7 +20,6 @@ Plug 'scrooloose/syntastic'
 Plug '2072/PHP-Indenting-for-VIm', { 'for': 'php' }
 Plug 'phpvim/phpcd.vim', { 'for': 'php', 'do': 'composer update' }
 Plug 'phpvim/phpfold.vim', { 'for': 'php', 'do': 'composer update' }
-Plug 'vim-scripts/progressbar-widget', { 'for': 'php' }
 Plug 'xsbeats/vim-blade'
 
 Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
