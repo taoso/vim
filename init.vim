@@ -23,10 +23,8 @@ Plug 'phpvim/phpfold.vim', { 'for': 'php', 'do': 'composer update' }
 Plug 'vim-php/tagbar-phpctags.vim', { 'for': 'php' }
 Plug 'vim-scripts/progressbar-widget', { 'for': 'php' }
 Plug 'xsbeats/vim-blade'
-Plug 'justmao945/vim-clang'
 
 Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
-Plug 'justmao945/vim-clang', { 'for': ['c', 'cpp'] }
 
 Plug 'justinmk/vim-syntax-extra'
 Plug 'elzr/vim-json'
@@ -83,6 +81,7 @@ autocmd FileType vim setlocal foldmethod=marker
 autocmd FileType json setlocal foldmethod=syntax
 autocmd FileType json setlocal foldlevel=1
 autocmd BufRead composer.lock setlocal ft=json
+autocmd BufRead *.phpt setlocal ft=php
 " 将光标跳转到上次打开当前文件的位置 {{{
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
 			\ execute "normal! g`\"" |
@@ -101,7 +100,6 @@ nnoremap <silent> <leader>f :NERDTreeFind<CR>
 
 " PHPCD
 autocmd CompleteDone * pclose " 补全完成后自动关闭预览窗口
-autocmd FileType php setlocal omnifunc=phpcd#CompletePHP
 autocmd FileType php setlocal iskeyword-=$
 
 " vim-markdown
@@ -133,8 +131,3 @@ let g:airline_theme = 'tender'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
