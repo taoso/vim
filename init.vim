@@ -130,15 +130,14 @@ let g:tagbar_type_php = {
 nnoremap <silent> <leader>e :NERDTreeToggle<CR>
 nnoremap <silent> <leader>f :NERDTreeFind<CR>
 
-" PHPCD
-autocmd CompleteDone * pclose " 补全完成后自动关闭预览窗口
-autocmd FileType php setlocal iskeyword-=$
-
 " vim-markdown
 let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_frontmatter=1
 
+" deoplete
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#omni#input_patterns = {}
+let g:deoplete#omni#input_patterns.php = '\w+|[^. \t]->\w*|\w+::\w*'
 
 let g:ackprg = 'ag --vimgrep'
 
