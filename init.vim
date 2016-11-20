@@ -3,7 +3,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
 Plug 'jacoborus/tender.vim'
-Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'lvht/fzf-mru'|Plug 'junegunn/fzf'
 Plug 'mileszs/ack.vim'
 
@@ -41,7 +41,6 @@ Plug 'ternjs/tern_for_vim', { 'for': 'javascript' }
 Plug 'wavded/vim-stylus'
 
 Plug 'plasticboy/vim-markdown'
-Plug 'tweekmonster/nvim-api-viewer'
 call plug#end() " }}}
 
 color tender
