@@ -135,8 +135,6 @@ let g:vim_markdown_frontmatter=1
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#omni#input_patterns = {}
-let g:deoplete#omni#input_patterns.php = '\w+|[^. \t]->\w*|\w+::\w*'
 
 let g:ackprg = 'ag --vimgrep'
 
