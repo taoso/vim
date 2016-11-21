@@ -135,6 +135,7 @@ let g:vim_markdown_frontmatter=1
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources = { '_': ['buffer'] }
 
 let g:ackprg = 'ag --vimgrep'
 
