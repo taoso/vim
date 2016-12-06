@@ -45,7 +45,7 @@ Plug 'easymotion/vim-easymotion'
 call plug#end() " }}}
 
 color tender
-highlight Normal guibg=#000001 ctermbg=black " 纯黑背景，酷
+highlight Normal guibg=#000001 " 纯黑背景，酷
 highlight Comment cterm=italic gui=italic
 highlight Visual guibg=#323232 ctermbg=0
 highlight Todo guifg=yellow guibg=bg gui=bold
