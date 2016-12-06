@@ -41,6 +41,7 @@ Plug 'ternjs/tern_for_vim', { 'for': 'javascript' }
 Plug 'wavded/vim-stylus'
 
 Plug 'plasticboy/vim-markdown'
+Plug 'easymotion/vim-easymotion'
 call plug#end() " }}}
 
 color tender
