@@ -80,6 +80,7 @@ autocmd FileType json setlocal foldmethod=syntax
 autocmd FileType json setlocal foldlevel=1
 autocmd BufRead composer.lock setlocal ft=json
 autocmd BufRead *.phpt setlocal ft=php
+autocmd BufRead *.phtml setlocal ft=html
 " 将光标跳转到上次打开当前文件的位置 {{{
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
 			\ execute "normal! g`\"" |
@@ -93,37 +94,37 @@ autocmd BufWritePre * if &filetype != 'markdown' |
 nnoremap <silent> <leader>t :TagbarToggle<CR>
 "{{{
 let g:tagbar_type_php = {
-    \ 'ctagsbin'  : 'phpctags',
-    \ 'ctagsargs' : '-f -',
-    \ 'kinds'     : [
-        \ 'd:Constants:0:0',
-        \ 'v:Variables:0:0',
-        \ 'f:Functions:1',
-        \ 'i:Interfaces:0',
-        \ 'c:Classes:0',
-        \ 'p:Properties:0:0',
-        \ 'm:Methods:1',
-        \ 'n:Namespaces:0',
-        \ 't:Traits:0',
-    \ ],
-    \ 'sro'        : '::',
-    \ 'kind2scope' : {
-        \ 'c' : 'class',
-        \ 'm' : 'method',
-        \ 'f' : 'function',
-        \ 'i' : 'interface',
-        \ 'n' : 'namespace',
-        \ 't' : 'trait',
-    \ },
-    \ 'scope2kind' : {
-        \ 'class'     : 'c',
-        \ 'method'    : 'm',
-        \ 'function'  : 'f',
-        \ 'interface' : 'i',
-        \ 'namespace' : 'n',
-        \ 'trait'     : 't',
-    \ }
-\ }
+			\ 'ctagsbin'  : 'phpctags',
+			\ 'ctagsargs' : '-f -',
+			\ 'kinds'     : [
+			\ 'd:Constants:0:0',
+			\ 'v:Variables:0:0',
+			\ 'f:Functions:1',
+			\ 'i:Interfaces:0',
+			\ 'c:Classes:0',
+			\ 'p:Properties:0:0',
+			\ 'm:Methods:1',
+			\ 'n:Namespaces:0',
+			\ 't:Traits:0',
+			\ ],
+			\ 'sro'        : '::',
+			\ 'kind2scope' : {
+			\ 'c' : 'class',
+			\ 'm' : 'method',
+			\ 'f' : 'function',
+			\ 'i' : 'interface',
+			\ 'n' : 'namespace',
+			\ 't' : 'trait',
+			\ },
+			\ 'scope2kind' : {
+			\ 'class'     : 'c',
+			\ 'method'    : 'm',
+			\ 'function'  : 'f',
+			\ 'interface' : 'i',
+			\ 'namespace' : 'n',
+			\ 'trait'     : 't',
+			\ }
+			\ }
 "}}}
 
 " NERD Tree
