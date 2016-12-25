@@ -42,6 +42,7 @@ Plug 'wavded/vim-stylus'
 
 Plug 'plasticboy/vim-markdown'
 Plug 'easymotion/vim-easymotion'
+Plug 'ironhouzi/vim-stim'
 call plug#end() " }}}
 
 color tender
@@ -92,6 +93,7 @@ autocmd BufWritePre * if &filetype != 'markdown' |
 
 " Tagbar
 nnoremap <silent> <leader>t :TagbarToggle<CR>
+let g:tagbar_compact = 1
 "{{{
 let g:tagbar_type_php = {
 			\ 'ctagsbin'  : 'phpctags',
@@ -130,6 +132,7 @@ let g:tagbar_type_php = {
 " NERD Tree
 nnoremap <silent> <leader>e :NERDTreeToggle<CR>
 nnoremap <silent> <leader>f :NERDTreeFind<CR>
+let NERDTreeMinimalUI = 1
 
 " vim-markdown
 let g:vim_markdown_folding_disabled=1
