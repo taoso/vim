@@ -93,7 +93,36 @@ autocmd BufWritePre * if &filetype != 'markdown' |
 
 " Tagbar
 nnoremap <silent> <leader>t :TagbarToggle<CR>
-let g:tagbar_compact = 1
+let g:tagbar_sort = 0
+let g:tagbar_type_markdown = {
+    \ 'ctagsbin'  : 'mdctags',
+    \ 'ctagsargs' : '',
+    \ 'kinds'     : [
+    \     'a:h1:0:0',
+    \     'b:h2:0:0',
+    \     'c:h3:0:0',
+    \     'd:h4:0:0',
+    \     'e:h5:0:0',
+    \     'f:h6:0:0',
+    \ ],
+    \ 'sro'        : '::',
+    \ 'kind2scope' : {
+    \     'a' : 'h1',
+    \     'b' : 'h2',
+    \     'c' : 'h3',
+    \     'd' : 'h4',
+    \     'e' : 'h5',
+    \     'f' : 'h6',
+    \ },
+    \ 'scope2kind' : {
+    \     'h1' : 'a',
+    \     'h2' : 'b',
+    \     'h3' : 'c',
+    \     'h4' : 'd',
+    \     'h5' : 'e',
+    \     'h6' : 'f',
+    \}
+\}
 "{{{
 let g:tagbar_type_php = {
 			\ 'ctagsbin'  : 'phpctags',
@@ -140,6 +169,7 @@ let g:vim_markdown_frontmatter=1
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#file#enable_buffer_path = 1
 let g:deoplete#sources = { '_': ['buffer', 'file'] }
 
 let g:ackprg = 'ag --vimgrep'
