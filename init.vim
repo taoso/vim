@@ -93,6 +93,7 @@ autocmd BufWritePre * if &filetype != 'markdown' |
 
 " Tagbar
 nnoremap <silent> <leader>t :TagbarToggle<CR>
+let g:tagbar_compact = 1
 let g:tagbar_sort = 0
 let g:tagbar_type_markdown = {
     \ 'ctagsbin'  : 'mdctags',
