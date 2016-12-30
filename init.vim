@@ -18,7 +18,7 @@ Plug 'vim-scripts/matchit.zip'
 Plug 'scrooloose/syntastic'
 
 Plug '2072/PHP-Indenting-for-VIm', { 'for': 'php' }
-Plug 'phpvim/phpcd.vim', { 'for': 'php', 'do': 'composer update' }
+Plug 'phpvim/phpcd.vim', { 'do': 'composer update' }
 Plug 'phpvim/phpfold.vim', { 'for': 'php', 'do': 'composer update' }
 Plug 'xsbeats/vim-blade'
 
