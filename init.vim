@@ -64,6 +64,8 @@ set smartcase
 set smartindent
 set pastetoggle=<leader>v
 set mouse-=a
+set nowrap
+set sidescroll=1
 " clear search highlight by type enter
 nnoremap <silent> <CR> :noh<CR><CR>
 
