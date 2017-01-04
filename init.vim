@@ -41,6 +41,7 @@ Plug 'ternjs/tern_for_vim', { 'for': 'javascript' }
 Plug 'wavded/vim-stylus'
 
 Plug 'plasticboy/vim-markdown'
+Plug 'lvht/tagbar-markdown'
 Plug 'easymotion/vim-easymotion'
 Plug 'ironhouzi/vim-stim'
 call plug#end() " }}}
@@ -97,68 +98,39 @@ autocmd BufWritePre * if &filetype != 'markdown' |
 nnoremap <silent> <leader>t :TagbarToggle<CR>
 let g:tagbar_compact = 1
 let g:tagbar_sort = 0
-let g:tagbar_type_markdown = {
-    \ 'ctagsbin'  : 'mdctags',
-    \ 'ctagsargs' : '',
-    \ 'kinds'     : [
-    \     'a:h1:0:0',
-    \     'b:h2:0:0',
-    \     'c:h3:0:0',
-    \     'd:h4:0:0',
-    \     'e:h5:0:0',
-    \     'f:h6:0:0',
-    \ ],
-    \ 'sro'        : '::',
-    \ 'kind2scope' : {
-    \     'a' : 'h1',
-    \     'b' : 'h2',
-    \     'c' : 'h3',
-    \     'd' : 'h4',
-    \     'e' : 'h5',
-    \     'f' : 'h6',
-    \ },
-    \ 'scope2kind' : {
-    \     'h1' : 'a',
-    \     'h2' : 'b',
-    \     'h3' : 'c',
-    \     'h4' : 'd',
-    \     'h5' : 'e',
-    \     'h6' : 'f',
-    \}
-\}
 "{{{
 let g:tagbar_type_php = {
-			\ 'ctagsbin'  : 'phpctags',
-			\ 'ctagsargs' : '-f -',
-			\ 'kinds'     : [
-			\ 'd:Constants:0:0',
-			\ 'v:Variables:0:0',
-			\ 'f:Functions:1',
-			\ 'i:Interfaces:0',
-			\ 'c:Classes:0',
-			\ 'p:Properties:0:0',
-			\ 'm:Methods:1',
-			\ 'n:Namespaces:0',
-			\ 't:Traits:0',
-			\ ],
-			\ 'sro'        : '::',
-			\ 'kind2scope' : {
-			\ 'c' : 'class',
-			\ 'm' : 'method',
-			\ 'f' : 'function',
-			\ 'i' : 'interface',
-			\ 'n' : 'namespace',
-			\ 't' : 'trait',
-			\ },
-			\ 'scope2kind' : {
-			\ 'class'     : 'c',
-			\ 'method'    : 'm',
-			\ 'function'  : 'f',
-			\ 'interface' : 'i',
-			\ 'namespace' : 'n',
-			\ 'trait'     : 't',
-			\ }
-			\ }
+	\ 'ctagsbin'  : 'phpctags',
+	\ 'ctagsargs' : '-f -',
+	\ 'kinds'     : [
+		\ 'd:Constants:0:0',
+		\ 'v:Variables:0:0',
+		\ 'f:Functions:1',
+		\ 'i:Interfaces:0',
+		\ 'c:Classes:0',
+		\ 'p:Properties:0:0',
+		\ 'm:Methods:1',
+		\ 'n:Namespaces:0',
+		\ 't:Traits:0',
+	\ ],
+	\ 'sro'        : '::',
+	\ 'kind2scope' : {
+		\ 'c' : 'class',
+		\ 'm' : 'method',
+		\ 'f' : 'function',
+		\ 'i' : 'interface',
+		\ 'n' : 'namespace',
+		\ 't' : 'trait',
+	\ },
+	\ 'scope2kind' : {
+		\ 'class'     : 'c',
+		\ 'method'    : 'm',
+		\ 'function'  : 'f',
+		\ 'interface' : 'i',
+		\ 'namespace' : 'n',
+		\ 'trait'     : 't',
+	\ }
+\ }
 "}}}
 
 " NERD Tree
