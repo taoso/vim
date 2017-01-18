@@ -48,7 +48,6 @@ call plug#end() " }}}
 
 color tender
 highlight Normal guibg=#000001 " 纯黑背景，酷
-highlight Comment cterm=italic gui=italic
 highlight Visual guibg=#323232 ctermbg=0
 highlight Todo guifg=yellow guibg=bg gui=bold
 
@@ -82,6 +81,7 @@ autocmd FileType php,python,json,nginx call ExpandTab(4)
 autocmd FileType vim setlocal foldmethod=marker
 autocmd FileType json setlocal foldmethod=syntax
 autocmd FileType json setlocal foldlevel=1
+autocmd FileType markdown setlocal wrap
 autocmd BufRead composer.lock setlocal ft=json
 autocmd BufRead *.phpt setlocal ft=php
 autocmd BufRead *.phtml setlocal ft=html
@@ -145,7 +145,7 @@ let g:vim_markdown_frontmatter=1
 " deoplete
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#file#enable_buffer_path = 1
-let g:deoplete#sources = { '_': ['buffer', 'file'] }
+let g:deoplete#ignore_sources = { '_': ['omni'] }
 
 let g:ackprg = 'ag --vimgrep'
 
