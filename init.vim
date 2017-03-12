@@ -165,8 +165,50 @@ let g:fzf_mru_file_list_size = 100
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'tender'
 
-" ale
+" ale {{{
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_enter = 0
 let g:ale_lint_on_text_changed = 0
 let g:ale_open_list = 1
+
+function! AlePhpstanCallback(buffer, lines) abort
+	let l:pattern = '\v^ \* (.+) in (.+) on line (\d+)$'
+
+	let l:output = []
+
+	for l:line in a:lines
+		let l:match = matchlist(l:line, l:pattern)
+
+		if len(l:match) == 0
+			continue
+		endif
+
+		call add(l:output, {
+					\   'bufnr': a:buffer,
+					\   'lnum': l:match[3] + 0,
+					\   'col': 0,
+					\   'text': l:match[1],
+					\   'type': 'E',
+					\})
+	endfor
+
+	return l:output
+endfunction
+
+function! AlePhpstanCommand(buffer)
+	let command =  'phpstan analyse -l 5 %s -a %s'
+	if exists('g:phpcd_autoload_path')
+		let command = command.' -a '.g:phpcd_autoload_path
+	endif
+
+	return command
+endfunction
+
+call ale#linter#Define('php', {
+			\   'name': 'phpstan',
+			\   'executable': 'phpstan',
+			\   'command_callback': 'AlePhpstanCommand',
+			\   'output_stream': 'stdout',
+			\   'callback': 'AlePhpstanCallback',
+			\})
+" }}}
