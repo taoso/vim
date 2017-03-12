@@ -15,11 +15,11 @@ Plug 'Townk/vim-autoclose'
 Plug 'godlygeek/tabular'
 Plug 'tomtom/tcomment_vim'
 Plug 'vim-scripts/matchit.zip'
-Plug 'scrooloose/syntastic'
 
 Plug '2072/PHP-Indenting-for-VIm', { 'for': 'php' }
-Plug 'php-vim/phpcd.vim', { 'do': 'composer update' }
-Plug 'php-vim/phpfold.vim', { 'for': 'php', 'do': 'composer update' }
+Plug 'lvht/phpcd.vim', { 'do': 'composer update' }
+Plug 'w0rp/ale'
+Plug 'lvht/phpfold.vim', { 'for': 'php' }
 Plug 'xsbeats/vim-blade'
 
 Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
@@ -74,7 +74,7 @@ func! ExpandTab(len) "{{{"
 	execute 'setlocal softtabstop='.a:len
 	execute 'setlocal tabstop='.a:len
 endfunc "}}}"
-autocmd FileType html,css,scss,javascript call ExpandTab(2)
+autocmd FileType html,css,scss,javascript,tex call ExpandTab(2)
 autocmd FileType php,python,json,nginx call ExpandTab(4)
 
 autocmd FileType vim setlocal foldmethod=marker
@@ -165,7 +165,8 @@ let g:fzf_mru_file_list_size = 100
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'tender'
 
-" syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" ale
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_text_changed = 0
+let g:ale_open_list = 1
