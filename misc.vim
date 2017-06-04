@@ -76,3 +76,8 @@ let g:ale_lint_on_enter = 0
 let g:ale_lint_on_text_changed = 0
 let g:ale_open_list = 1
 " }}}
+
+" vimwiki {{{
+let g:vimwiki_list = [{'path': '~/Nutstore/notes/me'},
+			\{'path': '~/Nutstore/notes/bili'}]
+" }}}

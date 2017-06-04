@@ -36,4 +36,5 @@ Plug 'plasticboy/vim-markdown'
 Plug 'lvht/tagbar-markdown'
 Plug 'easymotion/vim-easymotion'
 Plug 'ironhouzi/vim-stim'
+Plug 'vimwiki/vimwiki'
 call plug#end()

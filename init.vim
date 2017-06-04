@@ -1,4 +1,4 @@
-source plug.vim
-source base.vim
-source auto.vim
-source misc.vim
+runtime plug.vim
+runtime base.vim
+runtime auto.vim
+runtime misc.vim
