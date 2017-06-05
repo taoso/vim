@@ -81,3 +81,6 @@ let g:ale_open_list = 1
 let g:vimwiki_list = [{'path': '~/Nutstore/notes/me'},
 			\{'path': '~/Nutstore/notes/bili'}]
 " }}}
+
+command! DiffSaved vert new | set bt=nofile | r # | 0d_ | diffthis
+			\ | wincmd p | diffthis
