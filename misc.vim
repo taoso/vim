@@ -65,11 +65,6 @@ nnoremap <silent> <C-u> :FZFMru<CR>
 let g:fzf_mru_file_list_size = 100
 " }}}
 
-" airline {{{
-let g:airline_powerline_fonts = 1
-let g:airline_theme = 'tender'
-" }}}
-
 " ale {{{
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_enter = 0
