@@ -37,4 +37,5 @@ Plug 'lvht/tagbar-markdown'
 Plug 'easymotion/vim-easymotion'
 Plug 'ironhouzi/vim-stim'
 Plug 'vimwiki/vimwiki'
+Plug 'jreybert/vimagit'
 call plug#end()
