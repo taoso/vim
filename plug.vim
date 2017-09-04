@@ -17,11 +17,9 @@ Plug '2072/PHP-Indenting-for-VIm', { 'for': 'php' }
 Plug 'lvht/phpcd.vim', { 'do': 'composer update' }
 Plug 'w0rp/ale'
 Plug 'lvht/phpfold.vim', { 'for': 'php', 'do': 'composer update' }
-Plug 'justmao945/vim-clang'
 Plug 'xsbeats/vim-blade'
 Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
 Plug 'justinmk/vim-syntax-extra'
-Plug 'elzr/vim-json'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'groenewege/vim-less'
 Plug 'hail2u/vim-css3-syntax'
