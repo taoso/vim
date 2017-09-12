@@ -77,5 +77,12 @@ let g:vimwiki_list = [{'path': '~/Nutstore/notes/me'},
 			\{'path': '~/Nutstore/notes/bili'}]
 " }}}
 
+" neosnippet {{{
+let g:neosnippet#enable_completed_snippet = 1
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
+" }}}
+
 command! DiffSaved vert new | set bt=nofile | r # | 0d_ | diffthis
 			\ | wincmd p | diffthis

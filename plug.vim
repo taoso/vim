@@ -36,4 +36,5 @@ Plug 'easymotion/vim-easymotion'
 Plug 'ironhouzi/vim-stim'
 Plug 'vimwiki/vimwiki'
 Plug 'jreybert/vimagit'
+Plug 'Shougo/neosnippet.vim'|Plug 'Shougo/neosnippet-snippets'
 call plug#end()
