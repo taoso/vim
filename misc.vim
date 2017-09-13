@@ -60,7 +60,30 @@ let g:ackprg = 'ag --vimgrep --ignore tags'
 " }}}
 
 " fzf {{{
-nnoremap <silent> <C-p> :FZF<CR>
+function! s:FindRoot() " {{{
+	let pwd = expand("%:p:h")
+	let root = pwd
+
+	while root != "/"
+		if (isdirectory(root.'/.git'))
+			break
+		endif
+		if (filereadable(root.'/configure'))
+			break
+		endif
+		if (isdirectory(root.'/.svn'))
+			break
+		endif
+		if (isdirectory(root.'/.hg'))
+			break
+		endif
+		let root = fnamemodify(root, ":h")
+	endwhile
+
+	let g:fzf_root = root
+	return root
+endfunction " }}}
+execute "nnoremap <silent> <C-p> :FZF ".s:FindRoot()."<CR>"
 nnoremap <silent> <C-u> :FZFMru<CR>
 let g:fzf_mru_file_list_size = 100
 " }}}
