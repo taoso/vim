@@ -68,6 +68,9 @@ function! s:FindRoot() " {{{
 		if (isdirectory(root.'/.git'))
 			break
 		endif
+		if (filereadable(root.'/composer.json'))
+			break
+		endif
 		if (filereadable(root.'/configure'))
 			break
 		endif

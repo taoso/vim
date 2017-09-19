@@ -18,6 +18,3 @@ autocmd BufRead *.phtml setlocal ft=html
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
 			\ execute "normal! g`\"" |
 			\ endif
-" 清理行尾空白字符，md 文件除外
-autocmd BufWritePre * :%s/\s\+$//e
-
