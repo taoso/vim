@@ -110,5 +110,10 @@ smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
 " }}}
 
+" go {{{
+autocmd FileType go nnoremap <buffer> <silent> <C-]> :GoDef<CR>
+autocmd FileType go nnoremap <buffer> <silent> <K> :GoDoc<CR>
+" }}}
+
 command! DiffSaved vert new | set bt=nofile | r # | 0d_ | diffthis
 			\ | wincmd p | diffthis
