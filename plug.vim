@@ -1,4 +1,4 @@
-call plug#begin()
+call plug#begin('~/.config/nvim/vendor')
 Plug 'vim-airline/vim-airline'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
