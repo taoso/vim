@@ -14,12 +14,14 @@ Plug 'godlygeek/tabular'
 Plug 'tomtom/tcomment_vim'
 Plug 'vim-scripts/matchit.zip'
 Plug '2072/PHP-Indenting-for-VIm', { 'for': 'php' }
+Plug 'StanAngeloff/php.vim', { 'for': 'php' }
 Plug 'lvht/phpcd.vim', { 'do': 'composer update' }
-Plug 'w0rp/ale'
 Plug 'lvht/phpfold.vim', { 'for': 'php', 'do': 'composer update' }
+Plug 'w0rp/ale'
 Plug 'xsbeats/vim-blade'
 Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
 Plug 'justinmk/vim-syntax-extra'
+Plug 'wavded/vim-stylus'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'groenewege/vim-less'
 Plug 'hail2u/vim-css3-syntax'
@@ -29,7 +31,6 @@ Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'gavocanov/vim-js-indent', { 'for': 'javascript' }
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'ternjs/tern_for_vim', { 'for': 'javascript' }
-Plug 'wavded/vim-stylus'
 Plug 'plasticboy/vim-markdown'
 Plug 'lvht/tagbar-markdown'
 Plug 'easymotion/vim-easymotion'
