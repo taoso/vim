@@ -36,5 +36,6 @@ Plug 'ironhouzi/vim-stim'
 Plug 'jreybert/vimagit'
 Plug 'Shougo/neosnippet.vim'|Plug 'Shougo/neosnippet-snippets'
 Plug 'fatih/vim-go'
-Plug 'jceb/vim-orgmode'
+Plug 'jceb/vim-orgmode'|Plug 'tpope/vim-speeddating'
+Plug 'justmao945/vim-clang'
 call plug#end()
