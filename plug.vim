@@ -18,7 +18,6 @@ Plug 'StanAngeloff/php.vim', { 'for': 'php' }
 Plug 'lvht/phpcd.vim', { 'do': 'composer update' }
 Plug 'lvht/phpfold.vim', { 'for': 'php', 'do': 'composer update' }
 Plug 'w0rp/ale'
-Plug 'xsbeats/vim-blade'
 Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
 Plug 'justinmk/vim-syntax-extra'
 Plug 'wavded/vim-stylus'
@@ -33,10 +32,9 @@ Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'ternjs/tern_for_vim', { 'for': 'javascript' }
 Plug 'plasticboy/vim-markdown'
 Plug 'lvht/tagbar-markdown'
-Plug 'easymotion/vim-easymotion'
 Plug 'ironhouzi/vim-stim'
-Plug 'vimwiki/vimwiki'
 Plug 'jreybert/vimagit'
 Plug 'Shougo/neosnippet.vim'|Plug 'Shougo/neosnippet-snippets'
 Plug 'fatih/vim-go'
+Plug 'jceb/vim-orgmode'
 call plug#end()
