@@ -18,3 +18,6 @@ autocmd BufRead *.phtml setlocal ft=html
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
 			\ execute "normal! g`\"" |
 			\ endif
+
+autocmd FileType php highlight link phpDocTags phpDefine
+autocmd FileType php highlight link phpDocParam phpType
