@@ -67,13 +67,20 @@ set nowrap
 set sidescroll=1
 set conceallevel=2
 
-nnoremap <silent> <CR> :noh<CR><CR> " clear search highlight by type enter
-func! ExpandTab(len) "{{{"
-	setlocal expandtab
-	execute 'setlocal shiftwidth='.a:len
-	execute 'setlocal softtabstop='.a:len
-	execute 'setlocal tabstop='.a:len
-endfunc "}}}"
+nnoremap <silent> <CR> :noh<CR><CR>
+func! ExpandTab(len) " {{{
+	if a:len
+		setlocal expandtab
+		execute 'setlocal shiftwidth='.a:len
+		execute 'setlocal softtabstop='.a:len
+		execute 'setlocal tabstop='.a:len
+	else
+		setlocal noexpandtab
+		execute 'setlocal shiftwidth&vim'
+		execute 'setlocal softtabstop&vim'
+		execute 'setlocal tabstop&vim'
+	endif
+endfunc " }}}
 autocmd FileType html,css,scss,javascript,tex call ExpandTab(2)
 autocmd FileType php,python,json,nginx call ExpandTab(4)
 
