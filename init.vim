@@ -42,7 +42,6 @@ Plug 'jceb/vim-orgmode'
 " Plug 'justmao945/vim-clang'
 Plug 'lvht/workspace.vim'
 Plug 'dsummersl/vimunit'
-Plug 'yuratomo/w3m.vim'
 Plug 'skywind3000/asyncrun.vim'
 call plug#end()
 
