@@ -4,7 +4,8 @@ Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
 Plug 'jacoborus/tender.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'lvht/fzf-mru'|Plug 'junegunn/fzf'
+Plug 'junegunn/fzf'
+Plug 'lvht/fzf-mru'
 Plug 'mileszs/ack.vim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
@@ -15,28 +16,29 @@ Plug 'tomtom/tcomment_vim'
 Plug 'vim-scripts/matchit.zip'
 Plug '2072/PHP-Indenting-for-VIm', { 'for': 'php' }
 Plug 'StanAngeloff/php.vim', { 'for': 'php' }
-Plug 'lvht/phpcd.vim', { 'do': 'composer update' }
+Plug 'lvht/phpcd.vim', { 'fo': 'php', 'do': 'composer update' }
 Plug 'lvht/phpfold.vim', { 'for': 'php', 'do': 'composer update' }
-" Plug 'w0rp/ale'
+Plug 'w0rp/ale'
 Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
 Plug 'justinmk/vim-syntax-extra'
-Plug 'wavded/vim-stylus'
-Plug 'cakebaker/scss-syntax.vim'
-Plug 'groenewege/vim-less'
-Plug 'hail2u/vim-css3-syntax'
+Plug 'wavded/vim-stylus', { 'for': 'scss' }
+Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
+Plug 'groenewege/vim-less', { 'for': 'less' }
+Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 Plug 'othree/html5-syntax.vim', { 'for': 'html' }
 Plug 'othree/html5.vim', { 'for': 'html' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'gavocanov/vim-js-indent', { 'for': 'javascript' }
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
-Plug 'ternjs/tern_for_vim', { 'for': 'javascript' }
-Plug 'plasticboy/vim-markdown'
-Plug 'lvht/tagbar-markdown'
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+Plug 'lvht/tagbar-markdown', { 'for': 'markdown' }
 Plug 'ironhouzi/vim-stim'
 Plug 'jreybert/vimagit'
-Plug 'Shougo/neosnippet.vim'|Plug 'Shougo/neosnippet-snippets'
-Plug 'fatih/vim-go'
-Plug 'jceb/vim-orgmode'|Plug 'tpope/vim-speeddating'
+Plug 'Shougo/neosnippet-snippets'
+Plug 'Shougo/neosnippet.vim'
+Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'tpope/vim-speeddating'
+Plug 'jceb/vim-orgmode'
 " Plug 'justmao945/vim-clang'
 Plug 'lvht/workspace.vim'
 Plug 'dsummersl/vimunit'
@@ -82,10 +84,11 @@ autocmd FileType markdown setlocal wrap
 autocmd BufRead composer.lock setlocal ft=json
 autocmd BufRead *.phpt setlocal ft=php
 autocmd BufRead *.phtml setlocal ft=html
-" 将光标跳转到上次打开当前文件的位置
-autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | "{{{
+
+" 将光标跳转到上次打开当前文件的位置 {{{
+autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
 			\ execute "normal! g`\"" |
-			\ endif "}}}
+			\ endif " }}}
 
 autocmd FileType php highlight link phpDocTags phpDefine
 autocmd FileType php highlight link phpDocParam phpType
