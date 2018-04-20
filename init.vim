@@ -16,7 +16,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'vim-scripts/matchit.zip'
 Plug '2072/PHP-Indenting-for-VIm', { 'for': 'php' }
 Plug 'StanAngeloff/php.vim', { 'for': 'php' }
-Plug 'lvht/phpcd.vim', { 'fo': 'php', 'do': 'composer update' }
+Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer update' }
 Plug 'lvht/phpfold.vim', { 'for': 'php', 'do': 'composer update' }
 Plug 'w0rp/ale'
 Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
@@ -104,6 +104,7 @@ autocmd FileType php highlight link phpDocParam phpType
 nnoremap <silent> <leader>t :TagbarToggle<CR>
 let g:tagbar_compact = 1
 let g:tagbar_sort = 0
+let g:tagbar_iconchars = ['▸', '▾']
 "{{{
 let g:tagbar_type_php = {
 	\ 'ctagsbin'  : 'phpctags',
