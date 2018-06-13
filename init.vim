@@ -62,8 +62,6 @@ set ignorecase
 set smartcase
 set smartindent
 set pastetoggle=<leader>v
-set nowrap
-set sidescroll=1
 set conceallevel=2
 
 nnoremap <silent> <CR> :noh<CR><CR>
