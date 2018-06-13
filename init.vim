@@ -2,7 +2,7 @@ call plug#begin()
 Plug 'vim-airline/vim-airline'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
-Plug 'KeitaNakamura/neodark.vim'
+Plug 'jacoborus/tender.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'junegunn/fzf'
 Plug 'lvht/fzf-mru'
@@ -45,11 +45,10 @@ Plug 'dsummersl/vimunit'
 Plug 'skywind3000/asyncrun.vim'
 call plug#end()
 
-let g:neodark#solid_vertsplit = 1
-color neodark
-highlight Normal guibg=#000001 ctermbg=0
-highlight Folded guifg=#666666 ctermfg=242 guibg=#1d1d1d ctermbg=234 gui=NONE cterm=NONE
-highlight VertSplit guifg=#282828 ctermfg=235 guibg=#282828 ctermbg=235 gui=NONE cterm=NONE
+color tender
+highlight Normal guibg=#000001 " 纯黑背景，酷
+highlight Visual guibg=#323232 ctermbg=0
+highlight Todo guifg=yellow guibg=bg gui=bold
 
 set colorcolumn=80
 set cursorline
