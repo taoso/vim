@@ -214,6 +214,7 @@ xmap <C-k> <Plug>(neosnippet_expand_target)
 autocmd FileType go nnoremap <buffer> <silent> <C-]> :GoDef<CR>
 autocmd FileType go nnoremap <buffer> <silent> <K> :GoDoc<CR>
 autocmd FileType go setlocal foldmethod=syntax
+autocmd BufWritePost *.go normal! zv
 " }}}
 
 let g:airline#extensions#whitespace#mixed_indent_algo = 1
