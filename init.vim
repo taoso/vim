@@ -1,4 +1,4 @@
-call plug#begin()
+call plug#begin() " {{{
 Plug 'vim-airline/vim-airline'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
@@ -36,14 +36,18 @@ Plug 'ironhouzi/vim-stim'
 Plug 'jreybert/vimagit'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'Shougo/neosnippet.vim'
-Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'fatih/vim-go'
+Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'jodosha/vim-godebug'
+Plug 'sebdah/vim-delve'
+Plug 'cespare/vim-toml'
 Plug 'tpope/vim-speeddating'
 Plug 'jceb/vim-orgmode'
 " Plug 'justmao945/vim-clang'
 Plug 'lvht/workspace.vim'
 Plug 'dsummersl/vimunit'
 Plug 'skywind3000/asyncrun.vim'
-call plug#end()
+call plug#end() " }}}
 
 color tender
 highlight Normal guibg=#000001 " 纯黑背景，酷
