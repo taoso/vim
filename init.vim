@@ -34,19 +34,11 @@ Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'lvht/tagbar-markdown', { 'for': 'markdown' }
 Plug 'ironhouzi/vim-stim'
 Plug 'jreybert/vimagit'
-Plug 'Shougo/neosnippet-snippets'
-Plug 'Shougo/neosnippet.vim'
 Plug 'fatih/vim-go'
-Plug 'zchee/deoplete-go', { 'do': 'make'}
-Plug 'jodosha/vim-godebug'
-Plug 'sebdah/vim-delve'
+Plug 'zchee/deoplete-go', { 'do': 'make', 'for': 'go' }
+Plug 'jodosha/vim-godebug', { 'for': 'go' }
+Plug 'sebdah/vim-delve', { 'for':'go' }
 Plug 'cespare/vim-toml'
-Plug 'tpope/vim-speeddating'
-Plug 'jceb/vim-orgmode'
-" Plug 'justmao945/vim-clang'
-Plug 'lvht/workspace.vim'
-Plug 'dsummersl/vimunit'
-Plug 'skywind3000/asyncrun.vim'
 call plug#end() " }}}
 
 color tender
@@ -200,18 +192,6 @@ let g:ale_lint_on_save = 1
 let g:ale_lint_on_enter = 0
 let g:ale_lint_on_text_changed = 0
 let g:ale_open_list = 1
-" }}}
-
-" vimwiki {{{
-let g:vimwiki_list = [{'path': '~/Nutstore/notes/me'},
-			\{'path': '~/Nutstore/notes/bili'}]
-" }}}
-
-" neosnippet {{{
-let g:neosnippet#enable_completed_snippet = 1
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-xmap <C-k> <Plug>(neosnippet_expand_target)
 " }}}
 
 " go {{{
