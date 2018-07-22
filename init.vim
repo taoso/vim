@@ -36,8 +36,6 @@ Plug 'ironhouzi/vim-stim'
 Plug 'jreybert/vimagit'
 Plug 'fatih/vim-go'
 Plug 'zchee/deoplete-go', { 'do': 'make', 'for': 'go' }
-Plug 'jodosha/vim-godebug', { 'for': 'go' }
-Plug 'sebdah/vim-delve', { 'for':'go' }
 Plug 'cespare/vim-toml'
 call plug#end() " }}}
 
