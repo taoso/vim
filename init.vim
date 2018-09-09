@@ -37,6 +37,7 @@ Plug 'jreybert/vimagit'
 Plug 'fatih/vim-go'
 Plug 'zchee/deoplete-go', { 'do': 'make', 'for': 'go' }
 Plug 'cespare/vim-toml'
+Plug 'Lenovsky/nuake'
 call plug#end() " }}}
 
 color tender
@@ -57,6 +58,7 @@ set smartcase
 set smartindent
 set pastetoggle=<leader>v
 set conceallevel=2
+set maxmempattern=2000000
 
 nnoremap <silent> <CR> :noh<CR><CR>
 func! ExpandTab(len) " {{{
@@ -73,7 +75,7 @@ func! ExpandTab(len) " {{{
 	endif
 endfunc " }}}
 autocmd FileType html,css,scss,javascript,tex call ExpandTab(2)
-autocmd FileType php,python,json,nginx call ExpandTab(4)
+autocmd FileType php,python,json,nginx,proto call ExpandTab(4)
 
 autocmd FileType vim setlocal foldmethod=marker
 autocmd FileType json setlocal foldmethod=syntax
@@ -193,12 +195,13 @@ let g:ale_open_list = 1
 " }}}
 
 " go {{{
-autocmd FileType go nnoremap <buffer> <silent> <C-]> :GoDef<CR>
-autocmd FileType go nnoremap <buffer> <silent> <K> :GoDoc<CR>
 autocmd InsertLeave,CompleteDone *.go if pumvisible() == 0 | pclose | endif
+let g:go_fmt_command = "goimports"
+let g:go_term_enabled = 0
 " }}}
 
 let g:airline#extensions#whitespace#mixed_indent_algo = 1
+let g:airline#extensions#whitespace#skip_indent_check_ft = {'go': ['mixed-indent-file']}
 
 command! DiffSaved vert new | set bt=nofile | r # | 0d_ | diffthis
 			\ | wincmd p | diffthis
