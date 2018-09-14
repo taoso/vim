@@ -40,12 +40,13 @@ Plug 'cespare/vim-toml'
 Plug 'Lenovsky/nuake'
 call plug#end() " }}}
 
-color tender
+color tender " {{{
 highlight Normal guibg=#000001 " 纯黑背景，酷
 highlight Visual guibg=#323232 ctermbg=0
 highlight Todo guifg=yellow guibg=bg gui=bold
+" }}}
 
-set colorcolumn=80
+set colorcolumn=80 " {{{
 set cursorline
 set linebreak
 set list
@@ -59,28 +60,13 @@ set smartindent
 set pastetoggle=<leader>v
 set conceallevel=2
 set maxmempattern=2000000
+" }}}
 
 nnoremap <silent> <CR> :noh<CR><CR>
-func! ExpandTab(len) " {{{
-	if a:len
-		setlocal expandtab
-		execute 'setlocal shiftwidth='.a:len
-		execute 'setlocal softtabstop='.a:len
-		execute 'setlocal tabstop='.a:len
-	else
-		setlocal noexpandtab
-		execute 'setlocal shiftwidth&vim'
-		execute 'setlocal softtabstop&vim'
-		execute 'setlocal tabstop&vim'
-	endif
-endfunc " }}}
-autocmd FileType html,css,scss,javascript,tex call ExpandTab(2)
-autocmd FileType php,python,json,nginx,proto call ExpandTab(4)
 
-autocmd FileType vim setlocal foldmethod=marker
-autocmd FileType json setlocal foldmethod=syntax
-autocmd FileType json setlocal foldlevel=1
-autocmd FileType markdown setlocal wrap
+autocmd FileType vim setlocal foldmethod=marker " {{{
+autocmd FileType html,css,scss,javascript,tex call lv#ExpandTab(2)
+autocmd FileType php,python,json,nginx,proto call lv#ExpandTab(4)
 autocmd BufRead composer.lock setlocal ft=json
 autocmd BufRead *.phpt setlocal ft=php
 autocmd BufRead *.phtml setlocal ft=html
@@ -89,49 +75,13 @@ autocmd BufRead *.phtml setlocal ft=html
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
 			\ execute "normal! g`\"" |
 			\ endif " }}}
-
-autocmd FileType php highlight link phpDocTags phpDefine
-autocmd FileType php highlight link phpDocParam phpType
+" }}}
 
 " Tagbar {{{
 nnoremap <silent> <leader>t :TagbarToggle<CR>
 let g:tagbar_compact = 1
 let g:tagbar_sort = 0
 let g:tagbar_iconchars = ['▸', '▾']
-"{{{
-let g:tagbar_type_php = {
-	\ 'ctagsbin'  : 'phpctags',
-	\ 'ctagsargs' : '-f -',
-	\ 'kinds'     : [
-		\ 'd:Constants:0:0',
-		\ 'v:Variables:0:0',
-		\ 'f:Functions:1',
-		\ 'i:Interfaces:0',
-		\ 'c:Classes:0',
-		\ 'p:Properties:0:0',
-		\ 'm:Methods:1',
-		\ 'n:Namespaces:0',
-		\ 't:Traits:0',
-	\ ],
-	\ 'sro'        : '::',
-	\ 'kind2scope' : {
-		\ 'c' : 'class',
-		\ 'm' : 'method',
-		\ 'f' : 'function',
-		\ 'i' : 'interface',
-		\ 'n' : 'namespace',
-		\ 't' : 'trait',
-	\ },
-	\ 'scope2kind' : {
-		\ 'class'     : 'c',
-		\ 'method'    : 'm',
-		\ 'function'  : 'f',
-		\ 'interface' : 'i',
-		\ 'namespace' : 'n',
-		\ 'trait'     : 't',
-	\ }
-\ }
-"}}}
 " }}}
 
 " NERD Tree {{{
@@ -156,35 +106,10 @@ let g:ackprg = 'ag --vimgrep --ignore tags'
 " }}}
 
 " fzf {{{
-function! s:FindRoot() " {{{
-	let pwd = expand("%:p:h")
-	let root = pwd
-
-	while root != "/"
-		if (isdirectory(root.'/.git'))
-			break
-		endif
-		if (filereadable(root.'/composer.json'))
-			break
-		endif
-		if (filereadable(root.'/configure'))
-			break
-		endif
-		if (isdirectory(root.'/.svn'))
-			break
-		endif
-		if (isdirectory(root.'/.hg'))
-			break
-		endif
-		let root = fnamemodify(root, ":h")
-	endwhile
-
-	let g:fzf_root = root
-	return root
-endfunction " }}}
-execute "nnoremap <silent> <C-p> :FZF ".s:FindRoot()."<CR>"
-nnoremap <silent> <C-u> :FZFMru<CR>
+let g:fzf_root = lv#FindRoot()
 let g:fzf_mru_file_list_size = 100
+execute "nnoremap <silent> <C-p> :FZF ".g:fzf_root."<CR>"
+nnoremap <silent> <C-u> :FZFMru<CR>
 " }}}
 
 " ale {{{
@@ -200,8 +125,7 @@ let g:go_fmt_command = "goimports"
 let g:go_term_enabled = 0
 " }}}
 
+" airline {{{
 let g:airline#extensions#whitespace#mixed_indent_algo = 1
 let g:airline#extensions#whitespace#skip_indent_check_ft = {'go': ['mixed-indent-file']}
-
-command! DiffSaved vert new | set bt=nofile | r # | 0d_ | diffthis
-			\ | wincmd p | diffthis
+" }}}
