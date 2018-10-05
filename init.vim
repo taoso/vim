@@ -1,5 +1,4 @@
 call plug#begin() " {{{
-Plug 'vim-airline/vim-airline'
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
 Plug 'jacoborus/tender.vim'
@@ -34,7 +33,7 @@ Plug 'ironhouzi/vim-stim'
 Plug 'jreybert/vimagit'
 Plug 'fatih/vim-go'
 Plug 'zchee/deoplete-go', { 'do': 'make', 'for': 'go' }
-Plug 'cespare/vim-toml'
+Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'Lenovsky/nuake'
 Plug 'cloudhead/neovim-fuzzy'
 call plug#end() " }}}
@@ -59,6 +58,7 @@ set smartindent
 set pastetoggle=<leader>v
 set conceallevel=2
 set maxmempattern=2000000
+set laststatus=1
 " }}}
 
 nnoremap <silent> <CR> :noh<CR><CR>
@@ -71,11 +71,10 @@ autocmd FileType php,python,json,nginx,proto call lv#ExpandTab(4)
 autocmd BufRead composer.lock setlocal ft=json
 autocmd BufRead *.phpt setlocal ft=php
 autocmd BufRead *.phtml setlocal ft=html
-
-" 将光标跳转到上次打开当前文件的位置 {{{
+" 将光标跳转到上次打开当前文件的位置
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
 			\ execute "normal! g`\"" |
-			\ endif " }}}
+			\ endif
 " }}}
 
 " Tagbar {{{
@@ -117,9 +116,4 @@ let g:ale_open_list = 1
 autocmd InsertLeave,CompleteDone *.go if pumvisible() == 0 | pclose | endif
 let g:go_fmt_command = "goimports"
 let g:go_term_enabled = 0
-" }}}
-
-" airline {{{
-let g:airline#extensions#whitespace#mixed_indent_algo = 1
-let g:airline#extensions#whitespace#skip_indent_check_ft = {'go': ['mixed-indent-file']}
 " }}}
