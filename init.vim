@@ -2,7 +2,7 @@ call plug#begin() " {{{
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
 Plug 'jacoborus/tender.vim'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/deoplete.nvim'
 Plug 'mileszs/ack.vim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
@@ -10,29 +10,29 @@ Plug 'tpope/vim-fugitive'
 Plug 'Townk/vim-autoclose'
 Plug 'godlygeek/tabular'
 Plug 'tomtom/tcomment_vim'
-Plug '2072/PHP-Indenting-for-VIm', { 'for': 'php' }
-Plug 'StanAngeloff/php.vim', { 'for': 'php' }
-Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer update' }
-Plug 'lvht/phpfold.vim', { 'for': 'php', 'do': 'composer update' }
+Plug '2072/PHP-Indenting-for-VIm'
+Plug 'StanAngeloff/php.vim'
+Plug 'lvht/phpcd.vim'
+Plug 'lvht/phpfold.vim'
 Plug 'w0rp/ale'
-Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
+Plug 'hynek/vim-python-pep8-indent'
 Plug 'justinmk/vim-syntax-extra'
-Plug 'wavded/vim-stylus', { 'for': 'scss' }
-Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
-Plug 'groenewege/vim-less', { 'for': 'less' }
-Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
-Plug 'othree/html5-syntax.vim', { 'for': 'html' }
-Plug 'othree/html5.vim', { 'for': 'html' }
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'gavocanov/vim-js-indent', { 'for': 'javascript' }
-Plug 'othree/yajs.vim', { 'for': 'javascript' }
-Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
-Plug 'lvht/tagbar-markdown', { 'for': 'markdown' }
+Plug 'wavded/vim-stylus'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'groenewege/vim-less'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'othree/html5-syntax.vim'
+Plug 'othree/html5.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'gavocanov/vim-js-indent'
+Plug 'othree/yajs.vim'
+Plug 'plasticboy/vim-markdown'
+Plug 'lvht/tagbar-markdown'
 Plug 'ironhouzi/vim-stim'
 Plug 'jreybert/vimagit'
 Plug 'fatih/vim-go'
-Plug 'zchee/deoplete-go', { 'do': 'make', 'for': 'go' }
-Plug 'cespare/vim-toml', { 'for': 'toml' }
+Plug 'zchee/deoplete-go'
+Plug 'cespare/vim-toml'
 Plug 'Lenovsky/nuake'
 Plug 'cloudhead/neovim-fuzzy'
 call plug#end() " }}}
