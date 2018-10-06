@@ -1,5 +1,8 @@
 autocmd FileType php highlight link phpDocTags phpDefine
 autocmd FileType php highlight link phpDocParam phpType
+autocmd BufRead composer.lock setlocal ft=json
+autocmd BufRead *.phpt setlocal ft=php
+autocmd BufRead *.phtml setlocal ft=html
 
 let g:tagbar_type_php = {
 	\ 'ctagsbin'  : 'phpctags',

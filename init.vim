@@ -10,7 +10,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'Townk/vim-autoclose'
 Plug 'godlygeek/tabular'
 Plug 'tomtom/tcomment_vim'
-Plug 'vim-scripts/matchit.zip'
 Plug '2072/PHP-Indenting-for-VIm', { 'for': 'php' }
 Plug 'StanAngeloff/php.vim', { 'for': 'php' }
 Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer update' }
@@ -68,9 +67,6 @@ nnoremap <silent> <C-u> :FuzzyMru<CR>
 autocmd FileType vim setlocal foldmethod=marker " {{{
 autocmd FileType html,css,scss,javascript,tex call lv#ExpandTab(2)
 autocmd FileType php,python,json,nginx,proto call lv#ExpandTab(4)
-autocmd BufRead composer.lock setlocal ft=json
-autocmd BufRead *.phpt setlocal ft=php
-autocmd BufRead *.phtml setlocal ft=html
 " 将光标跳转到上次打开当前文件的位置
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
 			\ execute "normal! g`\"" |
