@@ -57,7 +57,6 @@ set smartindent
 set pastetoggle=<leader>v
 set conceallevel=2
 set maxmempattern=2000000
-set laststatus=1
 " }}}
 
 nnoremap <silent> <CR> :noh<CR><CR>
