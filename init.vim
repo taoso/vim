@@ -38,13 +38,13 @@ Plug 'cloudhead/neovim-fuzzy'
 call plug#end() " }}}
 
 color tender " {{{
-highlight Normal guibg=#000001 " 纯黑背景，酷
-highlight Visual guibg=#323232 ctermbg=0
+highlight Normal guibg=#000001
+highlight Visual guibg=#323232
 highlight Todo guifg=yellow guibg=bg gui=bold
+highlight StatusLine guifg=NONE guibg=#323232 gui=bold
 " }}}
 
 set colorcolumn=80 " {{{
-set cursorline
 set linebreak
 set list
 set fileformat=unix
@@ -55,7 +55,6 @@ set ignorecase
 set smartcase
 set smartindent
 set pastetoggle=<leader>v
-set conceallevel=2
 set maxmempattern=2000000
 " }}}
 
