@@ -2,7 +2,9 @@ call plug#begin() " {{{
 Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
 Plug 'jacoborus/tender.vim'
-Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'junegunn/fzf'
+Plug 'lvht/fzf-mru'
 Plug 'mileszs/ack.vim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
@@ -31,10 +33,9 @@ Plug 'lvht/tagbar-markdown'
 Plug 'ironhouzi/vim-stim'
 Plug 'jreybert/vimagit'
 Plug 'fatih/vim-go'
-Plug 'zchee/deoplete-go'
+Plug 'zchee/deoplete-go', { 'do': 'make', 'for': 'go' }
 Plug 'cespare/vim-toml'
 Plug 'Lenovsky/nuake'
-Plug 'cloudhead/neovim-fuzzy'
 call plug#end() " }}}
 
 color tender " {{{
@@ -59,8 +60,6 @@ set maxmempattern=2000000
 " }}}
 
 nnoremap <silent> <CR> :noh<CR><CR>
-nnoremap <silent> <C-p> :FuzzyOpen<CR>
-nnoremap <silent> <C-u> :FuzzyMru<CR>
 
 autocmd FileType vim setlocal foldmethod=marker " {{{
 autocmd FileType html,css,scss,javascript,tex call lv#ExpandTab(2)
@@ -97,6 +96,13 @@ let g:deoplete#file#enable_buffer_path = 1
 
 " ack {{{
 let g:ackprg = 'ag --vimgrep --ignore tags'
+" }}}
+
+" fzf {{{
+let g:fzf_root = lv#FindRoot()
+let g:fzf_mru_file_list_size = 100
+execute "nnoremap <silent> <C-p> :FZF ".g:fzf_root."<CR>"
+nnoremap <silent> <C-u> :FZFMru<CR>
 " }}}
 
 " ale {{{
