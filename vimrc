@@ -29,3 +29,9 @@ let g:tagbar_sort = 0
 let g:tagbar_iconchars = ['▸', '▾']
 let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_frontmatter=1
+
+if has('nvim')
+	let g:deoplete#enable_at_startup = 1
+	let g:deoplete#file#enable_buffer_path = 1
+	packadd deoplete
+endif
