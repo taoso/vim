@@ -22,3 +22,12 @@
 [submodule "pack/vendor/start/tender"]
 	path = pack/vendor/start/tender
 	url = https://github.com/jacoborus/tender.vim.git
+[submodule "pack/vendor/start/fugitive"]
+	path = pack/vendor/start/fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "pack/vendor/start/gitgutter"]
+	path = pack/vendor/start/gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "pack/vendor/start/vimagit"]
+	path = pack/vendor/start/vimagit
+	url = https://github.com/jreybert/vimagit.git
