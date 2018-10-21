@@ -13,3 +13,9 @@
 [submodule "pack/vendor/start/ack"]
 	path = pack/vendor/start/ack
 	url = https://github.com/mileszs/ack.vim.git
+[submodule "pack/vendor/start/markdown"]
+	path = pack/vendor/start/markdown
+	url = https://github.com/plasticboy/vim-markdown.git
+[submodule "pack/vendor/start/tagbar-markdown"]
+	path = pack/vendor/start/tagbar-markdown
+	url = git@github.com:lvht/tagbar-markdown.git
