@@ -34,3 +34,6 @@
 [submodule "pack/vendor/start/tcomment"]
 	path = pack/vendor/start/tcomment
 	url = https://github.com/tomtom/tcomment_vim.git
+[submodule "pack/vendor/start/ale"]
+	path = pack/vendor/start/ale
+	url = https://github.com/w0rp/ale.git
