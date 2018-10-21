@@ -1,8 +1,3 @@
-__!!Archived. Use [lvht/vim](https://github.com/lvht/vim) instead!!__
+# lv's vimrc
 
-Lv's NeoVim conf
-================
-
-Some useful configuration and plugins. **NeoVim ONLY**!!
-
-Enjoy it :)
+Support both vim8 and neovim.
