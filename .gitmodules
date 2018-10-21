@@ -10,3 +10,6 @@
 [submodule "pack/vendor/start/tagbar"]
 	path = pack/vendor/start/tagbar
 	url = https://github.com/majutsushi/tagbar.git
+[submodule "pack/vendor/start/ack"]
+	path = pack/vendor/start/ack
+	url = https://github.com/mileszs/ack.vim.git

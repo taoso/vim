@@ -15,3 +15,4 @@ nnoremap <silent> <leader>t :TagbarToggle<cr>
 autocmd BufReadPost * if line("\"") > 0 | execute "normal! g`\"" | endif
 
 let g:netrw_dirhistmax = 0
+let g:ackprg = 'ag --vimgrep'
