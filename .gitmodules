@@ -19,3 +19,6 @@
 [submodule "pack/vendor/start/tagbar-markdown"]
 	path = pack/vendor/start/tagbar-markdown
 	url = git@github.com:lvht/tagbar-markdown.git
+[submodule "pack/vendor/start/tender"]
+	path = pack/vendor/start/tender
+	url = https://github.com/jacoborus/tender.vim.git
