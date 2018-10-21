@@ -37,3 +37,9 @@
 [submodule "pack/vendor/start/ale"]
 	path = pack/vendor/start/ale
 	url = https://github.com/w0rp/ale.git
+[submodule "pack/vendor/start/phpcd"]
+	path = pack/vendor/start/phpcd
+	url = https://github.com/lvht/phpcd.vim.git
+[submodule "pack/vendor/start/phpfold"]
+	path = pack/vendor/start/phpfold
+	url = https://github.com/lvht/phpfold.vim.git
