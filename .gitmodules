@@ -31,3 +31,6 @@
 [submodule "pack/vendor/start/vimagit"]
 	path = pack/vendor/start/vimagit
 	url = https://github.com/jreybert/vimagit.git
+[submodule "pack/vendor/start/tcomment"]
+	path = pack/vendor/start/tcomment
+	url = https://github.com/tomtom/tcomment_vim.git
