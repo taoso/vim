@@ -7,3 +7,6 @@
 [submodule "pack/vendor/start/airline"]
 	path = pack/vendor/start/airline
 	url = https://github.com/vim-airline/vim-airline.git
+[submodule "pack/vendor/start/tagbar"]
+	path = pack/vendor/start/tagbar
+	url = https://github.com/majutsushi/tagbar.git

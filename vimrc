@@ -10,7 +10,8 @@ highlight Visual guibg=#323232
 
 nnoremap <silent> <c-u> :Mru<cr>
 nnoremap <silent> <c-p> :call fzf#Open()<cr>
+nnoremap <silent> <leader>t :TagbarToggle<cr>
 
-autocmd BufReadPost * execute "normal! g`\""
+autocmd BufReadPost * if line("\"") > 0 | execute "normal! g`\"" | endif
 
 let g:netrw_dirhistmax = 0
