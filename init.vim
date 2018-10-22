@@ -23,12 +23,14 @@ nnoremap <silent> <leader>t :TagbarToggle<cr>
 autocmd BufReadPost * if line("\"") > 0 | execute "normal! g`\"" | endif
 
 let g:netrw_dirhistmax = 0
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
 let g:ackprg = 'ag --vimgrep'
 let g:tagbar_compact = 1
 let g:tagbar_sort = 0
 let g:tagbar_iconchars = ['▸', '▾']
-let g:vim_markdown_folding_disabled=1
-let g:vim_markdown_frontmatter=1
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_frontmatter = 1
 
 if has('nvim')
 	let g:deoplete#enable_at_startup = 1
