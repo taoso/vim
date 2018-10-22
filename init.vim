@@ -19,12 +19,13 @@ highlight Normal guibg=#000001
 nnoremap <silent> <c-u> :Mru<cr>
 nnoremap <silent> <c-p> :call fzf#Open()<cr>
 nnoremap <silent> <leader>t :TagbarToggle<cr>
+nnoremap <silent> <leader>e :NERDTreeToggle<cr>
+nnoremap <silent> <leader>f :NERDTreeFind<cr>
 
 autocmd BufReadPost * if line("\"") > 0 | execute "normal! g`\"" | endif
 
-let g:netrw_dirhistmax = 0
-let g:netrw_liststyle = 3
-let g:netrw_banner = 0
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeChDirMode = 2
 let g:ackprg = 'ag --vimgrep'
 let g:tagbar_compact = 1
 let g:tagbar_sort = 0

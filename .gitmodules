@@ -52,3 +52,6 @@
 [submodule "pack/vendor/opt/deoplete-go"]
 	path = pack/vendor/opt/deoplete-go
 	url = https://github.com/zchee/deoplete-go.git
+[submodule "pack/vendor/start/nerdtree"]
+	path = pack/vendor/start/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
