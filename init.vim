@@ -22,7 +22,9 @@ nnoremap <silent> <leader>t :TagbarToggle<cr>
 nnoremap <silent> <leader>e :NERDTreeToggle<cr>
 nnoremap <silent> <leader>f :NERDTreeFind<cr>
 
-autocmd BufReadPost * if line("\"") > 0 | execute "normal! g`\"" | endif
+autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
+			\ execute "normal! g`\"" |
+			\ endif
 
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeChDirMode = 2
