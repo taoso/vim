@@ -11,3 +11,19 @@ function! lv#ExpandTab(len)
 		execute 'setlocal tabstop&vim'
 	endif
 endfunction
+
+func ExitTerm(...)
+	bdelete!
+endfunc
+
+func lv#Term()
+	tabnew
+	if has('nvim')
+		let options = {'on_exit': 'ExitTerm'}
+		call termopen($SHELL, options)
+		startinsert
+	else
+		terminal ++curwin
+	endif
+endfunc
+

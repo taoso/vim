@@ -21,6 +21,8 @@ nnoremap <silent> <c-p> :call fzf#Open()<cr>
 nnoremap <silent> <leader>t :TagbarToggle<cr>
 nnoremap <silent> <leader>e :NERDTreeToggle<cr>
 nnoremap <silent> <leader>f :NERDTreeFind<cr>
+nnoremap <c-w><c-t> :call lv#Term()<cr>
+tnoremap <c-w><c-t> <c-\><c-n>:call lv#Term()<cr>
 
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
 			\ execute "normal! g`\"" |
