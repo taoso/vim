@@ -12,11 +12,11 @@ function! lv#ExpandTab(len)
 	endif
 endfunction
 
-func ExitTerm(...)
+function! ExitTerm(...)
 	bdelete!
-endfunc
+endfunction
 
-func lv#Term()
+function! lv#Term()
 	tabnew
 	if has('nvim')
 		let options = {'on_exit': 'ExitTerm'}
@@ -25,5 +25,4 @@ func lv#Term()
 	else
 		terminal ++curwin
 	endif
-endfunc
-
+endfunction

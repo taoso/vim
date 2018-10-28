@@ -27,6 +27,8 @@ tnoremap <c-w><c-t> <c-\><c-n>:call lv#Term()<cr>
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
 			\ execute "normal! g`\"" |
 			\ endif
+autocmd BufWritePre *.js,*.jsx,*.css,*.less,*.scss,*.json PrettierAsync
+autocmd FileType jsavascript, jsx, css, less, scss, json call lv#ExpandTab(2)
 
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeChDirMode = 2
@@ -36,6 +38,7 @@ let g:tagbar_sort = 0
 let g:tagbar_iconchars = ['▸', '▾']
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_frontmatter = 1
+let g:prettier#autoformat = 0
 
 if has('nvim')
 	let g:deoplete#enable_at_startup = 1
