@@ -39,6 +39,7 @@ let g:tagbar_iconchars = ['▸', '▾']
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_frontmatter = 1
 let g:prettier#autoformat = 0
+let g:go_fmt_command = "goimports"
 
 if has('nvim')
 	let g:deoplete#enable_at_startup = 1
