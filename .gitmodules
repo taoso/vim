@@ -64,3 +64,6 @@
 [submodule "pack/vendor/start/jsx"]
 	path = pack/vendor/start/jsx
 	url = https://github.com/mxw/vim-jsx
+[submodule "pack/vendor/start/stim"]
+	path = pack/vendor/start/stim
+	url = https://github.com/ironhouzi/vim-stim.git
