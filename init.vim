@@ -28,7 +28,8 @@ autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
 			\ execute "normal! g`\"" |
 			\ endif
 autocmd BufWritePre *.js,*.jsx,*.css,*.less,*.scss,*.json PrettierAsync
-autocmd FileType jsavascript, jsx, css, less, scss, json call lv#ExpandTab(2)
+autocmd BufReadPost *.js,*.jsx,*.css,*.less,*.scss,*.json call lv#ExpandTab(2)
+autocmd InsertLeave,CompleteDone *.go if pumvisible() == 0 | pclose | endif
 
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeChDirMode = 2
