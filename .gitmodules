@@ -67,3 +67,6 @@
 [submodule "pack/vendor/start/stim"]
 	path = pack/vendor/start/stim
 	url = https://github.com/ironhouzi/vim-stim.git
+[submodule "pack/vendor/start/tabular"]
+	path = pack/vendor/start/tabular
+	url = https://github.com/godlygeek/tabular
