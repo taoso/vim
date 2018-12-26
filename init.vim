@@ -6,7 +6,7 @@ set ignorecase
 set smartcase
 set smartindent
 set fileformat=unix
-set fileencodings=ucs-bom,utf-8,cp936,gb18030
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,utf-16
 set linebreak
 set colorcolumn=80
 set termguicolors
