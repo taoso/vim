@@ -10,6 +10,7 @@ set fileencodings=ucs-bom,utf-8,cp936,gb18030,utf-16
 set linebreak
 set colorcolumn=80
 set termguicolors
+set cursorline
 let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 color tender
@@ -27,7 +28,7 @@ tnoremap <c-w><c-t> <c-\><c-n>:call lv#Term()<cr>
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
 			\ execute "normal! g`\"" |
 			\ endif
-autocmd BufWritePre *.js,*.jsx,*.css,*.less,*.scss,*.json PrettierAsync
+
 autocmd BufReadPost *.js,*.jsx,*.css,*.less,*.scss,*.json call lv#ExpandTab(2)
 autocmd InsertLeave,CompleteDone *.go if pumvisible() == 0 | pclose | endif
 
