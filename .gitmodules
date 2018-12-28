@@ -49,9 +49,6 @@
 [submodule "pack/vendor/opt/deoplete"]
 	path = pack/vendor/opt/deoplete
 	url = https://github.com/Shougo/deoplete.nvim.git
-[submodule "pack/vendor/opt/deoplete-go"]
-	path = pack/vendor/opt/deoplete-go
-	url = https://github.com/zchee/deoplete-go.git
 [submodule "pack/vendor/start/nerdtree"]
 	path = pack/vendor/start/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
