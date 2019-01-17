@@ -67,3 +67,9 @@
 [submodule "pack/vendor/start/tabular"]
 	path = pack/vendor/start/tabular
 	url = https://github.com/godlygeek/tabular
+[submodule "pack/vendor/start/toml"]
+	path = pack/vendor/start/toml
+	url = https://github.com/cespare/vim-toml.git
+[submodule "pack/vendor/start/nerdtree-git"]
+	path = pack/vendor/start/nerdtree-git
+	url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
