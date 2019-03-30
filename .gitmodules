@@ -73,3 +73,6 @@
 [submodule "pack/vendor/start/nerdtree-git"]
 	path = pack/vendor/start/nerdtree-git
 	url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
+[submodule "pack/vendor/start/indent-line"]
+	path = pack/vendor/start/indent-line
+	url = https://github.com/Yggdroot/indentLine
