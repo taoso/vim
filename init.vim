@@ -1,5 +1,6 @@
 syntax on
 filetype plugin indent on
+
 set noswapfile
 set noshowmode
 set ignorecase
@@ -12,6 +13,7 @@ set colorcolumn=80
 set cursorline
 set backspace=indent,eol,start
 set foldtext=getline(nextnonblank(v:foldstart))
+set encoding=utf-8
 
 set termguicolors
 let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
