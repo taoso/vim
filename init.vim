@@ -18,6 +18,7 @@ set cursorline
 set backspace=indent,eol,start
 set encoding=utf-8
 set maxmempattern=2000000
+set laststatus=2
 
 set termguicolors
 let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
@@ -25,6 +26,9 @@ let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 color tender
 highlight Visual guibg=#323232
 highlight Normal guibg=#000001
+highlight StatusLine guibg=#444444 guifg=#b3deef
+highlight StatusLineTerm guibg=#444444 guifg=#b3deef
+highlight StatusLineTermNC guibg=#444444 guifg=#999999
 
 nnoremap <silent> <c-u> :Mru<cr>
 nnoremap <silent> <c-p> :call fzf#Open()<cr>
