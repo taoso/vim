@@ -2,4 +2,4 @@
 
 Support both vim8 and neovim.
 
-Use `git submodule` and `vim-package` to manage plugins.
+<https://thinkinvim.org/articles/vim-plugin-git/>.
