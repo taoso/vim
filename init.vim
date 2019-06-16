@@ -1,6 +1,7 @@
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
 			\ execute "normal! g`\"" |
 			\ endif
+
 syntax on
 filetype plugin indent on
 
@@ -37,22 +38,6 @@ autocmd FileType yaml setlocal foldmethod=indent|call lv#ExpandTab(2)
 autocmd FileType go setlocal formatoptions+=ro
 autocmd InsertLeave,CompleteDone *.go if pumvisible() == 0 | pclose | endif
 
-autocmd BufReadPre *.php
-			\ packadd phpcd |
-			\ packadd phpfold
-autocmd BufReadPre *.md
-			\ packadd markdown |
-			\ packadd tagbar-markdown
-autocmd BufReadPre *.toml
-			\ packadd toml
-autocmd BufReadPre *.go
-			\ packadd go
-autocmd BufReadPre *.js
-			\ packadd javascript |
-			\ packadd prettier |
-autocmd BufReadPre *.ts
-			\ packadd ts
-
 command -nargs=1 ExpandTab call lv#ExpandTab(<f-args>)
 
 let g:NERDTreeMinimalUI = 1
@@ -69,5 +54,19 @@ let g:vim_markdown_conceal = 0
 let g:go_fmt_command = "goimports"
 let g:go_metalinter_command='golanci-lint'
 let g:go_fmt_fail_silently = 1
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#file#enable_buffer_path = 1
+
+autocmd BufReadPre *.php
+			\ packadd phpcd |
+			\ packadd phpfold
+autocmd BufReadPre *.md
+			\ packadd markdown |
+			\ packadd tagbar-markdown
+autocmd BufReadPre *.toml
+			\ packadd toml
+autocmd BufReadPre *.go
+			\ packadd go
+autocmd BufReadPre *.js
+			\ packadd javascript |
+			\ packadd prettier |
+autocmd BufReadPre *.ts
+			\ packadd ts
