@@ -19,6 +19,8 @@ set encoding=utf-8
 set maxmempattern=2000000
 
 set termguicolors
+let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 color tender
 highlight Visual guibg=#323232
 highlight Normal guibg=#000001
@@ -54,10 +56,3 @@ let g:go_metalinter_command='golanci-lint'
 let g:go_fmt_fail_silently = 1
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#file#enable_buffer_path = 1
-
-if !has('nvim')
-	let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
-	let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
-	packadd nvim-rpc
-	packadd nvim-yarp
-endif
