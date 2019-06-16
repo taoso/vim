@@ -52,11 +52,12 @@ let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_conceal = 0
 let g:go_fmt_command = "goimports"
 let g:go_metalinter_command='golanci-lint'
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#file#enable_buffer_path = 1
 
-if has('nvim')
-	let g:deoplete#enable_at_startup = 1
-	let g:deoplete#file#enable_buffer_path = 1
-	packadd deoplete
+if !has('nvim')
+    packadd nvim-rpc
+    packadd nvim-yarp
 endif
 
 function! ExpandTab(len)

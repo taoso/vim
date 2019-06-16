@@ -47,7 +47,7 @@
 	path = pack/vendor/start/go
 	url = https://github.com/fatih/vim-go.git
 [submodule "pack/vendor/opt/deoplete"]
-	path = pack/vendor/opt/deoplete
+	path = pack/vendor/start/deoplete
 	url = https://github.com/Shougo/deoplete.nvim.git
 [submodule "pack/vendor/start/nerdtree"]
 	path = pack/vendor/start/nerdtree
@@ -73,3 +73,9 @@
 [submodule "pack/vendor/start/nerdtree-git"]
 	path = pack/vendor/start/nerdtree-git
 	url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
+[submodule "pack/vendor/opt/neovim-rpc"]
+	path = pack/vendor/opt/nvim-rpc
+	url = https://github.com/roxma/vim-hug-neovim-rpc
+[submodule "pack/vendor/opt/nvim-yarp"]
+	path = pack/vendor/opt/nvim-yarp
+	url = https://github.com/roxma/nvim-yarp
