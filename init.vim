@@ -38,6 +38,22 @@ autocmd FileType yaml setlocal foldmethod=indent|call lv#ExpandTab(2)
 autocmd FileType go setlocal formatoptions+=ro
 autocmd InsertLeave,CompleteDone *.go if pumvisible() == 0 | pclose | endif
 
+autocmd BufReadPre *.php
+			\ packadd phpcd |
+			\ packadd phpfold
+autocmd BufReadPre *.md
+			\ packadd markdown |
+			\ packadd tagbar-markdown
+autocmd BufReadPre *.toml
+			\ packadd toml
+autocmd BufReadPre *.go
+			\ packadd go
+autocmd BufReadPre *.js
+			\ packadd javascript |
+			\ packadd prettier
+autocmd BufReadPre *.jsx
+			\ packadd jsx
+
 command -nargs=1 ExpandTab call lv#ExpandTab(<f-args>)
 
 let g:NERDTreeMinimalUI = 1

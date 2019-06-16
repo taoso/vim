@@ -14,10 +14,10 @@
 	path = pack/vendor/start/ack
 	url = https://github.com/mileszs/ack.vim.git
 [submodule "pack/vendor/start/markdown"]
-	path = pack/vendor/start/markdown
+	path = pack/vendor/opt/markdown
 	url = https://github.com/plasticboy/vim-markdown.git
 [submodule "pack/vendor/start/tagbar-markdown"]
-	path = pack/vendor/start/tagbar-markdown
+	path = pack/vendor/opt/tagbar-markdown
 	url = https://github.com/lvht/tagbar-markdown.git
 [submodule "pack/vendor/start/tender"]
 	path = pack/vendor/start/tender
@@ -38,25 +38,25 @@
 	path = pack/vendor/start/ale
 	url = https://github.com/w0rp/ale.git
 [submodule "pack/vendor/start/phpcd"]
-	path = pack/vendor/start/phpcd
+	path = pack/vendor/opt/phpcd
 	url = https://github.com/lvht/phpcd.vim.git
 [submodule "pack/vendor/start/phpfold"]
-	path = pack/vendor/start/phpfold
+	path = pack/vendor/opt/phpfold
 	url = https://github.com/lvht/phpfold.vim.git
 [submodule "pack/vendor/start/go"]
-	path = pack/vendor/start/go
+	path = pack/vendor/opt/go
 	url = https://github.com/fatih/vim-go.git
 [submodule "pack/vendor/start/nerdtree"]
 	path = pack/vendor/start/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
 [submodule "pack/vendor/start/prettier"]
-	path = pack/vendor/start/prettier
+	path = pack/vendor/opt/prettier
 	url = https://github.com/prettier/vim-prettier.git
 [submodule "pack/vendor/start/javascript"]
-	path = pack/vendor/start/javascript
+	path = pack/vendor/opt/javascript
 	url = https://github.com/pangloss/vim-javascript
 [submodule "pack/vendor/start/jsx"]
-	path = pack/vendor/start/jsx
+	path = pack/vendor/opt/jsx
 	url = https://github.com/mxw/vim-jsx
 [submodule "pack/vendor/start/stim"]
 	path = pack/vendor/start/stim
@@ -65,7 +65,7 @@
 	path = pack/vendor/start/tabular
 	url = https://github.com/godlygeek/tabular
 [submodule "pack/vendor/start/toml"]
-	path = pack/vendor/start/toml
+	path = pack/vendor/opt/toml
 	url = https://github.com/cespare/vim-toml.git
 [submodule "pack/vendor/start/nerdtree-git"]
 	path = pack/vendor/start/nerdtree-git
