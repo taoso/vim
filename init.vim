@@ -33,26 +33,24 @@ autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
 			\ endif
 
 autocmd BufReadPost *.js,*.css,*.json call ExpandTab(2)
+autocmd BufReadPost *.ts set filetype=javascript
 autocmd FileType proto call ExpandTab(4)
 autocmd FileType yaml setlocal foldmethod=indent|call ExpandTab(2)
 autocmd FileType go setlocal formatoptions+=ro
 autocmd InsertLeave,CompleteDone *.go if pumvisible() == 0 | pclose | endif
 
-autocmd BufReadPost *.ts set filetype=javascript
-
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeChDirMode = 2
+let g:NERDTreeWinSize=24
 let g:ackprg = 'ag --vimgrep'
 let g:tagbar_compact = 1
 let g:tagbar_sort = 0
 let g:tagbar_iconchars = ['▸', '▾']
+let g:tagbar_width = 30
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_conceal = 0
-let g:prettier#autoformat = 0
 let g:go_fmt_command = "goimports"
-let g:go_def_mode='gopls'
-let g:go_info_mode='gopls'
 let g:go_metalinter_command='golanci-lint'
 
 if has('nvim')
