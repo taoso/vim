@@ -51,8 +51,6 @@ autocmd BufReadPre *.go
 autocmd BufReadPre *.js
 			\ packadd javascript |
 			\ packadd prettier
-autocmd BufReadPre *.jsx
-			\ packadd jsx
 
 command -nargs=1 ExpandTab call lv#ExpandTab(<f-args>)
 
