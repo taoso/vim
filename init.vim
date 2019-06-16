@@ -31,8 +31,7 @@ nnoremap <silent> <leader>t :TagbarToggle<cr>
 nnoremap <silent> <leader>e :NERDTreeToggle<cr>
 nnoremap <silent> <leader>f :NERDTreeFind<cr>
 
-autocmd BufReadPost *.js,*.css,*.json call lv#ExpandTab(2)
-autocmd BufReadPost *.ts set filetype=javascript
+autocmd BufReadPost *.js,*.ts,*.css,*.json call lv#ExpandTab(2)
 autocmd FileType proto call lv#ExpandTab(4)
 autocmd FileType yaml setlocal foldmethod=indent|call lv#ExpandTab(2)
 autocmd FileType go setlocal formatoptions+=ro
@@ -50,7 +49,9 @@ autocmd BufReadPre *.go
 			\ packadd go
 autocmd BufReadPre *.js
 			\ packadd javascript |
-			\ packadd prettier
+			\ packadd prettier |
+autocmd BufReadPre *.ts
+			\ packadd ts
 
 command -nargs=1 ExpandTab call lv#ExpandTab(<f-args>)
 

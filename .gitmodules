@@ -67,3 +67,6 @@
 [submodule "pack/vendor/start/nerdtree-git"]
 	path = pack/vendor/start/nerdtree-git
 	url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
+[submodule "pack/vendor/opt/ts"]
+	path = pack/vendor/opt/ts
+	url = https://github.com/leafgarland/typescript-vim
