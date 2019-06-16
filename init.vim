@@ -59,18 +59,9 @@ let g:go_fmt_command = "goimports"
 let g:go_metalinter_command='golanci-lint'
 let g:go_fmt_fail_silently = 1
 
-autocmd BufReadPre *.php
-			\ packadd phpcd |
-			\ packadd phpfold
-autocmd BufReadPre *.md
-			\ packadd markdown |
-			\ packadd tagbar-markdown
-autocmd BufReadPre *.toml
-			\ packadd toml
-autocmd BufReadPre *.go
-			\ packadd go
-autocmd BufReadPre *.js
-			\ packadd javascript |
-			\ packadd prettier |
-autocmd BufReadPre *.ts
-			\ packadd ts
+autocmd BufReadPre *.go   packadd go
+autocmd BufReadPre *.js   packadd javascript | packadd prettier
+autocmd BufReadPre *.md   packadd markdown | packadd tagbar-markdown
+autocmd BufReadPre *.php  packadd phpcd | packadd phpfold
+autocmd BufReadPre *.toml packadd toml
+autocmd BufReadPre *.ts   packadd ts
