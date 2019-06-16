@@ -6,19 +6,18 @@ syntax on
 filetype plugin indent on
 
 set noswapfile
-set noshowmode
 set ignorecase
 set smartcase
-set smartindent
+set autoindent
+set encoding=utf-8
+set fileencodings=utf-8,gb18030
 set fileformat=unix
-set fileencodings=ucs-bom,utf-8,cp936,gb18030,utf-16
-set linebreak
 set colorcolumn=80
 set cursorline
-set backspace=indent,eol,start
-set encoding=utf-8
-set maxmempattern=2000000
+set linebreak
 set laststatus=2
+set maxmempattern=2000000
+set backspace=indent,eol,start
 
 set termguicolors
 let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
@@ -56,7 +55,6 @@ let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_conceal = 0
 let g:go_fmt_command = "goimports"
-let g:go_metalinter_command='golanci-lint'
 let g:go_fmt_fail_silently = 1
 
 autocmd BufReadPre *.go   packadd go
