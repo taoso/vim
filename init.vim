@@ -1,3 +1,6 @@
+autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
+			\ execute "normal! g`\"" |
+			\ endif
 syntax on
 filetype plugin indent on
 
@@ -13,6 +16,7 @@ set colorcolumn=80
 set cursorline
 set backspace=indent,eol,start
 set encoding=utf-8
+set maxmempattern=2000000
 
 set termguicolors
 color tender
@@ -24,10 +28,6 @@ nnoremap <silent> <c-p> :call fzf#Open()<cr>
 nnoremap <silent> <leader>t :TagbarToggle<cr>
 nnoremap <silent> <leader>e :NERDTreeToggle<cr>
 nnoremap <silent> <leader>f :NERDTreeFind<cr>
-
-autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
-			\ execute "normal! g`\"" |
-			\ endif
 
 autocmd BufReadPost *.js,*.css,*.json call lv#ExpandTab(2)
 autocmd BufReadPost *.ts set filetype=javascript
