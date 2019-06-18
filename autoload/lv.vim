@@ -11,3 +11,18 @@ function! lv#ExpandTab(len)
 		execute 'setlocal tabstop&vim'
 	endif
 endfunction
+
+function! lv#Term()
+	if &buftype == "terminal"
+		execute 'keepalt vertical split'
+		execute 'wincmd w'
+	else
+		execute 'keepalt belowright new'
+	end
+	if has('nvim')
+		execute 'terminal'
+		startinsert
+	else
+		execute 'terminal ++curwin'
+	end
+endfunction

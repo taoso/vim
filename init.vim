@@ -34,6 +34,7 @@ nnoremap <silent> <c-p> :call fzf#Open()<cr>
 nnoremap <silent> <leader>t :TagbarToggle<cr>
 nnoremap <silent> <leader>e :NERDTreeToggle<cr>
 nnoremap <silent> <leader>f :NERDTreeFind<cr>
+nnoremap <silent> <leader>c :call lv#Term()<cr>
 
 autocmd BufReadPost *.js,*.ts,*.css,*.json call lv#ExpandTab(2)
 autocmd FileType proto call lv#ExpandTab(4)
