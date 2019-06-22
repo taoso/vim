@@ -6,11 +6,14 @@ set laststatus=2
 set colorcolumn=80
 set cursorline
 set linebreak
-set termguicolors
+set autoindent
+set ignorecase
+set smartcase
 
 filetype plugin indent on
 syntax on
 
+set termguicolors
 color tender
 highlight Visual guibg=#323232
 highlight Normal guibg=#000001
