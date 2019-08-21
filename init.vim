@@ -9,6 +9,8 @@ set linebreak
 set autoindent
 set ignorecase
 set smartcase
+set ruler
+set diffopt+=internal,indent-heuristic,algorithm:patience
 
 filetype plugin indent on
 syntax on
