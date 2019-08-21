@@ -39,6 +39,8 @@ autocmd BufReadPost *.js,*.ts,*.css,*.json,*.yaml call lv#ExpandTab(2)
 autocmd FileType proto call lv#ExpandTab(4)
 autocmd FileType go setlocal formatoptions+=ro
 
+autocmd FileType vim nnoremap <c-]> :call vim#Jump()<cr>
+
 command -nargs=1 ExpandTab call lv#ExpandTab(<f-args>)
 
 let g:NERDTreeMinimalUI = 1
