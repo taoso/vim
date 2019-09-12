@@ -54,5 +54,3 @@ let g:tagbar_width = 30
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_conceal = 0
-let g:go_fmt_command = "goimports"
-let g:go_fmt_fail_silently = 1
