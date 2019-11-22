@@ -11,6 +11,7 @@ set ignorecase
 set smartcase
 set ruler
 set diffopt+=internal,indent-heuristic,algorithm:patience
+set showcmd
 
 filetype plugin indent on
 syntax on
@@ -40,6 +41,7 @@ autocmd FileType proto call lv#ExpandTab(4)
 autocmd FileType go setlocal formatoptions+=ro
 
 autocmd FileType vim nnoremap <buffer> <c-]> :call vim#Jump()<cr>
+autocmd FileType go nnoremap <buffer> <c-]> :ALEGoToDefinition<cr>
 
 command -nargs=1 ExpandTab call lv#ExpandTab(<f-args>)
 
@@ -55,8 +57,17 @@ let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_conceal = 0
 
+let g:ale_linters = {'go':['gopls']}
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'go': ['goimports'],
+\}
+let g:ale_fix_on_save = 1
+let g:ale_open_list = 'on_save'
+
 if !has('nvim')
 	packadd yarp
 	packadd vim-hug-neovim-rpc
 end
 let g:deoplete#enable_at_startup = 1
+autocmd VimEnter * call deoplete#custom#option('ale', 200)
