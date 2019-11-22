@@ -54,3 +54,9 @@ let g:tagbar_width = 30
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_conceal = 0
+
+if !has('nvim')
+	packadd yarp
+	packadd vim-hug-neovim-rpc
+end
+let g:deoplete#enable_at_startup = 1

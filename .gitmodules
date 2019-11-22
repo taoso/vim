@@ -67,3 +67,18 @@
 [submodule "pack/vendor/start/drawit"]
 	path = pack/vendor/start/drawit
 	url = https://github.com/vim-scripts/DrawIt.git
+[submodule "pack/vendor/opt/deoplete"]
+	path = pack/vendor/start/deoplete
+	url = https://github.com/Shougo/deoplete.nvim
+[submodule "pack/vendor/opt/yarp"]
+	path = pack/vendor/opt/yarp
+	url = https://github.com/roxma/nvim-yarp
+[submodule "pack/vendor/opt/vim-hug-neovim-rpc"]
+	path = pack/vendor/opt/vim-hug-neovim-rpc
+	url = https://github.com/roxma/vim-hug-neovim-rpc
+[submodule "pack/vendor/start/jumpy"]
+	path = pack/vendor/start/jumpy
+	url = https://github.com/arp242/jumpy.vim
+[submodule "pack/vendor/start/tagbar-proto"]
+	path = pack/vendor/start/tagbar-proto
+	url = https://github.com/tenfyzhong/tagbar-proto.vim
