@@ -56,7 +56,6 @@ let g:tagbar_width = 30
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_conceal = 0
-
 let g:ale_linters = {'go':['gopls']}
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
@@ -64,7 +63,6 @@ let g:ale_fixers = {
 \}
 let g:ale_fix_on_save = 1
 let g:ale_open_list = 'on_save'
-
 if !has('nvim')
 	packadd yarp
 	packadd vim-hug-neovim-rpc
