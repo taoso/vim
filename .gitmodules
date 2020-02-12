@@ -40,12 +40,6 @@
 [submodule "pack/vendor/start/nerdtree"]
 	path = pack/vendor/start/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule "pack/vendor/start/prettier"]
-	path = pack/vendor/start/prettier
-	url = https://github.com/prettier/vim-prettier.git
-[submodule "pack/vendor/start/javascript"]
-	path = pack/vendor/start/javascript
-	url = https://github.com/pangloss/vim-javascript
 [submodule "pack/vendor/start/stim"]
 	path = pack/vendor/start/stim
 	url = https://github.com/ironhouzi/vim-stim.git
@@ -58,9 +52,6 @@
 [submodule "pack/vendor/start/nerdtree-git"]
 	path = pack/vendor/start/nerdtree-git
 	url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
-[submodule "pack/vendor/opt/ts"]
-	path = pack/vendor/start/ts
-	url = https://github.com/leafgarland/typescript-vim
 [submodule "pack/vendor/opt/deoplete"]
 	path = pack/vendor/start/deoplete
 	url = https://github.com/Shougo/deoplete.nvim
