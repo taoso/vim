@@ -36,12 +36,11 @@ autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
 			\ endif
 
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-autocmd BufReadPost *.js,*.ts,*.css,*.json,*.yaml call lv#ExpandTab(2)
+autocmd BufReadPost *.html,*.js,*.css,*.json,*.yaml call lv#ExpandTab(2)
 autocmd FileType proto call lv#ExpandTab(4)
 autocmd FileType go setlocal formatoptions+=ro
-
+autocmd FileType go call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 autocmd FileType vim nnoremap <buffer> <c-]> :call vim#Jump()<cr>
-autocmd FileType go nnoremap <buffer> <c-]> :ALEGoToDefinition<cr>
 
 command -nargs=1 ExpandTab call lv#ExpandTab(<f-args>)
 
@@ -50,22 +49,17 @@ let g:NERDTreeChDirMode = 2
 let g:NERDTreeWinSize=24
 let g:ackprg = 'ag --vimgrep'
 let g:tagbar_compact = 1
-let g:tagbar_sort = 0
 let g:tagbar_iconchars = ['▸', '▾']
 let g:tagbar_width = 30
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_conceal = 0
-let g:ale_linters = {'go':['gopls']}
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'go': ['goimports'],
-\}
-let g:ale_fix_on_save = 1
-let g:ale_open_list = 'on_save'
+let g:deoplete#enable_at_startup = 1
+let g:go_fmt_command = 'goimports'
+let g:go_doc_popup_window = 1
+let g:go_rename_command = 'gopls'
+
 if !has('nvim')
 	packadd yarp
 	packadd vim-hug-neovim-rpc
 end
-let g:deoplete#enable_at_startup = 1
-autocmd VimEnter * call deoplete#custom#option('ale', 200)
