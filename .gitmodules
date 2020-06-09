@@ -67,6 +67,6 @@
 [submodule "pack/vendor/start/tagbar-proto"]
 	path = pack/vendor/start/tagbar-proto
 	url = https://github.com/tenfyzhong/tagbar-proto.vim
-[submodule "pack/vendor/start/ale"]
-	path = pack/vendor/start/ale
-	url = https://github.com/dense-analysis/ale.git
+[submodule "pack/vendor/start/go"]
+	path = pack/vendor/start/go
+	url = https://github.com/fatih/vim-go
