@@ -32,6 +32,29 @@ nnoremap <silent> <leader>e :NERDTreeToggle<cr>
 nnoremap <silent> <leader>f :NERDTreeFind<cr>
 nnoremap <silent> <leader>c :call lv#Term()<cr>
 
+function! MyTabLabel(n)
+	let buflist = tabpagebuflist(a:n)
+	let winnr = tabpagewinnr(a:n)
+	let name = fnamemodify(bufname(buflist[winnr - 1]), ':t')
+	return empty(name) ? '[No Name]' : name
+endfunction
+
+function! MyTabLine()
+	let s = ''
+	for i in range(tabpagenr('$'))
+		if i + 1 == tabpagenr()
+			let s .= '%#TabLineSel#'
+		else
+			let s .= '%#TabLine#'
+		endif
+
+		let s .= ' '. (i+1) . ' '
+		let s .= ' %{MyTabLabel(' . (i + 1) . ')} '
+	endfor
+	return s
+endfunction
+set tabline=%!MyTabLine()
+
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
 			\ execute "normal! g`\"" |
 			\ endif
