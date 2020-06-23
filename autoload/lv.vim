@@ -12,17 +12,17 @@ function! lv#ExpandTab(len)
 	endif
 endfunction
 
+function CloseTerm(...)
+	silent close
+endfunction
+
 function! lv#Term()
-	if &buftype == "terminal"
-		execute 'keepalt vertical split'
-		execute 'wincmd w'
-	else
-		execute 'keepalt belowright new'
-	end
+	tabedit
 	if has('nvim')
-		execute 'terminal'
+		let options = {'on_exit': 'CloseTerm'}
+		call termopen($SHELL, options)
 		startinsert
 	else
-		execute 'terminal ++curwin'
+		terminal ++curwin
 	end
 endfunction
