@@ -55,12 +55,6 @@
 [submodule "pack/vendor/opt/deoplete"]
 	path = pack/vendor/start/deoplete
 	url = https://github.com/Shougo/deoplete.nvim
-[submodule "pack/vendor/opt/yarp"]
-	path = pack/vendor/opt/yarp
-	url = https://github.com/roxma/nvim-yarp
-[submodule "pack/vendor/opt/vim-hug-neovim-rpc"]
-	path = pack/vendor/opt/vim-hug-neovim-rpc
-	url = https://github.com/roxma/vim-hug-neovim-rpc
 [submodule "pack/vendor/start/jumpy"]
 	path = pack/vendor/start/jumpy
 	url = https://github.com/arp242/jumpy.vim
