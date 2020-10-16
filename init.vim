@@ -12,11 +12,13 @@ set smartcase
 set ruler
 set diffopt+=internal,indent-heuristic,algorithm:patience
 set showcmd
+set formatoptions+=ro
+set termguicolors
+set tabline=%!lv#MyTabLine()
 
 filetype plugin indent on
 syntax on
 
-set termguicolors
 color tender
 highlight Visual guibg=#323232
 highlight Normal guibg=#000001
@@ -32,29 +34,6 @@ nnoremap <silent> <leader>e :NERDTreeToggle<cr>
 nnoremap <silent> <leader>f :NERDTreeFind<cr>
 nnoremap <silent> <leader>c :call lv#Term()<cr>
 
-function! MyTabLabel(n)
-	let buflist = tabpagebuflist(a:n)
-	let winnr = tabpagewinnr(a:n)
-	let name = fnamemodify(bufname(buflist[winnr - 1]), ':t')
-	return empty(name) ? '[No Name]' : name
-endfunction
-
-function! MyTabLine()
-	let s = ''
-	for i in range(tabpagenr('$'))
-		if i + 1 == tabpagenr()
-			let s .= '%#TabLineSel#'
-		else
-			let s .= '%#TabLine#'
-		endif
-
-		let s .= ' '. (i+1) . ' '
-		let s .= ' %{MyTabLabel(' . (i + 1) . ')} '
-	endfor
-	return s
-endfunction
-set tabline=%!MyTabLine()
-
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
 			\ execute "normal! g`\"" |
 			\ endif
@@ -62,7 +41,6 @@ autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 autocmd BufReadPost *.html,*.js,*.css,*.json,*.yaml call lv#ExpandTab(2)
 autocmd FileType proto call lv#ExpandTab(4)
-autocmd FileType go setlocal formatoptions+=ro
 autocmd FileType go call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 autocmd FileType vim nnoremap <buffer> <c-]> :call vim#Jump()<cr>
 

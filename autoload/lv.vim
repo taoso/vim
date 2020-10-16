@@ -26,3 +26,25 @@ function! lv#Term()
 		terminal ++curwin
 	end
 endfunction
+
+function! lv#MyTabLabel(n)
+	let buflist = tabpagebuflist(a:n)
+	let winnr = tabpagewinnr(a:n)
+	let name = fnamemodify(bufname(buflist[winnr - 1]), ':t')
+	return empty(name) ? '[No Name]' : name
+endfunction
+
+function! lv#MyTabLine()
+	let s = ''
+	for i in range(tabpagenr('$'))
+		if i + 1 == tabpagenr()
+			let s .= '%#TabLineSel#'
+		else
+			let s .= '%#TabLine#'
+		endif
+
+		let s .= ' '. (i+1) . ' '
+		let s .= ' %{lv#MyTabLabel(' . (i + 1) . ')} '
+	endfor
+	return s
+endfunction
