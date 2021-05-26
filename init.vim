@@ -60,3 +60,11 @@ let g:deoplete#enable_at_startup = 1
 let g:go_fmt_command = 'goimports'
 let g:go_doc_popup_window = 1
 let g:go_rename_command = 'gopls'
+
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+  },
+}
+EOF
