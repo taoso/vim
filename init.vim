@@ -55,7 +55,6 @@ let g:tagbar_width = 30
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_conceal = 0
-let g:deoplete#enable_at_startup = 1
 
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
@@ -94,6 +93,8 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
   buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
   buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+
+  require 'completion'.on_attach(client, bufnr)
 end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
@@ -109,3 +110,8 @@ for _, lsp in ipairs(servers) do
   }
 end
 EOF
+
+set completeopt=menuone,noinsert,noselect
+set shortmess+=c
+let g:completion_matching_smart_case = 1
+let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy', 'all']

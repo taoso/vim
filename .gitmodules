@@ -49,9 +49,6 @@
 [submodule "pack/vendor/start/nerdtree-git"]
 	path = pack/vendor/start/nerdtree-git
 	url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
-[submodule "pack/vendor/opt/deoplete"]
-	path = pack/vendor/start/deoplete
-	url = https://github.com/Shougo/deoplete.nvim
 [submodule "pack/vendor/start/jumpy"]
 	path = pack/vendor/start/jumpy
 	url = https://github.com/arp242/jumpy.vim
@@ -64,3 +61,6 @@
 [submodule "pack/vendor/start/lspconfig"]
 	path = pack/vendor/start/lspconfig
 	url = https://github.com/neovim/nvim-lspconfig.git
+[submodule "pack/vendor/start/completion-nvim"]
+	path = pack/vendor/start/completion-nvim
+	url = https://github.com/nvim-lua/completion-nvim.git
