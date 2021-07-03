@@ -61,6 +61,9 @@ require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,
   },
+  indent = {
+    enable = true,
+  },
 }
 
 -- Use an on_attach function to only map the following keys 
@@ -115,3 +118,5 @@ set completeopt=menuone,noinsert,noselect
 set shortmess+=c
 let g:completion_matching_smart_case = 1
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy', 'all']
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()

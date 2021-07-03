@@ -34,9 +34,6 @@
 [submodule "pack/vendor/start/phpcd"]
 	path = pack/vendor/start/phpcd
 	url = https://github.com/lvht/phpcd.vim.git
-[submodule "pack/vendor/start/phpfold"]
-	path = pack/vendor/start/phpfold
-	url = https://github.com/lvht/phpfold.vim.git
 [submodule "pack/vendor/start/nerdtree"]
 	path = pack/vendor/start/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
