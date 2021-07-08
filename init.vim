@@ -120,3 +120,9 @@ let g:completion_matching_smart_case = 1
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy', 'all']
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
+set foldlevel=1
+
+autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 100)
+
+autocmd InsertLeave * call lv#AutoIM("leave")
+autocmd InsertEnter * call lv#AutoIM("enter")

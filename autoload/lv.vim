@@ -43,8 +43,32 @@ function! lv#MyTabLine()
 			let s .= '%#TabLine#'
 		endif
 
-		let s .= ' '. (i+1) . ' '
+		let s .= (i+1) . ':'
 		let s .= ' %{lv#MyTabLabel(' . (i + 1) . ')} '
 	endfor
 	return s
+endfunction
+
+let g:lv_restore_last_im = 0
+
+function! lv#AutoIM(event)
+	let is_abc = system('is_abc') != ''
+
+	let need_switch_im = 0
+	if a:event == 'leave'
+		if !is_abc
+			let g:lv_restore_last_im = 1
+			let need_switch_im = 1
+		else
+			let g:lv_restore_last_im = 0
+		end
+	else " a:event == 'enter'
+		if is_abc && g:lv_restore_last_im
+			let need_switch_im = 1
+		end
+	end
+
+	if need_switch_im 
+		silent !osascript /usr/local/opt/lv/ctrl+space.scpt
+	end
 endfunction
