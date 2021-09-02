@@ -152,8 +152,4 @@ set foldexpr=nvim_treesitter#foldexpr()
 set foldlevel=1
 
 autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 100)
-autocmd BufWritePre *.go lua goimports(1000)
 autocmd CompleteDone *.go lua goimports(1000)
-
-autocmd InsertLeave * call lv#AutoIM("leave")
-autocmd InsertEnter * call lv#AutoIM("enter")
