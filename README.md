@@ -1,14 +1,9 @@
 # lv's vimrc
 
-Support both vim8 and neovim.
+Only support neovim.
 
-<https://thinkinvim.org/articles/vim-plugin-git/>
+<https://taoshu.in/vim/>
 
 ```
-# for neovim
-git clone --recursive https://github.com/lvht/vim.git ~/.config/nvim
-
-# for vim8
-git clone --recursive https://github.com/lvht/vim.git ~/.vim
-ln -s ~/.vim/init.vim ~/.vimrc
+git clone --recursive https://github.com/epii1/vim.git ~/.config/nvim
 ```
