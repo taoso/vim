@@ -13,12 +13,8 @@ filetype plugin indent on
 syntax on
 
 color tender
-highlight Visual guibg=#323232
-highlight Normal guibg=#000001
-highlight SignColumn guibg=#000001
-highlight StatusLine guibg=#444444 guifg=#b3deef
-highlight StatusLineTerm guibg=#444444 guifg=#b3deef
-highlight StatusLineTermNC guibg=#444444 guifg=#999999
+highlight Normal guibg=#000000
+highlight SignColumn guibg=#000000
 
 nnoremap <silent> <c-u> :Mru<cr>
 nnoremap <silent> <c-p> :call fzf#Open()<cr>
