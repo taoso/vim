@@ -40,6 +40,7 @@ autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
 
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 autocmd BufReadPost *.html,*.js,*.css,*.json,*.yaml call lv#ExpandTab(2)
+autocmd TextYankPost * call lv#Copy()
 autocmd FileType proto call lv#ExpandTab(4)
 autocmd FileType vim nnoremap <buffer> <c-]> :call vim#Jump()<cr>
 

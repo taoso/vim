@@ -72,3 +72,10 @@ function! lv#AutoIM(event)
 		silent !osascript /usr/local/opt/lv/ctrl+space.scpt
 	end
 endfunction
+
+function! lv#Copy()
+  let c = join(v:event.regcontents,"\n")
+  let c64 = system("base64", c)
+  let s = "\e]52;c;" . trim(c64) . "\x07"
+  call chansend(v:stderr, s)
+endfunction
