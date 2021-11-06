@@ -35,7 +35,6 @@ command -nargs=1 ExpandTab call lv#expandtab(<f-args>)
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeChDirMode = 2
 let g:NERDTreeWinSize=24
-let g:ackprg = 'ag --vimgrep'
 let g:tagbar_compact = 1
 let g:tagbar_iconchars = ['▸', '▾']
 let g:tagbar_width = 30
