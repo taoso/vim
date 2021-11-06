@@ -1,18 +1,11 @@
 set noswapfile
-set encoding=utf-8
-set fileencodings=utf-8,gb18030
-set backspace=eol,start,indent
-set laststatus=2
+set fileencodings^=gb18030
 set colorcolumn=80
 set cursorline
 set linebreak
-set autoindent
 set ignorecase
 set smartcase
-set ruler
-set diffopt+=internal,indent-heuristic,algorithm:patience
-set showcmd
-set formatoptions+=ro
+set diffopt+=indent-heuristic,algorithm:patience
 set termguicolors
 set tabline=%!lv#MyTabLine()
 
