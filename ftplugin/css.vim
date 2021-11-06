@@ -1,1 +1,1 @@
-call lv#ExpandTab(2)
+call lv#expandtab(2)

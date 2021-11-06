@@ -2,12 +2,12 @@ set noswapfile
 set fileencodings^=gb18030
 set colorcolumn=80
 set cursorline
-set linebreak
+set nowrap
 set ignorecase
 set smartcase
 set diffopt+=indent-heuristic,algorithm:patience
 set termguicolors
-set tabline=%!lv#MyTabLine()
+set tabline=%!lv#numtab()
 set shortmess+=c
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
@@ -25,12 +25,12 @@ nnoremap <silent> <c-p> :call fzf#Open()<cr>
 nnoremap <silent> <leader>t :TagbarToggle<cr>
 nnoremap <silent> <leader>e :NERDTreeToggle<cr>
 nnoremap <silent> <leader>f :NERDTreeFind<cr>
-nnoremap <silent> <leader>c :call lv#Term()<cr>
 
-autocmd TextYankPost * call lv#Copy()
-autocmd BufReadPost * call lv#Lastline()
+autocmd TextYankPost * call lv#copy()
+autocmd BufReadPost * call lv#lastline()
+autocmd InsertLeave * call lv#switchabc()
 
-command -nargs=1 ExpandTab call lv#ExpandTab(<f-args>)
+command -nargs=1 ExpandTab call lv#expandtab(<f-args>)
 
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeChDirMode = 2

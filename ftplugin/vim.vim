@@ -1,1 +1,1 @@
-nnoremap <buffer> <c-]> :call vim#Jump()<cr>
+nnoremap <buffer> <c-]> :call vim#jump()<cr>

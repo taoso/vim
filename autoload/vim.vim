@@ -1,4 +1,4 @@
-function! vim#Jump()
+function! vim#jump()
 	setlocal iskeyword+=:
 	let cword = expand('<cword>')
 	setlocal iskeyword-=:
