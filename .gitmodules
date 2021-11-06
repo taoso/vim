@@ -58,9 +58,24 @@
 [submodule "pack/vendor/start/lspconfig"]
 	path = pack/vendor/start/lspconfig
 	url = https://github.com/neovim/nvim-lspconfig.git
-[submodule "pack/vendor/start/completion-nvim"]
-	path = pack/vendor/start/completion-nvim
-	url = https://github.com/nvim-lua/completion-nvim.git
 [submodule "pack/vendor/start/colorizer"]
 	path = pack/vendor/start/colorizer
 	url = https://github.com/norcalli/nvim-colorizer.lua.git
+[submodule "pack/vendor/start/cmp"]
+	path = pack/vendor/start/cmp
+	url = https://github.com/hrsh7th/nvim-cmp
+[submodule "pack/vendor/start/cmp-lsp"]
+	path = pack/vendor/start/cmp-lsp
+	url = https://github.com/hrsh7th/cmp-nvim-lsp
+[submodule "pack/vendor/start/cmp-path"]
+	path = pack/vendor/start/cmp-path
+	url = https://github.com/hrsh7th/cmp-path
+[submodule "pack/vendor/start/cmp-buffer"]
+	path = pack/vendor/start/cmp-buffer
+	url = https://github.com/hrsh7th/cmp-buffer
+[submodule "pack/vendor/start/cmp-vsnip"]
+	path = pack/vendor/start/cmp-vsnip
+	url = https://github.com/hrsh7th/cmp-vsnip
+[submodule "pack/vendor/start/vim-vsnip"]
+	path = pack/vendor/start/vim-vsnip
+	url = https://github.com/hrsh7th/vim-vsnip
