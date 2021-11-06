@@ -1,3 +1,11 @@
+function! lv#Lastline()
+	let last = line("'\"")
+	let end = line("$")
+	if  last > 0 && last <= end
+		normal! g`"
+	endif
+endfunction
+
 function! lv#ExpandTab(len)
 	if a:len
 		setlocal expandtab
