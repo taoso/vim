@@ -44,6 +44,7 @@ let g:vim_markdown_conceal = 0
 
 lua <<EOF
 require'colorizer'.setup()
+require('gitsigns').setup()
 
 require'nvim-treesitter.configs'.setup {
   highlight = {
