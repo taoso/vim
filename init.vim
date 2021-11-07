@@ -1,5 +1,4 @@
 set noswapfile
-set fileencodings^=gb18030
 set colorcolumn=80
 set cursorline
 set nowrap
