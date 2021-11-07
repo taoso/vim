@@ -7,13 +7,9 @@ set smartcase
 set diffopt+=indent-heuristic,algorithm:patience
 set termguicolors
 set tabline=%!lv#numtab()
-set shortmess+=c
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
 set foldlevel=1
-
-filetype plugin indent on
-syntax on
 
 color tender
 highlight Normal guibg=#000000
