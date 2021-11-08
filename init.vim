@@ -14,6 +14,7 @@ set foldlevel=1
 color tender
 highlight Normal guibg=#000000
 highlight SignColumn guibg=#000000
+highlight StatusLine guibg=#444444 guifg=#b3deef
 
 nnoremap <silent> <c-u> :Mru<cr>
 nnoremap <silent> <c-p> :call fzf#Open()<cr>
