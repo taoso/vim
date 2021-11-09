@@ -47,7 +47,7 @@ cmp.setup({
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
     },
     sources = cmp.config.sources({
-        { name = 'buffer' },
+        { name = 'buffer', opts = { get_bufnrs = vim.api.nvim_list_bufs } },
         { name = 'nvim_lsp' },
         { name = 'path' },
         { name = 'vsnip' },
