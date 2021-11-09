@@ -27,19 +27,20 @@
   init.vim
   LICENSE
   README.md
+  vim.lua
 ```
 
 所有的个人工具方法都组织到 `autoload/lv.vim` 中，使用 `lv#` 名称空间。
 
 针对特定文件类型的配置组织到 `ftplugin/*.vim` 中，vim 会按需加载。
 
-主配置文件为 `init.vim`，因为纯 lua 配置文件变化太大，在有些地方反不如 viml 方便，所以先采用 viml 跟 lua 混合的配置方式。
+主配置文件为 `init.vim`，lua 的部分组织到 `vim.lua` 文件。
 
 ## 常用插件
 
 ### 主题
 
-选用 [tender](https://github.com/jacoborus/tender.vim)，使用24位真彩色。整个色调比较性冷淡，这样可以专注于内容。
+选用 [tender](https://github.com/jacoborus/tender.vim)，使用24位真彩色。整个色调比较性冷淡，专注于内容。
 
 ### 文件操作
 
