@@ -13,10 +13,6 @@ require'nvim-treesitter.configs'.setup {
 
 local on_attach = function(client, bufnr)
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-    local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-
-    buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
-
     local opts = { noremap=true, silent=true }
 
     buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
@@ -42,9 +38,6 @@ local cmp = require'cmp'
 cmp.setup({
     snippet = {
         expand = function(args) vim.fn["vsnip#anonymous"](args.body) end,
-    },
-    mapping = {
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
     },
     sources = cmp.config.sources({
         { name = 'buffer', opts = { get_bufnrs = vim.api.nvim_list_bufs } },
