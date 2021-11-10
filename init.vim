@@ -21,15 +21,17 @@ nnoremap <silent> <leader>t :TagbarToggle<cr>
 nnoremap <silent> <leader>e :NERDTreeToggle<cr>
 nnoremap <silent> <leader>f :NERDTreeFind<cr>
 
+autocmd BufReadPost *
+      \ if line("'\"") >= 1 && line("'\"") <= line("$")
+      \ |   exe "normal! g`\""
+      \ | endif
 autocmd TextYankPost * call lv#copy()
-autocmd BufReadPost * call lv#lastline()
 autocmd InsertLeave * call lv#switchabc()
-
-autocmd FileType vim nnoremap <buffer> <c-]> :call lv#vimjump()<cr>
-autocmd BufRead *.css,*.html,*.js,*.json call lv#expandtab(2)
 autocmd BufRead *.lua,*.proto call lv#expandtab(4)
-autocmd BufWritePre *.go :silent! lua require'lv'.goimports(9000)
+autocmd BufRead *.css,*.html,*.js,*.json call lv#expandtab(2)
+autocmd BufRead *.vim nnoremap <buffer> <c-]> :call lv#vimjump()<cr>
 autocmd BufWritePre *.go :silent! lua vim.lsp.buf.formatting()
+autocmd BufWritePre *.go :silent! lua require'lv'.goimports(9000)
 
 command -nargs=1 ExpandTab call lv#expandtab(<f-args>)
 
