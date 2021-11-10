@@ -6,7 +6,6 @@ set ignorecase
 set smartcase
 set diffopt+=indent-heuristic,algorithm:patience
 set termguicolors
-set tabline=%!lv#numtab()
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
 set foldlevel=1

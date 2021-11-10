@@ -20,28 +20,6 @@ function! lv#expandtab(len)
 	endif
 endfunction
 
-function! lv#filename(n)
-	let buflist = tabpagebuflist(a:n)
-	let winnr = tabpagewinnr(a:n)
-	let name = fnamemodify(bufname(buflist[winnr - 1]), ':t')
-	return empty(name) ? '[No Name]' : name
-endfunction
-
-function! lv#numtab()
-	let s = ''
-	for i in range(tabpagenr('$'))
-		let n = i + 1
-		if n == tabpagenr()
-			let s .= '%#TabLineSel#'
-		else
-			let s .= '%#TabLine#'
-		endif
-
-		let s .= n . ':%{lv#filename(' . n . ')} '
-	endfor
-	return s
-endfunction
-
 function! lv#switchabc()
 	let s = system('defaults read ~/Library/Preferences/com.apple.HIToolbox.plist AppleSelectedInputSources')
 	let is_abc = stridx(s, '"KeyboardLayout Name" = ABC') > 0

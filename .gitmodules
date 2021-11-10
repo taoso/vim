@@ -79,3 +79,6 @@
 [submodule "pack/vendor/start/gitsigns"]
 	path = pack/vendor/start/gitsigns
 	url = https://github.com/lewis6991/gitsigns.nvim
+[submodule "pack/vendor/start/tabline"]
+	path = pack/vendor/start/tabline
+	url = https://github.com/epii1/tabline.vim
