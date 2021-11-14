@@ -1,7 +1,7 @@
 set noswapfile
 set colorcolumn=80
 set cursorline
-set nowrap
+set linebreak
 set ignorecase
 set smartcase
 set diffopt+=indent-heuristic,algorithm:patience
@@ -11,9 +11,9 @@ set foldexpr=nvim_treesitter#foldexpr()
 set foldlevel=1
 
 color tender
-autocmd ColorScheme tender hi Normal guibg=#000000
-                       \ | hi SignColumn guibg=#000000
-                       \ | hi StatusLine guibg=#444444 guifg=#b3deef
+highlight Normal guibg=#000000
+highlight SignColumn guibg=#000000
+highlight StatusLine guibg=#444444 guifg=#b3deef
 
 nnoremap <silent> <c-u> :Mru<cr>
 nnoremap <silent> <c-p> :call fzf#Open()<cr>
