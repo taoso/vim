@@ -32,6 +32,12 @@ local on_attach = function(client, bufnr)
     buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>', opts)
     buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>', opts)
     buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<cr>', opts)
+
+    local nvim_command = vim.api.nvim_command
+
+    nvim_command("autocmd TextChanged *.go :lua require'lv'.importing()")
+    nvim_command("autocmd CompleteDone *.go :lua require'lv'.importing()")
+    nvim_command("autocmd BufWritePre *.go :lua vim.lsp.buf.formatting()")
 end
 
 local cmp = require'cmp'
