@@ -82,3 +82,6 @@
 [submodule "pack/vendor/start/lspkind"]
 	path = pack/vendor/start/lspkind
 	url = https://github.com/onsails/lspkind-nvim
+[submodule "pack/vendor/start/nnn"]
+	path = pack/vendor/start/nnn
+	url = https://github.com/mcchrish/nnn.vim.git
