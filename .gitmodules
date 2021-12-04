@@ -37,9 +37,6 @@
 [submodule "pack/vendor/start/nerdtree-git"]
 	path = pack/vendor/start/nerdtree-git
 	url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
-[submodule "pack/vendor/start/jumpy"]
-	path = pack/vendor/start/jumpy
-	url = https://github.com/arp242/jumpy.vim
 [submodule "pack/vendor/start/tagbar-proto"]
 	path = pack/vendor/start/tagbar-proto
 	url = https://github.com/tenfyzhong/tagbar-proto.vim
@@ -85,3 +82,6 @@
 [submodule "pack/vendor/start/nnn"]
 	path = pack/vendor/start/nnn
 	url = https://github.com/mcchrish/nnn.vim.git
+[submodule "pack/vendor/start/treesitter-textobjects"]
+	path = pack/vendor/start/treesitter-textobjects
+	url = https://github.com/nvim-treesitter/nvim-treesitter-textobjects.git
