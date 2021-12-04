@@ -6,13 +6,15 @@ set ignorecase
 set smartcase
 set diffopt+=indent-heuristic,algorithm:patience
 set termguicolors
+set formatoptions+=ro
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
 set foldlevel=1
+set tagfunc=v:lua.vim.lsp.tagfunc
 
 color tender
-highlight Normal guibg=#000000
-highlight SignColumn guibg=#000000
+highlight Normal guibg=none
+highlight SignColumn guibg=none
 highlight StatusLine guibg=#444444 guifg=#b3deef
 
 nnoremap <silent> <c-u> :Mru<cr>
