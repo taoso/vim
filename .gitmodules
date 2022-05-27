@@ -7,9 +7,6 @@
 [submodule "pack/vendor/start/tagbar"]
 	path = pack/vendor/start/tagbar
 	url = https://github.com/majutsushi/tagbar.git
-[submodule "pack/vendor/start/markdown"]
-	path = pack/vendor/start/markdown
-	url = https://github.com/plasticboy/vim-markdown.git
 [submodule "pack/vendor/start/tagbar-markdown"]
 	path = pack/vendor/start/tagbar-markdown
 	url = https://github.com/lvht/tagbar-markdown.git
@@ -76,12 +73,6 @@
 [submodule "pack/vendor/start/gitsigns"]
 	path = pack/vendor/start/gitsigns
 	url = https://github.com/lewis6991/gitsigns.nvim
-[submodule "pack/vendor/start/lspkind"]
-	path = pack/vendor/start/lspkind
-	url = https://github.com/onsails/lspkind-nvim
-[submodule "pack/vendor/start/nnn"]
-	path = pack/vendor/start/nnn
-	url = https://github.com/mcchrish/nnn.vim.git
 [submodule "pack/vendor/start/treesitter-textobjects"]
 	path = pack/vendor/start/treesitter-textobjects
 	url = https://github.com/nvim-treesitter/nvim-treesitter-textobjects.git
