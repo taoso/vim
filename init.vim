@@ -11,6 +11,11 @@ set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
 set foldlevel=1
 set tagfunc=v:lua.vim.lsp.tagfunc
+set completeopt=menu,menuone,noselect,preview
+set laststatus=3
+set exrc
+let g:do_filetype_lua = 1
+let g:did_load_filetypes = 0
 
 color tender
 highlight Normal guibg=none
@@ -41,9 +46,7 @@ let g:NERDTreeWinSize = 24
 let g:tagbar_compact = 1
 let g:tagbar_iconchars = ['▸', '▾']
 let g:tagbar_width = 30
-let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_frontmatter = 1
-let g:vim_markdown_conceal = 0
-let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Comment' } }
 
-runtime vim.lua
+if has('nvim')
+	runtime vim.lua
+endif
