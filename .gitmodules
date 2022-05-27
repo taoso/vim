@@ -7,9 +7,6 @@
 [submodule "pack/vendor/start/tagbar"]
 	path = pack/vendor/start/tagbar
 	url = https://github.com/majutsushi/tagbar.git
-[submodule "pack/vendor/start/tagbar-markdown"]
-	path = pack/vendor/start/tagbar-markdown
-	url = https://github.com/lvht/tagbar-markdown.git
 [submodule "pack/vendor/start/tender"]
 	path = pack/vendor/start/tender
 	url = https://github.com/jacoborus/tender.vim.git
@@ -22,9 +19,6 @@
 [submodule "pack/vendor/start/tcomment"]
 	path = pack/vendor/start/tcomment
 	url = https://github.com/tomtom/tcomment_vim.git
-[submodule "pack/vendor/start/phpcd"]
-	path = pack/vendor/start/phpcd
-	url = https://github.com/lvht/phpcd.vim.git
 [submodule "pack/vendor/start/nerdtree"]
 	path = pack/vendor/start/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
