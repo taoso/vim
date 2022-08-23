@@ -58,3 +58,50 @@ function! lv#vimjump()
 	let pattern = "\\vfu(nction)?!? ".cword
 	call search(pattern, flags)
 endfunction
+
+function! lv#tsenum()
+	normal! va{
+	let start = getpos("'<")[1]
+	let stop = getpos("'>")[1]
+	let enum = split(getline(start))[1]
+	let n = start + 1
+	let e2s = {}
+	let s2e = {}
+	while n < stop
+		let parts = split(getline(n))
+		if len(parts) > 0
+			let e = get(parts, 0)
+			let s = get(parts, 4, "未知")
+			let e2s[e] = s
+			let s2e[s] = e
+		endif
+		let n = n + 1
+	endwhile
+
+	execute n
+
+	call s:newline('')
+	call s:newline('export namespace '.enum.' {')
+	call s:newline('export function toString (type: '.enum.'): string {')
+	call s:newline('switch (type) {')
+	for [k,v] in items(e2s)
+		call s:newline('case '.enum.'.'.k.':')
+		call s:newline("return '".v."'")
+	endfor
+	call s:newline('}')
+	call s:newline('}')
+	call s:newline('export function parse (type: string): '.enum.' {')
+	call s:newline('switch (type) {')
+	for [k,v] in items(e2s)
+		call s:newline("case '".v."':")
+		call s:newline('return '.enum.'.'.k.'')
+	endfor
+	call s:newline('}')
+	call s:newline('}')
+	call s:newline('}')
+endfunction
+
+function! s:newline(line)
+	call append(line('.'), a:line)
+	normal! j
+endfunction
