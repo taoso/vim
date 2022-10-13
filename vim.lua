@@ -1,5 +1,6 @@
 require'colorizer'.setup()
 require'gitsigns'.setup()
+require'autolist'.setup()
 
 require'nvim-treesitter.configs'.setup {
     highlight = {
