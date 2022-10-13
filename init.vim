@@ -13,9 +13,7 @@ set foldlevel=1
 set tagfunc=v:lua.vim.lsp.tagfunc
 set completeopt=menu,menuone,noselect,preview
 set laststatus=3
-set exrc
-let g:do_filetype_lua = 1
-let g:did_load_filetypes = 0
+set mouse=
 
 color tender
 highlight Normal guibg=none
@@ -47,6 +45,4 @@ let g:tagbar_compact = 1
 let g:tagbar_iconchars = ['▸', '▾']
 let g:tagbar_width = 30
 
-if has('nvim')
-	runtime vim.lua
-endif
+runtime vim.lua
