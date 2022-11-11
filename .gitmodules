@@ -19,15 +19,9 @@
 [submodule "pack/vendor/start/tcomment"]
 	path = pack/vendor/start/tcomment
 	url = https://github.com/tomtom/tcomment_vim.git
-[submodule "pack/vendor/start/nerdtree"]
-	path = pack/vendor/start/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
 [submodule "pack/vendor/start/tabular"]
 	path = pack/vendor/start/tabular
 	url = https://github.com/godlygeek/tabular
-[submodule "pack/vendor/start/nerdtree-git"]
-	path = pack/vendor/start/nerdtree-git
-	url = https://github.com/Xuyuanp/nerdtree-git-plugin.git
 [submodule "pack/vendor/start/tagbar-proto"]
 	path = pack/vendor/start/tagbar-proto
 	url = https://github.com/tenfyzhong/tagbar-proto.vim
@@ -73,3 +67,6 @@
 [submodule "pack/vendor/start/autolist"]
 	path = pack/vendor/start/autolist
 	url = https://github.com/gaoDean/autolist.nvim.git
+[submodule "pack/vendor/start/tree"]
+	path = pack/vendor/start/tree
+	url = https://github.com/nvim-tree/nvim-tree.lua.git

@@ -47,7 +47,7 @@
 - [ag](https://github.com/epii1/ag.vim) 搜索文件内容
 - [fzf](https://github.com/epii1/fzf.vim) 搜索文件路径
 - [mru](https://github.com/epii1/mru.vim) 管理最近文件列表
-- [nerdtree](https://github.com/preservim/nerdtree) 查看目录结构
+- [nvim-tree](https://github.com/nvim-tree/nvim-tree.lua) 查看目录结构
 
 以上列出的 ag/fzf/mru 都是我自己定制的插件，代码最多也就一百多行，够用就好，方便定制。
 这三个插件也是学习 vim/neovim 插件开发的好素材，不要错过。
@@ -56,7 +56,6 @@
 
 - [fugitive](https://github.com/tpope/vim-fugitive) 在 vim 中执行 git 命令，目前只依赖 Git blame
 - [gitsigns](https://github.com/lewis6991/gitsigns.nvim) 快速显示文件内容修改信息
-- [nerdtree-git](https://github.com/Xuyuanp/nerdtree-git-plugin) 在文件管理器中显示 git 文件状态
 - [vimagit](https://github.com/jreybert/vimagit) magit 的 vim 版本，交互式、分部提交，非常方便
 
 ### 编程相关
