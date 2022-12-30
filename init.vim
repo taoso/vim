@@ -35,7 +35,7 @@ autocmd BufReadPost *
 autocmd TextYankPost * call lv#copy()
 autocmd InsertLeave * call lv#switchabc()
 autocmd BufRead *.lua,*.proto call lv#expandtab(4)
-autocmd BufRead *.css,*.html,*.js,*.json call lv#expandtab(2)
+autocmd BufRead *.css,*.html,*.js,*.json,*.lua call lv#expandtab(2)
 autocmd BufRead *.vim nnoremap <buffer> <c-]> :call lv#vimjump()<cr>
 
 command -nargs=1 Etab call lv#expandtab(<f-args>)

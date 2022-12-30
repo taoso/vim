@@ -102,7 +102,7 @@ local on_attach = function(client, bufnr)
         pattern = "*.go",
         callback = function(args)
             require'lv'.importing()
-            vim.lsp.buf.formatting()
+            vim.lsp.buf.format { async = true }
         end,
     })
 end
