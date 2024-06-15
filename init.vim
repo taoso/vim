@@ -6,7 +6,6 @@ set cursorline
 set linebreak
 set ignorecase
 set fileencoding=utf-8
-set spell
 set smartcase
 set diffopt+=indent-heuristic,algorithm:patience
 set termguicolors
@@ -19,14 +18,10 @@ set completeopt=menu,menuone,noselect,preview
 set laststatus=3
 set mouse=
 
-color tender
-highlight Normal guibg=none
-highlight SignColumn guibg=none
 highlight StatusLine guibg=#444444 guifg=#b3deef
 
 nnoremap <silent> <c-u> :Mru<cr>
 nnoremap <silent> <c-p> :call fzf#Open()<cr>
-nnoremap <silent> <leader>t :TagbarToggle<cr>
 nnoremap <silent> <leader>e :NvimTreeToggle<cr>
 nnoremap <silent> <leader>f :NvimTreeFindFile<cr>
 
