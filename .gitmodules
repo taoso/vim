@@ -4,9 +4,6 @@
 [submodule "pack/vendor/start/fzf"]
 	path = pack/vendor/start/fzf
 	url = https://github.com/lvht/fzf.git
-[submodule "pack/vendor/start/tagbar"]
-	path = pack/vendor/start/tagbar
-	url = https://github.com/majutsushi/tagbar.git
 [submodule "pack/vendor/start/tender"]
 	path = pack/vendor/start/tender
 	url = https://github.com/jacoborus/tender.vim.git
@@ -16,9 +13,6 @@
 [submodule "pack/vendor/start/vimagit"]
 	path = pack/vendor/start/vimagit
 	url = https://github.com/jreybert/vimagit.git
-[submodule "pack/vendor/start/tcomment"]
-	path = pack/vendor/start/tcomment
-	url = https://github.com/tomtom/tcomment_vim.git
 [submodule "pack/vendor/start/tabular"]
 	path = pack/vendor/start/tabular
 	url = https://github.com/godlygeek/tabular
@@ -31,9 +25,6 @@
 [submodule "pack/vendor/start/lspconfig"]
 	path = pack/vendor/start/lspconfig
 	url = https://github.com/neovim/nvim-lspconfig.git
-[submodule "pack/vendor/start/colorizer"]
-	path = pack/vendor/start/colorizer
-	url = https://github.com/norcalli/nvim-colorizer.lua.git
 [submodule "pack/vendor/start/cmp"]
 	path = pack/vendor/start/cmp
 	url = https://github.com/hrsh7th/nvim-cmp
@@ -64,12 +55,6 @@
 [submodule "pack/vendor/start/treesitter-textobjects"]
 	path = pack/vendor/start/treesitter-textobjects
 	url = https://github.com/nvim-treesitter/nvim-treesitter-textobjects.git
-[submodule "pack/vendor/start/autolist"]
-	path = pack/vendor/start/autolist
-	url = https://github.com/gaoDean/autolist.nvim.git
 [submodule "pack/vendor/start/tree"]
 	path = pack/vendor/start/tree
 	url = https://github.com/nvim-tree/nvim-tree.lua.git
-[submodule "pack/vendor/start/pretty-fold"]
-	path = pack/vendor/start/pretty-fold
-	url = https://github.com/anuvyklack/pretty-fold.nvim.git

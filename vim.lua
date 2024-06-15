@@ -1,6 +1,4 @@
-require'colorizer'.setup()
 require'gitsigns'.setup()
-require'autolist'.setup()
 
 require'nvim-treesitter.configs'.setup {
     highlight = {
@@ -140,12 +138,18 @@ vim.g.loaded_netrwPlugin = 1
 require("nvim-tree").setup({
   sort_by = "case_sensitive",
   hijack_cursor = true,
+  update_focused_file = {
+    update_root = true,
+  },
   system_open = {
     cmd = "open",
   },
   view = {
     width = 20,
     adaptive_size = true,
+  },
+  git = {
+    -- ignore = false,
   },
   renderer = {
     group_empty = true,

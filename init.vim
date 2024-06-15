@@ -5,6 +5,8 @@ set colorcolumn=80
 set cursorline
 set linebreak
 set ignorecase
+set fileencoding=utf-8
+set spell
 set smartcase
 set diffopt+=indent-heuristic,algorithm:patience
 set termguicolors
@@ -34,7 +36,7 @@ autocmd BufReadPost *
       \ | endif
 autocmd TextYankPost * call lv#copy()
 autocmd InsertLeave * call lv#switchabc()
-autocmd BufRead *.lua,*.proto call lv#expandtab(4)
+autocmd BufRead *.lua,*.proto call lv#expandtab(2)
 autocmd BufRead *.css,*.html,*.js,*.json,*.lua call lv#expandtab(2)
 autocmd BufRead *.vim nnoremap <buffer> <c-]> :call lv#vimjump()<cr>
 
