@@ -20,8 +20,8 @@ set mouse=
 
 highlight StatusLine guibg=#444444 guifg=#b3deef
 
-nnoremap <silent> <c-u> :Mru<cr>
-nnoremap <silent> <c-p> :call fzf#Open()<cr>
+nnoremap <silent> <leader>r :Mru<cr>
+nnoremap <silent> <leader>s :call fzf#Open()<cr>
 nnoremap <silent> <leader>e :NvimTreeToggle<cr>
 nnoremap <silent> <leader>f :NvimTreeFindFile<cr>
 
