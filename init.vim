@@ -12,13 +12,14 @@ set termguicolors
 set formatoptions+=ro
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
-set foldlevel=1
 set tagfunc=v:lua.vim.lsp.tagfunc
 set completeopt=menu,menuone,noselect,preview
 set laststatus=3
 set mouse=
 
+highlight Normal guibg=none
 highlight StatusLine guibg=#444444 guifg=#b3deef
+highlight VertSplit guifg=#282828 guibg=#282828
 
 nnoremap <silent> <leader>r :Mru<cr>
 nnoremap <silent> <leader>s :call fzf#Open()<cr>
