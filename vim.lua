@@ -145,8 +145,20 @@ require("nvim-tree").setup({
     cmd = "open",
   },
   view = {
-    width = 20,
+    -- width = 50,
     adaptive_size = true,
+    float = {
+      enable = true,
+      quit_on_focus_loss = true,
+      open_win_config = {
+        -- relative = "editor",
+        -- border = "rounded",
+        -- width = 50,
+        -- height = 30,
+        row = 0,
+        col = 0,
+      },
+    },
   },
   git = {
     -- ignore = false,
