@@ -194,3 +194,5 @@ require("nvim-tree").setup({
     dotfiles = true,
   },
 })
+
+require('pretty-fold').setup()

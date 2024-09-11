@@ -12,6 +12,7 @@ set termguicolors
 set formatoptions+=ro
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
+set foldlevel=1
 set tagfunc=v:lua.vim.lsp.tagfunc
 set completeopt=menu,menuone,noselect,preview
 set laststatus=3
