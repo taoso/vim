@@ -39,8 +39,4 @@ autocmd BufRead *.vim nnoremap <buffer> <c-]> :call lv#vimjump()<cr>
 
 command -nargs=1 Etab call lv#expandtab(<f-args>)
 
-let g:tagbar_compact = 1
-let g:tagbar_iconchars = ['▸', '▾']
-let g:tagbar_width = 30
-
 runtime vim.lua
