@@ -121,9 +121,10 @@ cmp.setup {
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-local servers = { 'gopls' }
+local servers = { 'gopls', 'rust_analyzer' }
+local lspc = require'lspconfig'
 for _, lsp in ipairs(servers) do
-    require'lspconfig'[lsp].setup {
+    lspc[lsp].setup {
         on_attach = on_attach,
         capabilities = capabilities,
         flags = {
