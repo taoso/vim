@@ -31,11 +31,11 @@ autocmd BufReadPost *
       \ if line("'\"") >= 1 && line("'\"") <= line("$")
       \ |   exe "normal! g`\""
       \ | endif
+autocmd CompleteDone * pclose
 autocmd TextYankPost * call lv#copy()
 autocmd InsertLeave * call lv#switchabc()
-autocmd BufRead *.lua,*.proto call lv#expandtab(2)
-autocmd BufRead *.css,*.html,*.js,*.json,*.lua call lv#expandtab(2)
 autocmd BufRead *.vim nnoremap <buffer> <c-]> :call lv#vimjump()<cr>
+autocmd BufRead *.lua,*.proto,*.css,*.html,*.js,*.json call lv#expandtab(2)
 
 command -nargs=1 Etab call lv#expandtab(<f-args>)
 
