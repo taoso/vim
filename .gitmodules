@@ -19,9 +19,6 @@
 [submodule "pack/vendor/start/ag"]
 	path = pack/vendor/start/ag
 	url = https://github.com/epii1/ag.vim
-[submodule "pack/vendor/start/plenary"]
-	path = pack/vendor/start/plenary
-	url = https://github.com/nvim-lua/plenary.nvim
 [submodule "pack/vendor/start/gitsigns"]
 	path = pack/vendor/start/gitsigns
 	url = https://github.com/lewis6991/gitsigns.nvim
