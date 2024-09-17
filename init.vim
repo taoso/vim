@@ -1,26 +1,18 @@
-set nobackup
+set mouse=
 set noswapfile
 set nowritebackup
-set colorcolumn=80
-set cursorline
 set linebreak
-set ignorecase
-set fileencoding=utf-8
+set cursorline
+set colorcolumn=80
 set smartcase
-set diffopt+=indent-heuristic,algorithm:patience
+set ignorecase
 set termguicolors
 set formatoptions+=ro
 set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()
-set foldlevel=1
-set tagfunc=v:lua.vim.lsp.tagfunc
-set completeopt=menu,menuone,noselect,preview
+set foldexpr=v:lua.vim.treesitter.foldexpr()
 set laststatus=3
-set mouse=
 
 highlight Normal guibg=none
-highlight StatusLine guibg=#444444 guifg=#b3deef
-highlight VertSplit guifg=#282828 guibg=#282828
 
 nnoremap <silent> <leader>r :Mru<cr>
 nnoremap <silent> <leader>s :call fzf#Open()<cr>
