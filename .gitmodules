@@ -7,9 +7,6 @@
 [submodule "pack/vendor/start/vimagit"]
 	path = pack/vendor/start/vimagit
 	url = https://github.com/jreybert/vimagit.git
-[submodule "pack/vendor/start/tabular"]
-	path = pack/vendor/start/tabular
-	url = https://github.com/godlygeek/tabular
 [submodule "pack/vendor/start/tagbar-proto"]
 	path = pack/vendor/start/tagbar-proto
 	url = https://github.com/tenfyzhong/tagbar-proto.vim
