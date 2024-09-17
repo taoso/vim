@@ -4,9 +4,6 @@
 [submodule "pack/vendor/start/fzf"]
 	path = pack/vendor/start/fzf
 	url = https://github.com/lvht/fzf.git
-[submodule "pack/vendor/start/fugitive"]
-	path = pack/vendor/start/fugitive
-	url = https://github.com/tpope/vim-fugitive.git
 [submodule "pack/vendor/start/vimagit"]
 	path = pack/vendor/start/vimagit
 	url = https://github.com/jreybert/vimagit.git
