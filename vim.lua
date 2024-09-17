@@ -108,16 +108,11 @@ require("nvim-tree").setup({
     cmd = "open",
   },
   view = {
-    -- width = 50,
     adaptive_size = true,
     float = {
       enable = true,
       quit_on_focus_loss = true,
       open_win_config = {
-        -- relative = "editor",
-        -- border = "rounded",
-        -- width = 50,
-        -- height = 30,
         row = 0,
         col = 0,
       },
@@ -130,10 +125,8 @@ require("nvim-tree").setup({
     group_empty = true,
     icons = {
       show = {
-        git = true,
         file = false,
         folder = false,
-        folder_arrow = true,
       },
       glyphs = {
         bookmark = "🔖",
@@ -146,7 +139,7 @@ require("nvim-tree").setup({
           staged = "✓",
           unmerged = "⌥",
           renamed = "➜",
-          untracked = "★",
+          untracked = "☆",
           deleted = "⊖",
           ignored = "◌",
         },
