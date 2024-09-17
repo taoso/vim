@@ -22,9 +22,6 @@
 [submodule "pack/vendor/start/gitsigns"]
 	path = pack/vendor/start/gitsigns
 	url = https://github.com/lewis6991/gitsigns.nvim
-[submodule "pack/vendor/start/treesitter-textobjects"]
-	path = pack/vendor/start/treesitter-textobjects
-	url = https://github.com/nvim-treesitter/nvim-treesitter-textobjects.git
 [submodule "pack/vendor/start/tree"]
 	path = pack/vendor/start/tree
 	url = https://github.com/nvim-tree/nvim-tree.lua.git
