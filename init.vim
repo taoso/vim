@@ -10,6 +10,7 @@ set termguicolors
 set formatoptions+=ro
 set foldmethod=expr
 set foldexpr=v:lua.vim.treesitter.foldexpr()
+set completeopt+=fuzzy,noinsert,popup
 set laststatus=3
 
 highlight Normal guibg=none
@@ -23,7 +24,6 @@ autocmd BufReadPost *
       \ if line("'\"") >= 1 && line("'\"") <= line("$")
       \ |   exe "normal! g`\""
       \ | endif
-autocmd CompleteDone * pclose
 autocmd TextYankPost * call lv#copy()
 autocmd InsertLeave * call lv#switchabc()
 autocmd BufRead *.vim nnoremap <buffer> <c-]> :call lv#vimjump()<cr>
