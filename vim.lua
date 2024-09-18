@@ -9,22 +9,28 @@ require("nvim-tree").setup({
   update_focused_file = {
     update_root = true,
   },
-  system_open = {
-    cmd = "open",
-  },
   view = {
-    adaptive_size = true,
+    signcolumn = "auto",
     float = {
       enable = true,
       quit_on_focus_loss = true,
-      open_win_config = {
-        row = 0,
-        col = 0,
-      },
+      open_win_config = function()
+        local w = vim.opt.columns:get()
+        local h = vim.opt.lines:get()
+        local fw = w * 0.5
+        local fh = h * 0.5
+        local x = (w - fw) / 2
+        local y = h / 3 - fh / 2
+        return {
+          border = "rounded",
+          relative = "editor",
+          col = x,
+          row = y,
+          width = math.floor(fw),
+          height = math.floor(fh),
+        }
+      end,
     },
-  },
-  git = {
-    -- ignore = false,
   },
   renderer = {
     group_empty = true,
