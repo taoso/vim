@@ -1,6 +1,4 @@
 set mouse=
-set noswapfile
-set nowritebackup
 set linebreak
 set cursorline
 set colorcolumn=80
