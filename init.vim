@@ -13,6 +13,7 @@ set laststatus=3
 
 highlight Normal guibg=none
 highlight StatusLine guibg=#303030 guifg=#adadad
+highlight SpellBad guibg=red
 
 nnoremap <silent> <leader>r :Mru<cr>
 nnoremap <silent> <leader>s :call fzf#Open()<cr>
