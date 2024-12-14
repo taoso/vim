@@ -11,26 +11,6 @@ require("nvim-tree").setup({
   },
   view = {
     signcolumn = "auto",
-    float = {
-      enable = true,
-      quit_on_focus_loss = true,
-      open_win_config = function()
-        local w = vim.opt.columns:get()
-        local h = vim.opt.lines:get()
-        local fw = w * 0.5
-        local fh = h * 0.5
-        local x = (w - fw) / 2
-        local y = h / 3 - fh / 2
-        return {
-          border = "rounded",
-          relative = "editor",
-          col = x,
-          row = y,
-          width = math.floor(fw),
-          height = math.floor(fh),
-        }
-      end,
-    },
   },
   renderer = {
     group_empty = true,
@@ -45,6 +25,7 @@ require("nvim-tree").setup({
           arrow_closed = "⏵",
           arrow_open = "⏷",
         },
+        symlink = "",
         git = {
           unstaged = "✗",
           staged = "✓",
