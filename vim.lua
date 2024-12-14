@@ -46,20 +46,20 @@ require("nvim-tree").setup({
 require('pretty-fold').setup()
 
 require'nvim-treesitter.configs'.setup {
-    highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = false,
-    },
-    indent = {
-        enable = true,
-    },
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+  },
+  indent = {
+    enable = true,
+  },
 }
 
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(args)
     local function buf_set_keymap(keys, callback)
-        local opts = { noremap=true, silent=true, callback=callback }
-        vim.api.nvim_buf_set_keymap(args.buf, 'n', keys, '', opts)
+      local opts = { noremap=true, silent=true, callback=callback }
+      vim.api.nvim_buf_set_keymap(args.buf, 'n', keys, '', opts)
     end
 
     buf_set_keymap('gD', vim.lsp.buf.declaration)
