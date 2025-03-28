@@ -84,3 +84,6 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 local lsp = require'lspconfig'
 lsp.gopls.setup({})
 lsp.rust_analyzer.setup({})
+
+require("aerial").setup({})
+vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>")

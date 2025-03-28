@@ -28,3 +28,6 @@
 [submodule "pack/vendor/pretty-fold"]
 	path = pack/vendor/start/pretty-fold
 	url = https://github.com/bbjornstad/pretty-fold.nvim.git
+[submodule "pack/vendor/start/aerial"]
+	path = pack/vendor/start/aerial
+	url = https://github.com/stevearc/aerial.nvim
