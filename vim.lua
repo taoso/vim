@@ -45,6 +45,17 @@ require("nvim-tree").setup({
 
 require('pretty-fold').setup()
 
+vim.diagnostic.config({
+  -- Use the default configuration
+  virtual_lines = true,
+
+  -- Alternatively, customize specific options
+  virtual_lines = {
+   -- Only show virtual line diagnostics for the current cursor line
+   current_line = true,
+  },
+})
+
 require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,
@@ -56,15 +67,11 @@ require'nvim-treesitter.configs'.setup {
 }
 
 vim.api.nvim_create_autocmd('LspAttach', {
-  callback = function(args)
-    local function buf_set_keymap(keys, callback)
-      local opts = { noremap=true, silent=true, callback=callback }
-      vim.api.nvim_buf_set_keymap(args.buf, 'n', keys, '', opts)
+  callback = function(ev)
+    local client = vim.lsp.get_client_by_id(ev.data.client_id)
+    if client:supports_method('textDocument/completion') then
+      vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
     end
-
-    buf_set_keymap('gD', vim.lsp.buf.declaration)
-    buf_set_keymap('gd', vim.lsp.buf.definition)
-    buf_set_keymap('gri', vim.lsp.buf.implementation)
   end,
 })
 
