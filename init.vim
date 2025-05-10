@@ -10,6 +10,7 @@ set foldmethod=expr
 set foldexpr=v:lua.vim.treesitter.foldexpr()
 set completeopt+=fuzzy,noinsert,popup
 set laststatus=3
+set winborder=rounded
 
 highlight Normal guibg=none
 highlight StatusLine guibg=#303030 guifg=#adadad
